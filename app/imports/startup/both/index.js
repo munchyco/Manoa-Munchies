@@ -1,2 +1,2 @@
-import '/imports/api/restaurant';
+import '/imports/api/vendor';
 import '/imports/api/user';
