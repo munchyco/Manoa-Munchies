@@ -2,9 +2,9 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
-const Restaurants = new Mongo.Collection('Restaurants');
+const Vendors = new Mongo.Collection('Vendors');
 
-const RestaurantsSchema = new SimpleSchema({
+const VendorsSchema = new SimpleSchema({
   name: String,
   foodTypeOne: String,    //food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
   foodTypeTwo: String,
@@ -19,6 +19,6 @@ const RestaurantsSchema = new SimpleSchema({
   owner: String           //restaurant POC account
 }, { tracker: Tracker });
 
-Restaurants.attachSchema(RestaurantsSchema);
+Vendors.attachSchema(VendorsSchema);
 
-export { Restaurants, RestaurantsSchema };
+export { Vendors, VendorsSchema };
