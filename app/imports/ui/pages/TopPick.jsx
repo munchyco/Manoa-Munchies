@@ -1,13 +1,13 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Header, Loader, Card } from 'semantic-ui-react';
-import { Vendors } from '/imports/api/vendor/vendor';
+import { Items } from '/imports/api/item/item';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
-import Vendor from '../components/Vendor';
+import Item from '../components/Item';
 
 
 
@@ -24,30 +24,30 @@ class TopPick extends React.Component {
   renderPage() {
     return (
         <div className="center-image">
-        <Container>
-          <Header as="h2" textAlign="center" inverted>Today's Top Pick</Header>
-          <Card.Group>
-            {this.props.vendors.map((vendor, index) => <Vendor key={index}
-                                                                vendor={vendor}/>)}
-          </Card.Group>
-        </Container>
+          <Container>
+            <Header as="h2" textAlign="center" inverted>Today's Top Pick</Header>
+            <Card.Group>
+              {this.props.items.map((item, index) => <Item key={index}
+                                                           item={item}/>)}
+            </Card.Group>
+          </Container>
         </div>
-  );
+    );
   }
 }
 
 /** Require an array of Vendor documents in the props. */
 TopPick.propTypes = {
-  vendors: PropTypes.array.isRequired,
+  items: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Vendor documents.
-  const subscription = Meteor.subscribe('Vendors');
+  const subscription = Meteor.subscribe('Items');
   return {
-    vendors: Vendors.find({}).fetch(),
+    items: Items.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(TopPick);

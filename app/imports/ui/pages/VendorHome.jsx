@@ -18,13 +18,13 @@ class VendorHome extends React.Component {
   renderPage() {
     return (
         <div className="center-image">
-        <Container>
-          <Header as="h2" textAlign="center" inverted>Vendor Lists</Header>
-          <Card.Group>
-            {this.props.vendors.map((vendor, index) => <Vendor key={index}
-                                                               vendor={vendor}/>)}
-          </Card.Group>
-        </Container>
+          <Container>
+            <Header as="h2" textAlign="center" inverted>Vendor Lists</Header>
+            <Card.Group>
+              {this.props.vendors.map((vendor, index) => <Vendor key={index}
+                                                                 vendor={vendor}/>)}
+            </Card.Group>
+          </Container>
         </div>
     );
   }

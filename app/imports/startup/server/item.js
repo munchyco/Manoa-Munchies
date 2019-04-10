@@ -1,34 +1,34 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
-import { Vendors } from '../../api/vendor/vendor.js';
+import { Items } from '../../api/item/item.js';
 
 /** Initialize the database with a default data document. */
 function addData(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
-  Vendors.insert(data);
+  Items.insert(data);
 }
 
 /** Initialize the collection if empty. */
-if (Vendors.find().count() === 0) {
-  if (Meteor.settings.defaultVendors) {
+if (Items.find().count() === 0) {
+  if (Meteor.settings.defaultItems) {
     console.log('Creating default Contacts.');
-    Meteor.settings.defaultVendors.map(data => addData(data));
+    Meteor.settings.defaultItems.map(data => addData(data));
   }
 }
 
 /** This subscription publishes only the documents associated with the logged in user */
-Meteor.publish('Vendors', function publish() {
+Meteor.publish('Items', function publish() {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
-    return Vendors.find({ owner: username });
+    return Items.find({ owner: username });
   }
   return this.ready();
 });
 
 /** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
-Meteor.publish('VendorsAdmin', function publish() {
+Meteor.publish('ItemsAdmin', function publish() {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Vendors.find();
+    return Items.find();
   }
   return this.ready();
 });
