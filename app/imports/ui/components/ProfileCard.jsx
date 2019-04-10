@@ -7,7 +7,7 @@ export default class ProfileCard extends React.Component {
         <div className={'Cardplacement'}>
           <Container>
         <Card centered>
-          <Image src={'jameshead.jpg'}/>
+          <Image src={'https://i.imgur.com/tILqO0L.jpg'}/>
           <Card.Content>
             <Card.Header>Preferences</Card.Header>
             <Card.Meta>

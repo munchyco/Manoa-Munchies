@@ -17,6 +17,7 @@ class VendorHome extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
+        <div className="center-image">
         <Container>
           <Header as="h2" textAlign="center" inverted>Vendor Lists</Header>
           <Card.Group>
@@ -24,6 +25,7 @@ class VendorHome extends React.Component {
                                                                   vendor={vendor}/>)}
           </Card.Group>
         </Container>
+        </div>
     );
   }
 }
