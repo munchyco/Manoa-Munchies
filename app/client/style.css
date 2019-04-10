@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 .white-logo{
@@ -42,4 +43,44 @@
 .buttons{
   padding-top: 15px;
   margin-left: 15%;
+
+.ui.inverted.topmenu.menu {
+  background-color: #004030;
+  box-shadow: none;
+}
+.bump{
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.adminMid {
+
+}
+.Cardplacement {
+  margin-top: -20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url('https://i.ibb.co/5Wd0VTN/background.png');
+  background-size: cover;
+  border: none;
+}
+
+
+.Tight {
+  margin-top: 0px;
+}
+
+.green-background{
+  background-color: #004030;
+  color: white;
+}
+.ui.borderless.middlemenu.menu {
+  box-shadow: none;
+  border: none;
+  margin-bottom: 0px;
+}
+.footer-background {
+  background-color: #292929;
+  height: 200px;
+  color: white;
 }
