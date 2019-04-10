@@ -17,19 +17,21 @@ class ListAvailableVendors extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
+        <div className="center-image">
         <Container>
           <Header as="h2" textAlign="center" inverted>List Available Vendors</Header>
           <Card.Group>
-            {this.props.vendor.map((vendor, index) => <Vendor key={index} contact={vendor}/>)}
+            {this.props.vendors.map((vendor, index) => <Vendor key={index} contact={vendor}/>)}
           </Card.Group>
         </Container>
+        </div>
     );
   }
 }
 
 /** Require an array of Stuff documents in the props. */
 ListAvailableVendors.propTypes = {
-  vendor: PropTypes.array.isRequired,
+  vendors: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -37,7 +39,7 @@ ListAvailableVendors.propTypes = {
 export default withTracker(() => {
   const subscription = Meteor.subscribe('Vendors');
   return {
-    vendor: Vendors.find({}).fetch(),
+    vendors: Vendors.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(ListAvailableVendors);
