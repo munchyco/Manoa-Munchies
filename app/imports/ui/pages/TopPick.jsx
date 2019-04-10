@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
+import Vendor from '../components/Vendor';
+
 
 
 
@@ -25,7 +27,7 @@ class TopPick extends React.Component {
         <Container>
           <Header as="h2" textAlign="center" inverted>Today's Top Pick</Header>
           <Card.Group>
-            {this.props.vendors.map((vendor, index) => <Vendors key={index}
+            {this.props.vendors.map((vendor, index) => <Vendor key={index}
                                                                 vendor={vendor}/>)}
           </Card.Group>
         </Container>
@@ -49,4 +51,3 @@ export default withTracker(() => {
     ready: subscription.ready(),
   };
 })(TopPick);
-ReactDOM.render(<TopPick/>, document.getElementById('root'));
