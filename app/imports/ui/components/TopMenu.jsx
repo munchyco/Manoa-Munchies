@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Menu } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 
 export default class TopMenu extends React.Component {
   render() {
@@ -8,7 +8,6 @@ export default class TopMenu extends React.Component {
             <Menu.Item active>Profile</Menu.Item>
             <Menu.Item>Breakfast</Menu.Item>
             <Menu.Item>Lunch</Menu.Item>
-            <Menu.Item>Dinner</Menu.Item>
             <Menu.Item>Dinner</Menu.Item>
         </Menu>
     )
