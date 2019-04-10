@@ -8,7 +8,6 @@ export default class TopPick extends React.Component {
         <div className={'vendorMid'}>
           <TopMenu/>
           <TopPickMid/>
-          <BottomFooter/>
         </div>
     );
   }
