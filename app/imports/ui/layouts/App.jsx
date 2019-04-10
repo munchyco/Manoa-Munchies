@@ -12,23 +12,26 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import AdminHome from '../pages/AdminHome';
 import Signout from '../pages/Signout';
+import AddVendor from '../pages/AddVendor';
+import ListAvailableVendors from '../pages/ListAvailableVendors';
 import VendorHome from '../pages/VendorHome';
 import UserProfile from '../pages/UserProfile';
 import TopPick from '../pages/TopPick';
 import BottomFooter from '../components/BottomFooter';
-
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
     return (
         <Router>
-          <div>
+          <div className="manoa-background">
             <NavBar/>
             <Switch>
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
+              <ProtectedRoute path="/add" component={AddVendor}/>
+              <ProtectedRoute path="/list" component={ListAvailableVendors}/>
               <ProtectedRoute path="/toppick" component={TopPick}/>
               <ProtectedRoute path="/vendorhome" component={VendorHome}/>
               <ProtectedRoute path="/user" component={UserProfile}/>

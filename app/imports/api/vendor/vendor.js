@@ -12,12 +12,12 @@ const VendorsSchema = new SimpleSchema({
   vegan: Boolean,          //boolean values for whether the restaurant offers vegan, GF and healthy options.
   glutenFree: Boolean,
   healthy: Boolean,
-  restaurantPrice: String, //this will be either $/$$/$$$
-  restaurantType: String,  //restaurant types such as "Food Truck", "Pre-made To-go," "Made To Order"
+  vendorPrice: String, //this will be either $/$$/$$$
+  vendorType: String,  //vendor types such as "Food Truck", "Pre-made To-go," "Made To Order"
   location: String,        //dining hall, potentially coordinates lat/long that could be used to get distance to user?
   image: String,           //image of food/logo
-  description: String,     //tagline for restaurant
-  owner: String            //restaurant POC account
+  description: String,     //tagline for vendor
+  owner: String            //vendor POC account
 }, { tracker: Tracker });
 
 Vendors.attachSchema(VendorsSchema);

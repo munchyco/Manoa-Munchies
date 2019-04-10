@@ -1,18 +1,39 @@
 import React from 'react';
+import { Container, Grid, List, Icon } from 'semantic-ui-react';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
   render() {
-    const divStyle = { paddingTop: '15px' };
     return (
-        <footer>
-          <div style={divStyle} className="ui center aligned container">
-            <hr />
-              Department of Information and Computer Sciences <br />
-              University of Hawaii<br />
-              Honolulu, HI 96822
-          </div>
-        </footer>
+        <div className="green-background">
+          <Container><Grid columns={2}>
+            <Grid.Column>
+              <div className="white">Contact Us</div>
+              <hr/>
+              <List>
+                <List.Item>
+                  <div className="white">Phone Number: 808-955-8123</div>
+                </List.Item>
+                <List.Item>
+                  <div className="white">Email: munchyco@hawaii.edu</div>
+                </List.Item>
+              </List>
+            </Grid.Column>
+            <Grid.Column>
+              <div className="white">Find us on Social Media!</div>
+              <hr/>
+              <List>
+                <List.Item>
+                  <a className="white">Twitter <Icon size='large' name='twitter square'> </Icon></a>
+                </List.Item>
+                <List.Item>
+                  <a className="white">Facebook <Icon size='large' name='facebook square'> </Icon></a>
+                </List.Item>
+              </List>
+            </Grid.Column>
+          </Grid>
+          </Container>
+        </div>
     );
   }
 }

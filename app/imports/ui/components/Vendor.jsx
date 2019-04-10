@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Card, Group, Image, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
@@ -13,6 +14,7 @@ class Vendor extends React.Component {
           <Card.Content>
             <Card.Header>{this.props.vendor.name} </Card.Header>
             <Card.Meta>{this.props.vendor.location}</Card.Meta>
+
             <Card.Description>
               {this.props.vendor.description}
             </Card.Description>
@@ -28,4 +30,6 @@ Vendor.propTypes = {
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
+
 export default withRouter(Vendor);
+

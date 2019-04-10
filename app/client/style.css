@@ -1,5 +1,27 @@
-
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+.manoa-background {
+  background: url('https://i.ibb.co/5Wd0VTN/background.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.green-background {
+  background-color: #004030;
+}
+
+.white {
+  color: white;
+}
+
+.center-padding {
+  padding-top: 20px;
+  padding-bottom: 66px;
+}
+
+.navbar-stuff {
+  margin-bottom: 10px;
+  color: #004030;
+}
 
 .white-logo{
   font-family: 'Quicksand';
