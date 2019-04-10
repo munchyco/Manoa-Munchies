@@ -3,7 +3,10 @@
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
-  "vendor"
-
-
+  "defaultItems": [
+    { "owner": "john@foo.com",
+      "name": "Chiken katsu",
+      "location": "123 University Way",
+      "description": "Its chicken katsu" }
+  ]
 }

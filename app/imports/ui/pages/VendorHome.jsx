@@ -4,6 +4,7 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Vendors } from '/imports/api/vendor/vendor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import Vendor from '../components/Vendor';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class VendorHome extends React.Component {
@@ -19,7 +20,7 @@ class VendorHome extends React.Component {
         <Container>
           <Header as="h2" textAlign="center" inverted>Vendor Lists</Header>
           <Card.Group>
-            {this.props.vendors.map((vendor, index) => <Vendors key={index}
+            {this.props.vendors.map((vendor, index) => <Vendor key={index}
                                                                   vendor={vendor}/>)}
           </Card.Group>
         </Container>
