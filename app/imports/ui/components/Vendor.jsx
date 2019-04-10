@@ -30,12 +30,5 @@ Vendor.propTypes = {
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
-export default withTracker(() => {
-  // Get access to Vendor documents.
-  const subscription = Meteor.subscribe('Vendors');
-  return {
-    vendor: Vendors.find({}).fetch(),
-    ready: subscription.ready(),
-  };
-})(Vendor);
+export default withRouter(Vendor);
 
