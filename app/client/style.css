@@ -83,17 +83,13 @@
 }
 
 .Cardplacement {
-  margin-top: -20px;
   padding-top: 50px;
   padding-bottom: 50px;
-  background-image: url('https://i.ibb.co/5Wd0VTN/background.png');
-  background-size: cover;
   border: none;
 }
 
 
 .Tight {
-  margin-top: -10px;
 }
 
 .green-background {
