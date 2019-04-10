@@ -1,27 +1,23 @@
+
+
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Group, Image, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+
+/** Renders a single row in the List Stuff table. See pages/ListContacts.jsx. */
 class Vendor extends React.Component {
   render() {
     return (
         <Card centered>
           <Card.Content>
-            <Image floated='right' size='mini' src={this.props.vendor.image}/>
-            <Card.Header>
-              {this.props.vendor.name}
-            </Card.Header>
-            <Card.Meta>
-              {this.props.vendor.address}
-            </Card.Meta>
+            <Card.Header>{this.props.vendor.name} </Card.Header>
+            <Card.Meta>{this.props.vendor.location}</Card.Meta>
+
             <Card.Description>
               {this.props.vendor.description}
             </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <Link to={`/edit/${this.props.vendor._id}`}>Edit</Link>
           </Card.Content>
         </Card>
     );
@@ -34,4 +30,6 @@ Vendor.propTypes = {
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
+
 export default withRouter(Vendor);
+

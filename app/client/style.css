@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 .manoa-background {
   background: url('https://i.ibb.co/5Wd0VTN/background.png') no-repeat center center fixed;
   background-size: cover;
@@ -20,3 +22,94 @@
   margin-bottom: 10px;
   color: #004030;
 }
+
+.white-logo{
+  font-family: 'Quicksand';
+  color: white;
+  font-size: 40px;
+}
+
+.white-logo-under{
+  font-family: 'Quicksand', Light;
+  color: white;
+  font-size: 20px;
+}
+
+.center-image{
+  background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
+  background-size: cover;
+  height: 600px;
+  margin-top: -10px;
+}
+
+.center-text{
+  margin-top: 40%;
+  margin-left: 20%;
+}
+
+.under-text{
+  margin-top: 10%;
+  margin-left: 24%;
+}
+
+.description{
+  font-family: 'Quicksand', Light;
+  color: white;
+  font-size: 15px;
+  margin-top: 40%;
+}
+
+.description-box{
+  margin-top: 120%;
+}
+
+.buttons {
+  padding-top: 15px;
+  margin-left: 15%;
+}
+
+.ui.inverted.topmenu.menu {
+  background-color: #004030;
+  box-shadow: none;
+}
+
+.bump {
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.adminMid {
+
+}
+
+.Cardplacement {
+  margin-top: -20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url('https://i.ibb.co/5Wd0VTN/background.png');
+  background-size: cover;
+  border: none;
+}
+
+
+.Tight {
+  margin-top: -10px;
+}
+
+.green-background {
+  background-color: #004030;
+  color: white;
+}
+
+.ui.borderless.middlemenu.menu {
+  box-shadow: none;
+  border: none;
+  margin-bottom: 0px;
+}
+
+.footer-background {
+  background-color: #292929;
+  height: 200px;
+  color: white;
+}
+

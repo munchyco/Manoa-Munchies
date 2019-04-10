@@ -1,18 +1,23 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import 'semantic-ui-css/semantic.css';
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
+import AdminHome from '../pages/AdminHome';
 import Signout from '../pages/Signout';
 import AddVendor from '../pages/AddVendor';
 import ListAvailableVendors from '../pages/ListAvailableVendors';
+import VendorHome from '../pages/VendorHome';
+import UserProfile from '../pages/UserProfile';
+import TopPick from '../pages/TopPick';
+import BottomFooter from '../components/BottomFooter';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -27,10 +32,15 @@ class App extends React.Component {
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/add" component={AddVendor}/>
               <ProtectedRoute path="/list" component={ListAvailableVendors}/>
+              <ProtectedRoute path="/toppick" component={TopPick}/>
+              <ProtectedRoute path="/vendorhome" component={VendorHome}/>
+              <ProtectedRoute path="/user" component={UserProfile}/>
+              <ProtectedRoute path="/edit/:_id" component={VendorHome}/>
+              <AdminProtectedRoute path="/admin" component={AdminHome}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
-            <Footer/>
+            <BottomFooter/>
           </div>
         </Router>
     );
