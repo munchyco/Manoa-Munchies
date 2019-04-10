@@ -40,15 +40,17 @@
   margin-top: 120%;
 }
 
-.buttons{
+.buttons {
   padding-top: 15px;
   margin-left: 15%;
+}
 
 .ui.inverted.topmenu.menu {
   background-color: #004030;
   box-shadow: none;
 }
-.bump{
+
+.bump {
   margin-top: -20px;
   margin-bottom: 10px;
 }
@@ -56,6 +58,7 @@
 .adminMid {
 
 }
+
 .Cardplacement {
   margin-top: -20px;
   padding-top: 50px;
@@ -70,17 +73,20 @@
   margin-top: 0px;
 }
 
-.green-background{
+.green-background {
   background-color: #004030;
   color: white;
 }
+
 .ui.borderless.middlemenu.menu {
   box-shadow: none;
   border: none;
   margin-bottom: 0px;
 }
+
 .footer-background {
   background-color: #292929;
   height: 200px;
   color: white;
 }
+

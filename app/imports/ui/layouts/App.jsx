@@ -10,7 +10,12 @@ import Landing from '../pages/Landing';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
+import AdminHome from '../pages/AdminHome';
 import Signout from '../pages/Signout';
+import VendorHome from '../pages/VendorHome';
+import UserProfile from '../pages/UserProfile';
+import TopPick from '../pages/TopPick';
+
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -23,10 +28,11 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              /**<ProtectedRoute path="/list" component={ListStuff}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-              <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>**/
+              <ProtectedRoute path="/toppick" component={TopPick}/>
+              <ProtectedRoute path="/vendorhome" component={VendorHome}/>
+              <ProtectedRoute path="/user" component={UserProfile}/>
+              <ProtectedRoute path="/edit/:_id" component={VendorHome}/>
+              <AdminProtectedRoute path="/admin" component={AdminHome}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

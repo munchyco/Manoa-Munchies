@@ -19,7 +19,7 @@ class TopPick extends React.Component {
         <Container>
           <Header as="h2" textAlign="center" inverted>Today's Top Pick</Header>
           <Card.Group>
-            {this.props.vendors.map((vendor, index) => <Vendor key={index}
+            {this.props.vendors.map((vendor, index) => <Vendors key={index}
                                                                vendor={vendor}/>)}
           </Card.Group>
         </Container>
