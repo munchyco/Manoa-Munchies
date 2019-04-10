@@ -4,9 +4,19 @@
     { "email": "john@foo.com", "password": "changeme" }
   ],
   "defaultItems": [
-    { "owner": "john@foo.com",
-      "name": "Chiken katsu",
+    {"name": "Chicken katsu",
+      "foodTypeOne": "Japanese",
+      "foodTypeTwo": "Chinese",
+      "foodTypeThree": "Korean",
+      "vegan": true,
+      "glutenFree": true,
+      "healthy": true,
+      "restaurantPrice": "$$",
+      "restaurantType": "food truck",
       "location": "123 University Way",
-      "description": "Its chicken katsu" }
+      "image": "google.com",
+      "description": "Its chicken katsu",
+      "owner": "john@foo.com"
+    }
   ]
 }
