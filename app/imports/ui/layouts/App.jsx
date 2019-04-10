@@ -15,6 +15,7 @@ import Signout from '../pages/Signout';
 import VendorHome from '../pages/VendorHome';
 import UserProfile from '../pages/UserProfile';
 import TopPick from '../pages/TopPick';
+import BottomFooter from '../components/BottomFooter';
 
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -36,7 +37,7 @@ class App extends React.Component {
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
-            <Footer/>
+            <BottomFooter/>
           </div>
         </Router>
     );
