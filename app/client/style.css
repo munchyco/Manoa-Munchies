@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+.white-logo{
+  font-family: 'Quicksand';
+  color: white;
+  font-size: 40px;
+}
+
+.white-logo-under{
+  font-family: 'Quicksand', Light;
+  color: white;
+  font-size: 20px;
+}
+
+.center-image{
+  background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
+  background-size: cover;
+  height: 600px;
+}
+
+.center-text{
+  margin-top: 40%;
+  margin-left: 20%;
+}
+
+.under-text{
+  margin-top: 10%;
+  margin-left: 24%;
+}
+
+.description{
+  font-family: 'Quicksand', Light;
+  color: white;
+  font-size: 15px;
+  margin-top: 40%;
+}
+
+.description-box{
+  margin-top: 120%;
+}
+
+.buttons{
+  padding-top: 15px;
+  margin-left: 15%;
+}
