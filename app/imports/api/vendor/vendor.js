@@ -11,7 +11,6 @@ const VendorsSchema = new SimpleSchema({
   foodTypeThree: String,
   vegan: Boolean,          //boolean values for whether the restaurant offers vegan, GF and healthy options.
   glutenFree: Boolean,
-  healthy: Boolean,
   vendorPrice: String, //this will be either $/$$/$$$
   vendorType: String,  //vendor types such as "Food Truck", "Pre-made To-go," "Made To Order"
   location: String,        //dining hall, potentially coordinates lat/long that could be used to get distance to user?

@@ -53,7 +53,6 @@ class AddVendor extends React.Component {
                 <TextField name='foodTypeThree'/>
                 <TextField name='vegan'/>
                 <TextField name='glutenFree'/>
-                <TextField name='healthy'/>
                 <TextField name='vendorPrice'/>
                 <TextField name='vendorType'/>
                 <TextField name='location'/>
