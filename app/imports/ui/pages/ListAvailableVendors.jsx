@@ -6,7 +6,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Vendor from '../components/Vendor';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders a table containing all of the Vendor documents. Use <Vendor> to render each row. */
 class ListAvailableVendors extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -21,7 +21,7 @@ class ListAvailableVendors extends React.Component {
         <Container>
           <Header as="h2" textAlign="center" inverted>List Available Vendors</Header>
           <Card.Group>
-            {this.props.vendors.map((vendor, index) => <Vendor key={index} contact={vendor}/>)}
+            {this.props.vendors.map((vendor, index) => <Vendor key={index} vendor={vendor}/>)}
           </Card.Group>
         </Container>
         </div>
@@ -29,7 +29,7 @@ class ListAvailableVendors extends React.Component {
   }
 }
 
-/** Require an array of Stuff documents in the props. */
+/** Require an array of Vendor documents in the props. */
 ListAvailableVendors.propTypes = {
   vendors: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
@@ -37,6 +37,7 @@ ListAvailableVendors.propTypes = {
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
+  // Get access to Vendor documents.
   const subscription = Meteor.subscribe('Vendors');
   return {
     vendors: Vendors.find({}).fetch(),

@@ -21,8 +21,7 @@ class VendorHome extends React.Component {
         <Container>
           <Header as="h2" textAlign="center" inverted>Vendor Lists</Header>
           <Card.Group>
-            {this.props.vendors.map((vendor, index) => <Vendor key={index}
-                                                               vendor={vendor}/>)}
+            {this.props.vendors.map((vendor, index) => <Vendor key={index} vendor={vendor}/>)}
           </Card.Group>
         </Container>
         </div>
