@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment, Dropdown } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
+import { Roles } from 'meteor/alanning:roles';
 
 /**
  * Signup component is similar to signin component, but we attempt to create a new user instead.
  */
+
 const roleOption = [
   {
     text: 'Vendor',
@@ -13,10 +15,9 @@ const roleOption = [
   },
   {
     text: 'Customer',
-    value: '',
+    value: 'customer',
   },
 ]
-
 
 export default class Signup extends React.Component {
   /** Initialize state fields. */
@@ -37,24 +38,22 @@ export default class Signup extends React.Component {
   /** Handle Signup submission using Meteor's account mechanism. */
   handleSubmit() {
     const { email, password, role } = this.state;
-    Accounts.createUser({ email, username: email, password, role }, (err) => {
+    Accounts.createUser({ email, username: email, password}, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        // browserHistory.push('/login');
+        //Landing.push('/login');
       }
       //Need to add call to update roles for user based on role.
     });
+    console.log(this.state.role);
   }
-
-
-
-
 
 
 
   /** Display the signup form. */
   render() {
+    const { value } = this.state;
     return (
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
@@ -85,9 +84,11 @@ export default class Signup extends React.Component {
                   <Form.Field>
                     <Dropdown placeholder='Are you a customer or a vendor?'
                               name="role"
+                              type="role"
                               fluid
                               selection
-                              options={this.roleOption}
+                              options={roleOption}
+                              value={value}
                               onChange={this.handleChange}/>
                   </Form.Field>
                   <Form.Button content="Submit"/>
