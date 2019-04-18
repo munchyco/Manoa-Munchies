@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment, Dropdown } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
@@ -24,7 +24,7 @@ export default class Signup extends React.Component {
   /** Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', role: '' };
+    this.state = { email: '', password: '', error: '', role: '', finished: false};
     // Ensure that 'this' is bound to this component in these two functions.
     // https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,6 +54,7 @@ export default class Signup extends React.Component {
         alert(err);
       } else {
         console.log('success');// success!
+        this.setState({finished: true});
       }
     });
   }
@@ -63,6 +64,10 @@ export default class Signup extends React.Component {
   /** Display the signup form. */
   render() {
     const { value } = this.state;
+    if(this.state.finished)
+    {
+      return <Redirect to="/"/>;
+    }
     return (
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
