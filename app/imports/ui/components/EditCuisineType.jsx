@@ -7,8 +7,11 @@ import { withTracker } from 'meteor/react-meteor-data';
 export default class EditCuisineType extends React.Component {
 
   handleToGoChange = (e) => this.props.TGC;
+
   handleFoodTruckChange = (e) => this.props.FTC;
+
   handleMadeToOrderChange = (e) => this.props.MTOC;
+
   handleBuffetChange = (e) => this.props.BC;
 
   render() {
@@ -17,7 +20,7 @@ export default class EditCuisineType extends React.Component {
 
   renderPage() {
     return (
-        <div className="center-padding">
+        <div className="center-paddingEditPref">
           <Grid container centered>
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>Edit Cuisine Type</Header>
@@ -62,3 +65,13 @@ export default class EditCuisineType extends React.Component {
   }
 
 }
+EditCuisineType.propTypes = {
+  getB: PropTypes.func.isRequired,
+  getMTO: PropTypes.func.isRequired,
+  getFT: PropTypes.func.isRequired,
+  getTG: PropTypes.func.isRequired,
+  TGC: PropTypes.func.isRequired,
+  MTOC: PropTypes.func.isRequired,
+  FTC: PropTypes.func.isRequired,
+  BC: PropTypes.func.isRequired,
+};

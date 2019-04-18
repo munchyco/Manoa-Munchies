@@ -12,7 +12,9 @@
 .white {
   color: white;
 }
-
+.center-paddingEditPref {
+  color: white;
+}
 .center-padding {
   padding-top: 20px;
   padding-bottom: 66px;
@@ -82,7 +84,7 @@
   background-color: #292929;
 }
 
-.adminMid {
+.EditPreferences {
 
 }
 .Cardplacement {

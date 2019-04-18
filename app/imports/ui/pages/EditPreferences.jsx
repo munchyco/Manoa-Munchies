@@ -25,11 +25,13 @@ export default class EditPreferences extends React.Component {
     Buffet: Boolean,
     restaurantPrice: Array, //typical price range student wants.
     location: String,       //usual place on campus.
-    owner: String           //user account
+    owner: String,           //user account
   }
 
-  setUp(){
-    this.state.ToGo = true;
+      
+
+  setUp() {
+    this.setState();
     this.state.FoodTruck = false;
     this.state.MadeToOrder = true;
     this.state.Buffet = true;
@@ -44,29 +46,29 @@ export default class EditPreferences extends React.Component {
     this.state.glutenFree = true;
   }
 
-  handlePriceChange(price){
+  handlePriceChange(price) {
       this.state.restaurantPrice[price] = !this.state.restaurantPrice[price];
   }
 
-  getToGoPreset(){
+  getToGoPreset() {
     return this.state.ToGo;
   }
 
-  getBuffetPreset(){
+  getBuffetPreset() {
     return this.state.Buffet;
   }
 
-  getFoodTruckPreset(){
+  getFoodTruckPreset() {
     return this.state.FoodTruck;
   }
 
-  getMadeToOrderPreset(){
+  getMadeToOrderPreset() {
     return this.state.MadeToOrder;
   }
 
 
-  handleToGoChange(){
-    if(this.state.ToGo === false){
+  handleToGoChange() {
+    if(this.state.ToGo === false) {
       this.state.ToGo = true;
     } else if (this.state.ToGo === true) {
       this.state.ToGo = false;
@@ -74,29 +76,29 @@ export default class EditPreferences extends React.Component {
     console.log(this.state.ToGo);
   }
 
-  handleBuffetChange(){
-    if(this.state.Buffet === false){
+  handleBuffetChange() {
+    if(this.state.Buffet === false) {
       this.state.Buffet = true;
     } else {
       this.state.Buffet = false;
     }
   }
-  handleFoodTruckChange(){
-    if(this.state.FoodTruck === false){
+  handleFoodTruckChange() {
+    if(this.state.FoodTruck === false) {
       this.state.FoodTruck = true;
     } else {
       this.state.FoodTruck = false;
     }
   }
-  handleMadeToOrderChange(){
-    if(this.state.MadeToOrder === false){
+  handleMadeToOrderChange() {
+    if(this.state.MadeToOrder === false) {
       this.state.MadeToOrder = true;
     } else {
       this.state.MadeToOrder = false;
     }
   }
 
-  getPricePreset1(){
+  getPricePreset1() {
     return this.state.restaurantPrice[0];
   }
 
@@ -104,55 +106,55 @@ export default class EditPreferences extends React.Component {
     return this.state.restaurantPrice[1];
   }
 
-  getPricePreset3(){
+  getPricePreset3() {
     return this.state.restaurantPrice[2];
   }
 
-  handlePriceChange1(){
+  handlePriceChange1() {
     this.state.restaurantPrice[0] = !this.state.restaurantPrice[0];
   }
 
-  handlePriceChange2(){
+  handlePriceChange2() {
     this.state.restaurantPrice[1] = !this.state.restaurantPrice[1];
   }
 
-  handlePriceChange3(){
+  handlePriceChange3() {
     this.state.restaurantPrice[2] = !this.state.restaurantPrice[2];
   }
 
-  getFoodTag1(){
+  getFoodTag1() {
     return this.state.foodTypeOne;
   }
 
-  getFoodTag2(){
+  getFoodTag2() {
     return this.state.foodTypeTwo;
   }
 
-  getFoodTag3(){
+  getFoodTag3() {
     return this.state.foodTypeThree;
   }
 
-  getVegan(){
+  getVegan() {
     return this.state.vegan;
   }
 
-  getGlutenFree(){
+  getGlutenFree() {
     return this.state.glutenFree;
   }
 
-  getHealthy(){
+  getHealthy() {
     return this.state.healthy;
   }
 
-  handleVeganChange(){
+  handleVeganChange() {
     this.state.vegan = !this.state.vegan;
   }
 
-  handleHealthyChange(){
+  handleHealthyChange() {
     this.state.healthy = !this.state.healthy;
   }
 
-  handleGlutenFreeChange(){
+  handleGlutenFreeChange() {
     this.state.glutenFree = !this.state.glutenFree;
   }
 
@@ -160,7 +162,7 @@ export default class EditPreferences extends React.Component {
   render() {
     this.setUp();
     return (
-        <div className={'adminMid'}>
+        <div className={'EditPreferences'}>
           <EditCuisineType
             getTG={this.getToGoPreset()}
             getB={this.getBuffetPreset()}
