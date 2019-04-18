@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment, Dropdown } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor';
 
 /**
  * Signup component is similar to signin component, but we attempt to create a new user instead.
@@ -46,7 +47,15 @@ export default class Signup extends React.Component {
       }
       //Need to add call to update roles for user based on role.
     });
-    console.log(this.state.role);
+    Meteor.call('updatingRole', {
+      role: this.state.role
+    }, (err) => {
+      if (err) {
+        alert(err);
+      } else {
+        console.log('success');// success!
+      }
+    });
   }
 
 

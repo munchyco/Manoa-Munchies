@@ -19,14 +19,6 @@ function createUser(email, password, role) {
   }
 }
 
-function updateUserRole(userID, role){
-  if (role === 'vendor') {
-    Roles.addUsersToRoles(userID, 'vendor');
-  }
-  if (role === 'customer') {
-    console.log('customer');
-  }
-}
 
 /** When running app for first time, pass a settings file to set up a default user account. */
 if (Meteor.users.find().count() === 0) {
