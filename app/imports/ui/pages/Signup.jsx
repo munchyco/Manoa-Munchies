@@ -1,16 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Link, Redirect } from 'react-router-dom';
+import { Container, Form, Grid, Header, Message, Segment, Dropdown } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
+import { Roles } from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor';
 
 /**
  * Signup component is similar to signin component, but we attempt to create a new user instead.
  */
+
+const roleOption = [
+  {
+    text: 'Vendor',
+    value: 'vendor',
+  },
+  {
+    text: 'Customer',
+    value: 'customer',
+  },
+]
+
 export default class Signup extends React.Component {
   /** Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '' };
+    this.state = { email: '', password: '', error: '', role: '', finished: false};
     // Ensure that 'this' is bound to this component in these two functions.
     // https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,18 +38,36 @@ export default class Signup extends React.Component {
 
   /** Handle Signup submission using Meteor's account mechanism. */
   handleSubmit() {
-    const { email, password } = this.state;
-    Accounts.createUser({ email, username: email, password }, (err) => {
+    const { email, password, role } = this.state;
+    Accounts.createUser({ email, username: email, password}, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        // browserHistory.push('/login');
+        //Landing.push('/login');
+      }
+      //Need to add call to update roles for user based on role.
+    });
+    Meteor.call('updatingRole', {
+      role: this.state.role
+    }, (err) => {
+      if (err) {
+        alert(err);
+      } else {
+        console.log('success');// success!
+        this.setState({finished: true});
       }
     });
   }
 
+
+
   /** Display the signup form. */
   render() {
+    const { value } = this.state;
+    if(this.state.finished)
+    {
+      return <Redirect to="/"/>;
+    }
     return (
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
@@ -63,6 +95,16 @@ export default class Signup extends React.Component {
                       type="password"
                       onChange={this.handleChange}
                   />
+                  <Form.Field>
+                    <Dropdown placeholder='Are you a customer or a vendor?'
+                              name="role"
+                              type="role"
+                              fluid
+                              selection
+                              options={roleOption}
+                              value={value}
+                              onChange={this.handleChange}/>
+                  </Form.Field>
                   <Form.Button content="Submit"/>
                 </Segment>
               </Form>
