@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Button } from 'semantic-ui-react';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
 import { Meteor } from 'meteor/meteor';
@@ -9,6 +10,8 @@ import EditPrice from '../components/EditPrice';
 import EditFoodTags from '../components/EditFoodTags';
 import Users from '/imports/api/user/user.js';
 import EditHealthOptions from '../components/EditHealthOptions';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
 
 export default class EditPreferences extends React.Component {
 
@@ -31,19 +34,23 @@ export default class EditPreferences extends React.Component {
       
 
   setUp() {
-    this.setState();
-    this.state.FoodTruck = false;
-    this.state.MadeToOrder = true;
-    this.state.Buffet = true;
-    this.state.restaurantPrice[0] = true;
+    this.setState({FoodTruck: false });
+    this.setState({MadeToOrder: true });
+    this.setState({Buffet: true });
+    this.setState({ToGo: true });
+    this.setState({restaurantPrice: true});
     this.state.restaurantPrice[1] = false;
     this.state.restaurantPrice[2] = true;
-    this.state.foodTypeOne = 'Chinese';
-    this.state.foodTypeTwo = 'Korean';
-    this.state.foodTypeThree = 'BBQ';
-    this.state.vegan = false;
-    this.state.healthy = true;
-    this.state.glutenFree = true;
+    this.setState({foodTypeOne: 'Chinese'});
+    this.setState({foodTypeTwo: 'Korean'});
+    this.setState({foodTypeThree: 'BBQ'});
+    this.setState({vegan: false});
+    this.setState({healthy: true});
+    this.setState({glutenFree: true});
+  }
+
+  handleSubmit(){
+    
   }
 
   handlePriceChange(price) {
@@ -68,34 +75,17 @@ export default class EditPreferences extends React.Component {
 
 
   handleToGoChange() {
-    if(this.state.ToGo === false) {
-      this.state.ToGo = true;
-    } else if (this.state.ToGo === true) {
-      this.state.ToGo = false;
-    }
-    console.log(this.state.ToGo);
+    this.setState({ToGo: !this.state.ToGo});
   }
 
   handleBuffetChange() {
-    if(this.state.Buffet === false) {
-      this.state.Buffet = true;
-    } else {
-      this.state.Buffet = false;
-    }
+    this.setState({Buffet: !this.state.Buffet});
   }
   handleFoodTruckChange() {
-    if(this.state.FoodTruck === false) {
-      this.state.FoodTruck = true;
-    } else {
-      this.state.FoodTruck = false;
-    }
+    this.setState({FoodTruck: !this.state.FoodTruck});
   }
   handleMadeToOrderChange() {
-    if(this.state.MadeToOrder === false) {
-      this.state.MadeToOrder = true;
-    } else {
-      this.state.MadeToOrder = false;
-    }
+    this.setState({MadeToOrder: !this.state.MadeToOrder});
   }
 
   getPricePreset1() {
@@ -147,20 +137,23 @@ export default class EditPreferences extends React.Component {
   }
 
   handleVeganChange() {
-    this.state.vegan = !this.state.vegan;
+    this.setState({vegan: !this.state.vegan});
   }
 
   handleHealthyChange() {
-    this.state.healthy = !this.state.healthy;
+    this.setState({healthy: !this.state.healthy});
   }
 
   handleGlutenFreeChange() {
-    this.state.glutenFree = !this.state.glutenFree;
+    this.setState({glutenFree: !this.state.glutenFree});
   }
 
 
   render() {
     this.setUp();
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+   renderPage() {
     return (
         <div className={'EditPreferences'}>
           <EditCuisineType
@@ -194,9 +187,29 @@ export default class EditPreferences extends React.Component {
               HHC={this.handleHealthyChange()}
               HGFC={this.handleGlutenFreeChange()}
           />
+          <Button size='small' color='green'>
+            Submit
+            onClick={this.handleSubmit()}
+          </Button>
         </div>
     );
   }
 }
 
 ReactDOM.render(<EditPreferences/>, document.getElementById('root'));
+
+
+EditPreferences.propTypes = {
+  Users: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe('Users');
+  return {
+    User: Users.find({}).fetch(),
+    ready: (subscription.ready()),
+  };
+})(EditPreferences);

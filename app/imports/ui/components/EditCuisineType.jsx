@@ -75,3 +75,6 @@ EditCuisineType.propTypes = {
   FTC: PropTypes.func.isRequired,
   BC: PropTypes.func.isRequired,
 };
+
+
+

@@ -3,6 +3,7 @@ import { Grid, Form, Header } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import EditCuisineType from './EditCuisineType';
 
 export default class EditHealthOptions extends React.Component {
 
@@ -49,3 +50,12 @@ export default class EditHealthOptions extends React.Component {
   }
 
 }
+
+EditHealthOptions.propTypes = {
+  getV: PropTypes.func.isRequired,
+  getGF: PropTypes.func.isRequired,
+  getH: PropTypes.func.isRequired,
+  HHC: PropTypes.func.isRequired,
+  HGFC: PropTypes.func.isRequired,
+  HVC: PropTypes.func.isRequired,
+};
