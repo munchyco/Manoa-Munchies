@@ -4,7 +4,6 @@ import { Button } from 'semantic-ui-react';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
 import { Meteor } from 'meteor/meteor';
-import BottomFooter from '../components/BottomFooter';
 import EditCuisineType from '../components/EditCuisineType';
 import EditPrice from '../components/EditPrice';
 import EditFoodTags from '../components/EditFoodTags';
@@ -26,27 +25,41 @@ export default class EditPreferences extends React.Component {
     FoodTruck: Boolean,
     MadeToOrder: Boolean,
     Buffet: Boolean,
-    restaurantPrice: Array, //typical price range student wants.
+    restaurantPrice1: Boolean, //typical price range student wants.
+    restaurantPrice2: Boolean,
+    restaurantPrice3: Boolean,
     location: String,       //usual place on campus.
     owner: String,           //user account
   }
 
-      
+
 
   setUp() {
     this.setState({FoodTruck: false });
     this.setState({MadeToOrder: true });
     this.setState({Buffet: true });
     this.setState({ToGo: true });
-    this.setState({restaurantPrice: true});
-    this.state.restaurantPrice[1] = false;
-    this.state.restaurantPrice[2] = true;
+    this.setState({restaurantPrice1: true});
+    this.setState({restaurantPrice2: true});
+    this.setState({restaurantPrice3: true});
     this.setState({foodTypeOne: 'Chinese'});
     this.setState({foodTypeTwo: 'Korean'});
     this.setState({foodTypeThree: 'BBQ'});
     this.setState({vegan: false});
     this.setState({healthy: true});
     this.setState({glutenFree: true});
+  }
+
+  handleFoodType1Change(value) {
+    this.setState({ foodTypeOne: value });
+  }
+
+  handleFoodType2Change(value) {
+    this.setState({ foodTypeTwo: value });
+  }
+
+  handleFoodType3Change(value) {
+    this.setState({ foodTypeThree: value });
   }
 
   handleSubmit(){
@@ -89,27 +102,27 @@ export default class EditPreferences extends React.Component {
   }
 
   getPricePreset1() {
-    return this.state.restaurantPrice[0];
+    return this.state.restaurantPrice1;
   }
 
   getPricePreset2() {
-    return this.state.restaurantPrice[1];
+    return this.state.restaurantPrice2;
   }
 
   getPricePreset3() {
-    return this.state.restaurantPrice[2];
+    return this.state.restaurantPrice3;
   }
 
   handlePriceChange1() {
-    this.state.restaurantPrice[0] = !this.state.restaurantPrice[0];
+    this.setState({restaurantPrice1: !this.state.restaurantPrice1});
   }
 
   handlePriceChange2() {
-    this.state.restaurantPrice[1] = !this.state.restaurantPrice[1];
+    this.setState({restaurantPrice2: !this.state.restaurantPrice2});
   }
 
   handlePriceChange3() {
-    this.state.restaurantPrice[2] = !this.state.restaurantPrice[2];
+    this.setState({restaurantPrice3: !this.state.restaurantPrice3});
   }
 
   getFoodTag1() {
@@ -178,6 +191,9 @@ export default class EditPreferences extends React.Component {
               getFT1={this.getFoodTag1()}
               getFT2={this.getFoodTag2()}
               getFT3={this.getFoodTag3()}
+              HFT1C={this.handleFoodType1Change()}
+              HFT2C={this.handleFoodType2Change()}
+              HFT3C={this.handleFoodType3Change()}
           />
           <EditHealthOptions
               getV={this.getVegan()}
@@ -206,7 +222,7 @@ EditPreferences.propTypes = {
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
-  // Get access to Stuff documents.
+  // Get access to Users documents.
   const subscription = Meteor.subscribe('Users');
   return {
     User: Users.find({}).fetch(),
