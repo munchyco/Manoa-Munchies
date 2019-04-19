@@ -80,13 +80,18 @@
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 ::before{
   background-color: #292929;
 }
 
 .EditPreferences {
+=======
+.adminMid {
+>>>>>>> parent of 21a0e95... EditPreferencesPage
 
 }
+
 .Cardplacement {
   padding-top: 50px;
   padding-bottom: 50px;

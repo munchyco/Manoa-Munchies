@@ -2,16 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
-import { Meteor } from 'meteor/meteor';
 import BottomFooter from '../components/BottomFooter';
 import EditCuisineType from '../components/EditCuisineType';
 import EditPrice from '../components/EditPrice';
-import EditFoodTags from '../components/EditFoodTags';
-import Users from '/imports/api/user/user.js';
-import EditHealthOptions from '../components/EditHealthOptions';
 
 export default class EditPreferences extends React.Component {
 
+<<<<<<< HEAD
   state = {
     foodTypeOne: String,    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
     foodTypeTwo: String,
@@ -159,9 +156,11 @@ export default class EditPreferences extends React.Component {
   }
 
 
+=======
+>>>>>>> parent of 21a0e95... EditPreferencesPage
   render() {
-    this.setUp();
     return (
+<<<<<<< HEAD
         <div className={'EditPreferences'}>
           <EditCuisineType
             getTG={this.getToGoPreset()}
@@ -194,6 +193,11 @@ export default class EditPreferences extends React.Component {
               HHC={this.handleHealthyChange()}
               HGFC={this.handleGlutenFreeChange()}
           />
+=======
+        <div className={'adminMid'}>
+          <EditCuisineType/>
+          <EditPrice/>
+>>>>>>> parent of 21a0e95... EditPreferencesPage
         </div>
     );
   }

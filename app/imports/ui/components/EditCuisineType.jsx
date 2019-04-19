@@ -1,11 +1,15 @@
 import React from 'react';
 import { Grid, Form, Header, Checkbox } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
+
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 
 export default class EditCuisineType extends React.Component {
+  state = {
+    const: active === 'false'
+  }
 
+<<<<<<< HEAD
   handleToGoChange = (e) => this.props.TGC;
 
   handleFoodTruckChange = (e) => this.props.FTC;
@@ -13,12 +17,17 @@ export default class EditCuisineType extends React.Component {
   handleMadeToOrderChange = (e) => this.props.MTOC;
 
   handleBuffetChange = (e) => this.props.BC;
+=======
+
+  handleChange = (e, { value }) => this.setState({ value })
+>>>>>>> parent of 21a0e95... EditPreferencesPage
 
   render() {
     return this.renderPage();
   }
 
   renderPage() {
+    const { ToGo, FoodTruck, MadeToOrder, Buffet } = this.state
     return (
         <div className="center-paddingEditPref">
           <Grid container centered>
@@ -28,32 +37,35 @@ export default class EditCuisineType extends React.Component {
                 <Form.Group>
                   <label>Cuisine Type</label>
                   <Form.Field>
-                    <Form.Radio toggle
-                                label='ToGo'
-                                defaultChecked={this.props.getTG}
-                                onChange={this.handleToGoChange}
+                    <Checkbox
+                        label='To Go'
+                        value='TG'
+                        checked={ToGo === 'TG'}
+                        onChange={this.handleChange}
                     />
                   </Form.Field>
                   <Form.Field>
-                    <Form.Radio toggle
-                                label='FoodTruck'
-                                defaultChecked={(this.props.getFT)}
-                                onChange={this.handleFoodTruckChange}
-                    />
-
-                  </Form.Field>
-                  <Form.Field>
-                    <Form.Radio toggle
-                                label='MadeToOrder'
-                                defaultChecked={this.props.getMTO}
-                                onChange={this.handleMadeToOrderChange}
+                    <Checkbox
+                        label='Food Truck'
+                        value='FT'
+                        checked={FoodTruck === 'FT'}
+                        onChange={this.handleChange}
                     />
                   </Form.Field>
                   <Form.Field>
-                    <Form.Radio toggle
-                                label='Buffet'
-                                defaultChecked={this.props.getB}
-                                onChange={this.handleBuffetChange}
+                    <Checkbox
+                        label='Made To Order'
+                        value='MTD'
+                        checked={MadeToOrder === 'MTD'}
+                        onChange={this.handleChange}
+                    />
+                  </Form.Field>
+                  <Form.Field>
+                    <Checkbox
+                        label='Buffet'
+                        value='B'
+                        checked={Buffet === 'B'}
+                        onChange={this.handleChange}
                     />
                   </Form.Field>
                 </Form.Group>
