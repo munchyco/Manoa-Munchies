@@ -111,6 +111,6 @@ export default class ProfileCard extends React.Component {
           </Container>
         </div>
 
-   );
+   )
   }
 }
