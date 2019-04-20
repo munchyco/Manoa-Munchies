@@ -6,10 +6,6 @@ import { withTracker } from 'meteor/react-meteor-data';
 
 export default class EditCuisineType extends React.Component {
 
-  handleToGoChange = (e) => this.props.TGC;
-  handleFoodTruckChange = (e) => this.props.FTC;
-  handleMadeToOrderChange = (e) => this.props.MTOC;
-  handleBuffetChange = (e) => this.props.BC;
 
   render() {
     return this.renderPage();
@@ -21,21 +17,20 @@ export default class EditCuisineType extends React.Component {
           <Grid container centered>
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>Edit Cuisine Type</Header>
-              <Form inverted>
                 <Form.Group>
                   <label>Cuisine Type</label>
                   <Form.Field>
                     <Form.Radio toggle
                                 label='ToGo'
                                 defaultChecked={this.props.getTG}
-                                onChange={this.handleToGoChange}
+                                onChange={this.props.HTGC}
                     />
                   </Form.Field>
                   <Form.Field>
                     <Form.Radio toggle
                                 label='FoodTruck'
                                 defaultChecked={(this.props.getFT)}
-                                onChange={this.handleFoodTruckChange}
+                                onChange={this.props.HFTC}
                     />
 
                   </Form.Field>
@@ -43,18 +38,17 @@ export default class EditCuisineType extends React.Component {
                     <Form.Radio toggle
                                 label='MadeToOrder'
                                 defaultChecked={this.props.getMTO}
-                                onChange={this.handleMadeToOrderChange}
+                                onChange={this.props.HMTOC}
                     />
                   </Form.Field>
                   <Form.Field>
                     <Form.Radio toggle
                                 label='Buffet'
                                 defaultChecked={this.props.getB}
-                                onChange={this.handleBuffetChange}
+                                onChange={this.props.HBC}
                     />
                   </Form.Field>
                 </Form.Group>
-              </Form>
             </Grid.Column>
           </Grid>
         </div>
@@ -62,3 +56,13 @@ export default class EditCuisineType extends React.Component {
   }
 
 }
+EditCuisineType.propTypes = {
+  getTG: PropTypes.bool.isRequired,
+  getMTO: PropTypes.bool.isRequired,
+  getB: PropTypes.bool.isRequired,
+  getFT: PropTypes.bool.isRequired,
+  HTGC: PropTypes.func.isRequired,
+  HFTC: PropTypes.func.isRequired,
+  HMTOC: PropTypes.func.isRequired,
+  HBC: PropTypes.func.isRequired,
+};

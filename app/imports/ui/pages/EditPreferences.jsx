@@ -8,11 +8,15 @@ import EditCuisineType from '../components/EditCuisineType';
 import EditPrice from '../components/EditPrice';
 import EditFoodTags from '../components/EditFoodTags';
 import Users from '/imports/api/user/user.js';
+import { Form, Button } from 'semantic-ui-react';
 import EditHealthOptions from '../components/EditHealthOptions';
+
 
 export default class EditPreferences extends React.Component {
 
-  state = {
+  constructor(props) {
+    super(props);
+    this.Tracker = {
     foodTypeOne: String,    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
     foodTypeTwo: String,
     foodTypeThree: String,
@@ -28,180 +32,243 @@ export default class EditPreferences extends React.Component {
     restaurantPrice3: Boolean,
     location: String,       //usual place on campus.
     owner: String           //user account
-  }
-
-  setUp(){
-    this.state.ToGo = true;
-    this.state.FoodTruck = false;
-    this.state.MadeToOrder = true;
-    this.state.Buffet = true;
-    this.state.foodTypeOne = 'Chinese';
-    this.state.foodTypeTwo = 'Korean';
-    this.state.foodTypeThree = 'BBQ';
-    this.state.vegan = false;
-    this.state.healthy = true;
-    this.state.glutenFree = true;
-    this.state.restaurantPrice1 = true;
-    this.state.restaurantPrice2 = true;
-    this.state.restaurantPrice3 = true;
-  }
-
-  handlePriceChange1(){
-    this.setState({restaurantPrice1: !this.state.restaurantPrice1});
-  }
-
-  handlePriceChange2(){
-    this.setState({restaurantPrice2: !this.state.restaurantPrice2});
-  }
-
-  handlePriceChange3(){
-    this.setState({restaurantPrice3: !this.state.restaurantPrice3});
-  }
-
-  getToGoPreset(){
-    return this.state.ToGo;
-  }
-
-  getBuffetPreset(){
-    return this.state.Buffet;
-  }
-
-  getFoodTruckPreset(){
-    return this.state.FoodTruck;
-  }
-
-  getMadeToOrderPreset(){
-    return this.state.MadeToOrder;
-  }
-
-
-  handleToGoChange(){
-    if(this.state.ToGo === false){
-      this.state.ToGo = true;
-    } else if (this.state.ToGo === true) {
-      this.state.ToGo = false;
     }
-    console.log(this.state.ToGo);
+    this.trackVegan = 0;
+    this.trackGlutenFree = 0;
+    this.trackHealthy = 0;
+    this.trackToGo = 0;
+    this.trackFoodTruck = 0;
+    this.trackMadeToOrder = 0;
+    this.trackBuffet = 0;
+    this.trackPrice1 = 0;
+    this.trackPrice2 = 0;
+    this.trackPrice3 = 0;
+
+
+    this.handleHealthyChange = this.handleHealthyChange.bind(this);
+    this.handleGlutenFreeChange = this.handleGlutenFreeChange.bind(this);
+    this.handleVeganChange = this.handleVeganChange.bind(this);
+    this.handleBuffetChange = this.handleBuffetChange.bind(this);
+    this.handleToGoChange = this.handleToGoChange.bind(this);
+    this.handleMadeToOrderChange = this.handleMadeToOrderChange.bind(this);
+    this.handleFoodTruckChange = this.handleFoodTruckChange.bind(this);
+    this.handlePrice1Change = this.handlePrice1Change.bind(this);
+    this.handlePrice2Change = this.handlePrice2Change.bind(this);
+    this.handlePrice3Change = this.handlePrice3Change.bind(this);
+    this.handleFT1 = this.handleFT1.bind(this);
+    this.handleFT2 = this.handleFT2.bind(this);
+    this.handleFT3 = this.handleFT3.bind(this);
+    this.trackHealthyChange = this.trackHealthyChange.bind(this);
+    this.trackGlutenFreeChange = this.trackGlutenFreeChange.bind(this);
+    this.trackVeganChange = this.trackVeganChange.bind(this);
+    this.trackBuffetChange = this.trackBuffetChange.bind(this);
+    this.trackToGoChange = this.trackToGoChange.bind(this);
+    this.trackMadeToOrderChange = this.trackMadeToOrderChange.bind(this);
+    this.trackFoodTruckChange = this.trackFoodTruckChange.bind(this);
+    this.trackPrice1Change = this.trackPrice1Change.bind(this);
+    this.trackPrice2Change = this.trackPrice2Change.bind(this);
+    this.trackPrice3Change = this.trackPrice3Change.bind(this);
+    this.Submit = this.Submit.bind(this);
   }
 
-  handleBuffetChange(){
-    if(this.state.Buffet === false){
-      this.state.Buffet = true;
-    } else {
-      this.state.Buffet = false;
+  oddEven(number){
+    if((number % 2) == 0){
+      return false;
+    } else if((number % 2) == 1){
+      return true;
     }
-  }
-  handleFoodTruckChange(){
-    if(this.state.FoodTruck === false){
-      this.state.FoodTruck = true;
-    } else {
-      this.state.FoodTruck = false;
-    }
-  }
-  handleMadeToOrderChange(){
-    if(this.state.MadeToOrder === false){
-      this.state.MadeToOrder = true;
-    } else {
-      this.state.MadeToOrder = false;
-    }
-  }
-
-  getPricePreset1(){
-    return this.state.restaurantPrice1;
-  }
-
-  getPricePreset2() {
-    return this.state.restaurantPrice2;
-  }
-
-  getPricePreset3(){
-    return this.state.restaurantPrice3;
-  }
-
-  handlePriceChange1(){
-    this.state.restaurantPrice1 = !this.state.restaurantPrice1;
-  }
-
-  handlePriceChange2(){
-    this.state.restaurantPrice2 = !this.state.restaurantPrice2;
-  }
-
-  handlePriceChange3(){
-    this.state.restaurantPrice3 = !this.state.restaurantPrice3;
-  }
-
-  getFoodTag1(){
-    return this.state.foodTypeOne;
-  }
-
-  getFoodTag2(){
-    return this.state.foodTypeTwo;
-  }
-
-  getFoodTag3(){
-    return this.state.foodTypeThree;
-  }
-
-  getVegan(){
-    return this.state.vegan;
-  }
-
-  getGlutenFree(){
-    return this.state.glutenFree;
-  }
-
-  getHealthy(){
-    return this.state.healthy;
-  }
-
-  handleVeganChange(){
-    this.state.vegan = !this.state.vegan;
   }
 
   handleHealthyChange(){
-    this.state.healthy = !this.state.healthy;
+    if(this.oddEven(this.trackHealthy)){
+      this.Tracker.healthy = !this.Tracker.healthy;
+    }
+    this.trackHealthy = 0;
   }
 
   handleGlutenFreeChange(){
-    this.state.glutenFree = !this.state.glutenFree;
+    if(this.oddEven(this.trackGlutenFree)){
+      this.Tracker.glutenFree = !this.Tracker.glutenFree;
+    }
+    this.trackGlutenFree = 0;
   }
 
+  handleVeganChange(){
+    if(this.oddEven(this.trackHealthy)){
+      this.Tracker.vegan = !this.Tracker.vegan;
+    }
+    this.trackHealthy = 0;
+  }
+
+  handleBuffetChange(){
+    if(this.oddEven(this.trackBuffet)){
+      this.Tracker.Buffet = !this.Tracker.Buffet;
+    }
+    this.trackBuffet = 0;
+  }
+
+  handleToGoChange(){
+    if(this.oddEven(this.trackToGo)){
+      this.Tracker.ToGo = !this.Tracker.ToGo;
+    }
+    this.trackToGo = 0;
+  }
+
+  handleMadeToOrderChange(){
+    if(this.oddEven(this.trackMadeToOrder)){
+      this.Tracker.MadeToOrder = !this.Tracker.MadeToOrder;
+    }
+    this.trackMadeToOrder = 0;
+  }
+
+  handleFoodTruckChange(){
+    if(this.oddEven(this.trackFoodTruck)){
+      this.Tracker.FoodTruck = !this.Tracker.FoodTruck;
+    }
+    this.trackFoodTruck = 0;
+  }
+
+  handlePrice1Change(){
+    if(this.oddEven(this.trackPrice1)){
+      this.Tracker.restaurantPrice1 = !this.Tracker.restaurantPrice1;
+    }
+    this.trackPrice1 = 0;
+  }
+
+  handlePrice2Change(){
+    if(this.oddEven(this.trackPrice2)){
+      this.Tracker.restaurantPrice2 = !this.Tracker.restaurantPrice2;
+    }
+    this.trackPrice2 = 0;
+  }
+
+  handlePrice3Change(){
+    if(this.oddEven(this.trackPrice3)){
+      this.Tracker.restaurantPrice3 = !this.Tracker.restaurantPrice3;
+    }
+    this.trackPrice3 = 0;
+  }
+
+  trackPrice1Change() {
+    this.trackPrice1++;
+  }
+  trackPrice2Change() {
+    this.trackPrice2++;
+  }
+  trackPrice3Change() {
+    this.trackPrice3++;
+  }
+
+  trackBuffetChange() {
+    this.trackBuffet++;
+  }
+
+  trackToGoChange() {
+    this.trackToGo++;
+  }
+
+  trackMadeToOrderChange() {
+    this.trackMadeToOrder++;
+  }
+
+  trackFoodTruckChange() {
+    this.trackFoodTruck++;
+  }
+
+  trackHealthyChange() {
+    this.trackHealthy++;
+  }
+  trackGlutenFreeChange() {
+    this.trackGlutenFree++;
+  }
+  trackVeganChange() {
+    this.trackVegan++;
+  }
+
+  handleFT1 = value => {
+    this.Tracker.foodTypeOne = value;
+  };
+
+  handleFT2 = value => {
+    this.Tracker.foodTypeTwo = value;
+  };
+
+  handleFT3 = value => {
+    this.Tracker.foodTypeThree = value;
+  };
+
+  setUp(){
+    this.Tracker.ToGo = true;
+    this.Tracker.FoodTruck = false;
+    this.Tracker.MadeToOrder = true;
+    this.Tracker.Buffet = true;
+    this.Tracker.foodTypeOne = "Chinese";
+    this.Tracker.foodTypeTwo = "Korean";
+    this.Tracker.foodTypeThree = "American";
+    this.Tracker.vegan = false;
+    this.Tracker.healthy = false;
+    this.Tracker.glutenFree = true;
+    this.Tracker.restaurantPrice1 = true;
+    this.Tracker.restaurantPrice2 = true;
+    this.Tracker.restaurantPrice3 = true;
+  }
+Submit(){
+  this.handleHealthyChange();
+  this.handleGlutenFreeChange();
+  this.handleVeganChange();
+  this.handleBuffetChange();
+  this.handleToGoChange();
+  this.handleMadeToOrderChange();
+  this.handleFoodTruckChange();
+  this.handlePrice1Change();
+  this.handlePrice2Change();
+  this.handlePrice3Change();
+    console.log(this.Tracker);
+}
 
   render() {
     this.setUp();
     return (
-        <div className={'adminMid'}>
+        <div className={'EditPrefs'}>
+          <Form
+              onSubmit={this.Submit}
+          >
           <EditCuisineType
-              getTG={this.getToGoPreset()}
-              getB={this.getBuffetPreset()}
-              getFT={this.getFoodTruckPreset()}
-              getMTO={this.getMadeToOrderPreset()}
-              TGC={this.handleToGoChange()}
-              BC={this.handleBuffetChange()}
-              FTC={this.handleFoodTruckChange()}
-              MTOC={this.handleMadeToOrderChange()}
+              getTG={this.Tracker.ToGo}
+              getB={this.Tracker.Buffet}
+              getFT={this.Tracker.FoodTruck}
+              getMTO={this.Tracker.MadeToOrder}
+              HTGC={this.trackToGoChange}
+              HBC={this.trackBuffetChange}
+              HFTC={this.trackFoodTruckChange}
+              HMTOC={this.trackMadeToOrderChange}
           />
           <EditPrice
-              getPP1={this.getPricePreset1()}
-              getPP2={this.getPricePreset2()}
-              getPP3={this.getPricePreset3()}
-              HPC1={this.handlePriceChange1()}
-              HPC2={this.handlePriceChange2()}
-              HPC3={this.handlePriceChange3()}
+            getPP1={this.Tracker.restaurantPrice1}
+            getPP2={this.Tracker.restaurantPrice2}
+            getPP3={this.Tracker.restaurantPrice3}
+            HP1={this.trackPrice1Change}
+            HP2={this.trackPrice2Change}
+            HP3={this.trackPrice3Change}
           />
           <EditFoodTags
-              getFT1={this.getFoodTag1()}
-              getFT2={this.getFoodTag2()}
-              getFT3={this.getFoodTag3()}
+            FT1={this.Tracker.foodTypeOne}
+            FT2={this.Tracker.foodTypeTwo}
+            FT3={this.Tracker.foodTypeThree}
+            HFT1={this.handleFT1}
+            HFT2={this.handleFT2}
+            HFT3={this.handleFT3}
           />
           <EditHealthOptions
-              getV={this.getVegan()}
-              getGF={this.getGlutenFree()}
-              getH={this.getHealthy()}
-              HVC={this.handleVeganChange()}
-              HHC={this.handleHealthyChange()}
-              HGFC={this.handleGlutenFreeChange()}
+            getV={this.Tracker.vegan}
+            getGF={this.Tracker.glutenFree}
+            getH={this.Tracker.healthy}
+            HHC={this.trackHealthyChange}
+            HGFC={this.trackGlutenFreeChange}
+            HVC={this.trackVeganChange}
           />
+            <Button type='submit'>Submit</Button>
+          </Form >
         </div>
     );
   }
