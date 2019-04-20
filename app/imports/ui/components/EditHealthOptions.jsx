@@ -4,8 +4,12 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
-export default class EditPrice extends React.Component {
+export default class EditHealthOptions extends React.Component {
 
+
+  handleHealthyChange = (e) => this.props.HHC;
+  handleGlutenFreeChange = (e) => this.props.HGFC;
+  handleVeganChange = (e) => this.props.HVC;
 
   render() {
     return this.renderPage();
@@ -21,20 +25,20 @@ export default class EditPrice extends React.Component {
                 <Form.Group>
                   <Form.Field>
                     <Form.Radio toggle
-                                label='$0 - $10'
-                                defaultChecked={this.props.getPP1}
-                                onChange={this.handleToGoChange}
+                                label='Vegan'
+                                defaultChecked={this.props.getV}
+                                onChange={this.handleVeganChange()}
                     />
                   </Form.Field>
                   <Form.Radio toggle
-                              label='$10 - $20'
-                              defaultChecked={this.props.getPP2}
-                              onChange={this.handleToGoChange}
+                              label='Gluten Free'
+                              defaultChecked={this.props.getGF}
+                              onChange={this.handleGlutenFreeChange()}
                   />
                   <Form.Radio toggle
-                              label='$20+'
-                              defaultChecked={this.props.getPP3}
-                              onChange={this.handleToGoChange}
+                              label='Healthy'
+                              defaultChecked={this.props.getH}
+                              onChange={this.handleHealthyChange()}
                   />
                 </Form.Group>
               </Form>

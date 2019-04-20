@@ -2,13 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
+import { Meteor } from 'meteor/meteor';
 import BottomFooter from '../components/BottomFooter';
 import EditCuisineType from '../components/EditCuisineType';
 import EditPrice from '../components/EditPrice';
+import EditFoodTags from '../components/EditFoodTags';
+import Users from '/imports/api/user/user.js';
+import EditHealthOptions from '../components/EditHealthOptions';
 
 export default class EditPreferences extends React.Component {
 
-<<<<<<< HEAD
   state = {
     foodTypeOne: String,    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
     foodTypeTwo: String,
@@ -20,52 +23,60 @@ export default class EditPreferences extends React.Component {
     FoodTruck: Boolean,
     MadeToOrder: Boolean,
     Buffet: Boolean,
-    restaurantPrice: Array, //typical price range student wants.
+    restaurantPrice1: Boolean, //typical price range student wants.
+    restaurantPrice2: Boolean,
+    restaurantPrice3: Boolean,
     location: String,       //usual place on campus.
-    owner: String,           //user account
+    owner: String           //user account
   }
 
-      
-
-  setUp() {
-    this.setState();
+  setUp(){
+    this.state.ToGo = true;
     this.state.FoodTruck = false;
     this.state.MadeToOrder = true;
     this.state.Buffet = true;
-    this.state.restaurantPrice[0] = true;
-    this.state.restaurantPrice[1] = false;
-    this.state.restaurantPrice[2] = true;
     this.state.foodTypeOne = 'Chinese';
     this.state.foodTypeTwo = 'Korean';
     this.state.foodTypeThree = 'BBQ';
     this.state.vegan = false;
     this.state.healthy = true;
     this.state.glutenFree = true;
+    this.state.restaurantPrice1 = true;
+    this.state.restaurantPrice2 = true;
+    this.state.restaurantPrice3 = true;
   }
 
-  handlePriceChange(price) {
-      this.state.restaurantPrice[price] = !this.state.restaurantPrice[price];
+  handlePriceChange1(){
+    this.setState({restaurantPrice1: !this.state.restaurantPrice1});
   }
 
-  getToGoPreset() {
+  handlePriceChange2(){
+    this.setState({restaurantPrice2: !this.state.restaurantPrice2});
+  }
+
+  handlePriceChange3(){
+    this.setState({restaurantPrice3: !this.state.restaurantPrice3});
+  }
+
+  getToGoPreset(){
     return this.state.ToGo;
   }
 
-  getBuffetPreset() {
+  getBuffetPreset(){
     return this.state.Buffet;
   }
 
-  getFoodTruckPreset() {
+  getFoodTruckPreset(){
     return this.state.FoodTruck;
   }
 
-  getMadeToOrderPreset() {
+  getMadeToOrderPreset(){
     return this.state.MadeToOrder;
   }
 
 
-  handleToGoChange() {
-    if(this.state.ToGo === false) {
+  handleToGoChange(){
+    if(this.state.ToGo === false){
       this.state.ToGo = true;
     } else if (this.state.ToGo === true) {
       this.state.ToGo = false;
@@ -73,104 +84,102 @@ export default class EditPreferences extends React.Component {
     console.log(this.state.ToGo);
   }
 
-  handleBuffetChange() {
-    if(this.state.Buffet === false) {
+  handleBuffetChange(){
+    if(this.state.Buffet === false){
       this.state.Buffet = true;
     } else {
       this.state.Buffet = false;
     }
   }
-  handleFoodTruckChange() {
-    if(this.state.FoodTruck === false) {
+  handleFoodTruckChange(){
+    if(this.state.FoodTruck === false){
       this.state.FoodTruck = true;
     } else {
       this.state.FoodTruck = false;
     }
   }
-  handleMadeToOrderChange() {
-    if(this.state.MadeToOrder === false) {
+  handleMadeToOrderChange(){
+    if(this.state.MadeToOrder === false){
       this.state.MadeToOrder = true;
     } else {
       this.state.MadeToOrder = false;
     }
   }
 
-  getPricePreset1() {
-    return this.state.restaurantPrice[0];
+  getPricePreset1(){
+    return this.state.restaurantPrice1;
   }
 
   getPricePreset2() {
-    return this.state.restaurantPrice[1];
+    return this.state.restaurantPrice2;
   }
 
-  getPricePreset3() {
-    return this.state.restaurantPrice[2];
+  getPricePreset3(){
+    return this.state.restaurantPrice3;
   }
 
-  handlePriceChange1() {
-    this.state.restaurantPrice[0] = !this.state.restaurantPrice[0];
+  handlePriceChange1(){
+    this.state.restaurantPrice1 = !this.state.restaurantPrice1;
   }
 
-  handlePriceChange2() {
-    this.state.restaurantPrice[1] = !this.state.restaurantPrice[1];
+  handlePriceChange2(){
+    this.state.restaurantPrice2 = !this.state.restaurantPrice2;
   }
 
-  handlePriceChange3() {
-    this.state.restaurantPrice[2] = !this.state.restaurantPrice[2];
+  handlePriceChange3(){
+    this.state.restaurantPrice3 = !this.state.restaurantPrice3;
   }
 
-  getFoodTag1() {
+  getFoodTag1(){
     return this.state.foodTypeOne;
   }
 
-  getFoodTag2() {
+  getFoodTag2(){
     return this.state.foodTypeTwo;
   }
 
-  getFoodTag3() {
+  getFoodTag3(){
     return this.state.foodTypeThree;
   }
 
-  getVegan() {
+  getVegan(){
     return this.state.vegan;
   }
 
-  getGlutenFree() {
+  getGlutenFree(){
     return this.state.glutenFree;
   }
 
-  getHealthy() {
+  getHealthy(){
     return this.state.healthy;
   }
 
-  handleVeganChange() {
+  handleVeganChange(){
     this.state.vegan = !this.state.vegan;
   }
 
-  handleHealthyChange() {
+  handleHealthyChange(){
     this.state.healthy = !this.state.healthy;
   }
 
-  handleGlutenFreeChange() {
+  handleGlutenFreeChange(){
     this.state.glutenFree = !this.state.glutenFree;
   }
 
 
-=======
->>>>>>> parent of 21a0e95... EditPreferencesPage
   render() {
+    this.setUp();
     return (
-<<<<<<< HEAD
-        <div className={'EditPreferences'}>
+        <div className={'adminMid'}>
           <EditCuisineType
-            getTG={this.getToGoPreset()}
-            getB={this.getBuffetPreset()}
-            getFT={this.getFoodTruckPreset()}
-            getMTO={this.getMadeToOrderPreset()}
-            TGC={this.handleToGoChange()}
-            BC={this.handleBuffetChange()}
-            FTC={this.handleFoodTruckChange()}
-            MTOC={this.handleMadeToOrderChange()}
+              getTG={this.getToGoPreset()}
+              getB={this.getBuffetPreset()}
+              getFT={this.getFoodTruckPreset()}
+              getMTO={this.getMadeToOrderPreset()}
+              TGC={this.handleToGoChange()}
+              BC={this.handleBuffetChange()}
+              FTC={this.handleFoodTruckChange()}
+              MTOC={this.handleMadeToOrderChange()}
           />
           <EditPrice
               getPP1={this.getPricePreset1()}
@@ -193,11 +202,6 @@ export default class EditPreferences extends React.Component {
               HHC={this.handleHealthyChange()}
               HGFC={this.handleGlutenFreeChange()}
           />
-=======
-        <div className={'adminMid'}>
-          <EditCuisineType/>
-          <EditPrice/>
->>>>>>> parent of 21a0e95... EditPreferencesPage
         </div>
     );
   }

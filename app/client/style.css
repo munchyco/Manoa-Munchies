@@ -12,9 +12,7 @@
 .white {
   color: white;
 }
-.center-paddingEditPref {
-  color: white;
-}
+
 .center-padding {
   padding-top: 20px;
   padding-bottom: 66px;
@@ -80,24 +78,39 @@
   margin-bottom: 10px;
 }
 
-<<<<<<< HEAD
 ::before{
   background-color: #292929;
 }
 
-.EditPreferences {
-=======
 .adminMid {
->>>>>>> parent of 21a0e95... EditPreferencesPage
 
 }
-
 .Cardplacement {
   padding-top: 50px;
   padding-bottom: 50px;
   border: none;
 }
 
+
+.Tight {
+}
+
+.green-background {
+  background-color: #004030;
+  color: white;
+}
+
+.ui.borderless.middlemenu.menu {
+  box-shadow: none;
+  border: none;
+  margin-bottom: 0px;
+}
+
+.footer-background {
+  background-color: #292929;
+  height: 200px;
+  color: white;
+}
 
 .Tight {
 }
