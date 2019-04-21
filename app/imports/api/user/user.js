@@ -11,8 +11,13 @@ const UsersSchema = new SimpleSchema({
   vegan: Boolean,         //boolean values for whether the user cares about vegan, GF and healthy options.
   glutenFree: Boolean,
   healthy: Boolean,
-  restaurantPrice: String, //typical price range student wants.
-  restaurantType: String, //restaurant types such as "Food Truck", "Pre-made To-go," "Made To Order"
+  ToGo: Boolean,
+  FoodTruck: Boolean,
+  MadeToOrder: Boolean,
+  Buffet: Boolean,
+  restaurantPrice1: Boolean, //typical price range student wants.
+  restaurantPrice2: Boolean,
+  restaurantPrice3: Boolean,
   location: String,       //usual place on campus.
   owner: String           //user account
 }, { tracker: Tracker });
