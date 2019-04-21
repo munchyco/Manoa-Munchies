@@ -16,6 +16,7 @@
 .center-padding {
   padding-top: 20px;
   padding-bottom: 66px;
+  color: white;
 }
 
 .navbar-stuff {
@@ -51,7 +52,9 @@
   margin-top: 10%;
   margin-left: 24%;
 }
-
+.body{
+  color: white;
+}
 .description{
   font-family: 'Quicksand', Light;
   color: white;
@@ -78,16 +81,43 @@
   margin-bottom: 10px;
 }
 
+::before{
+  background-color: #292929;
+}
+
 .adminMid {
 
 }
-
 .Cardplacement {
   padding-top: 50px;
   padding-bottom: 50px;
   border: none;
 }
 
+.EditPrefs{
+  padding-bottom: 70px;
+  color: white;
+}
+
+.Tight {
+}
+
+.green-background {
+  background-color: #004030;
+  color: white;
+}
+
+.ui.borderless.middlemenu.menu {
+  box-shadow: none;
+  border: none;
+  margin-bottom: 0px;
+}
+
+.footer-background {
+  background-color: #292929;
+  height: 200px;
+  color: white;
+}
 
 .Tight {
 }

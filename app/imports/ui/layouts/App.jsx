@@ -18,6 +18,8 @@ import VendorHome from '../pages/VendorHome';
 import UserProfile from '../pages/UserProfile';
 import TopPick from '../pages/TopPick';
 import BottomFooter from '../components/BottomFooter';
+import EditPreferences from '../pages/EditPreferences';
+
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -34,6 +36,7 @@ class App extends React.Component {
               <ProtectedRoute path="/listvendors" component={ListAvailableVendors}/>
               <ProtectedRoute path="/toppick" component={TopPick}/>
               <VendorProtectedRoute path="/vendor" component={VendorHome}/>
+              <ProtectedRoute path="/EditPreferences" component={EditPreferences}/>
               <ProtectedRoute path="/user" component={UserProfile}/>
               <ProtectedRoute path="/edit/:_id" component={VendorHome}/>
               <AdminProtectedRoute path="/admin" component={AdminHome}/>
