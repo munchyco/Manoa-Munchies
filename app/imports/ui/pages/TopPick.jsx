@@ -45,7 +45,7 @@ TopPick.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Vendor documents.
-  const subscription = Meteor.subscribe('Vendors');
+  const subscription = Meteor.subscribe('AllVendors');
   return {
     vendors: Vendors.find({}).fetch(),
     ready: subscription.ready(),

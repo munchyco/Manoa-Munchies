@@ -25,6 +25,16 @@ Meteor.publish('Vendors', function publish() {
   return this.ready();
 });
 
+/** This subscription publishes only the documents associated with the logged in user */
+Meteor.publish('AllVendors', function publish() {
+  if (this.userId) {
+  //  const username = Meteor.users.findOne(this.userId).username;
+    return Vendors.find();
+  }
+  return this.ready();
+});
+
+
 /** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
 Meteor.publish('VendorsAdmin', function publish() {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
