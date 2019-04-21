@@ -72,7 +72,9 @@ export default class UserProfile extends React.Component {
                 getGF={this.Tracker.glutenFree}
                 getH={this.Tracker.healthy}
             />
-            <Button>Edit Preferences</Button>
+            <Button style={{marginLeft: "50%",
+                            marginRight: "50%"
+            }}>Edit Preferences</Button>
         </div>
     );
   }

@@ -14,26 +14,30 @@ export default class Price extends React.Component {
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>Price Range</Header>
               <Form.Group>
-                <Form.Field>
+                <Form.Field style={{padding: "15px"}}>
+                  <label style={{color: '#ffffff'}}>$0 - $10:</label>
                   <Form.Radio toggle
                               readOnly
-                              label='$0 - $10'
                               defaultChecked={this.props.getPP1}
                               onChange={this.props.HP1}
                   />
                 </Form.Field>
-                <Form.Radio toggle
-                            readOnly
-                            label='$10 - $20'
-                            defaultChecked={this.props.getPP2}
-                            onChange={this.props.HP2}
-                />
-                <Form.Radio toggle
-                            readOnly
-                            label='$20+'
-                            defaultChecked={this.props.getPP3}
-                            onChange={this.props.HP3}
-                />
+                <Form.Field style={{padding: "15px"}}>
+                  <label style={{color: '#ffffff'}}>$10 - $20:</label>
+                  <Form.Radio toggle
+                              readOnly
+                              defaultChecked={this.props.getPP2}
+                              onChange={this.props.HP2}
+                  />
+                </Form.Field>
+                <Form.Field style={{padding: "15px"}}>
+                  <label style={{color: '#ffffff'}}>$20+:</label>
+                  <Form.Radio toggle
+                              readOnly
+                              defaultChecked={this.props.getPP3}
+                              onChange={this.props.HP3}
+                   />
+                </Form.Field>
               </Form.Group>
             </Grid.Column>
           </Grid>

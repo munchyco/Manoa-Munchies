@@ -17,23 +17,27 @@ export default class HealthOptions extends React.Component {
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>Price Range</Header>
               <Form.Group>
-                <Form.Field>
+                <Form.Field style={{padding: "15px"}}>
+                  <label style={{color: '#ffffff'}}>Vegan:</label>
                   <Form.Radio toggle
                               readOnly
-                              label='Vegan'
                               defaultChecked={this.props.getV}
                   />
                 </Form.Field>
+                <Form.Field style={{padding: "15px"}}>
+                  <label style={{color: '#ffffff'}}>Gluten Free:</label>
                 <Form.Radio toggle
                             readOnly
-                            label='Gluten Free'
                             defaultChecked={this.props.getGF}
                 />
+                </Form.Field>
+                <Form.Field style={{padding: "15px"}}>
+                  <label style={{color: '#ffffff'}}>Healthy:</label>
                 <Form.Radio toggle
                             readOnly
-                            label='Healthy'
                             defaultChecked={this.props.getH}
                 />
+                </Form.Field>
               </Form.Group>
             </Grid.Column>
           </Grid>

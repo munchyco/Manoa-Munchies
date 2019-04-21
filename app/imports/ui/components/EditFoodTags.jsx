@@ -1,5 +1,4 @@
 import React from 'react';
-import _ from "underscore";
 import { Grid, Form, Header, Dropdown } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';

@@ -12,35 +12,38 @@ export default class CuisineType extends React.Component {
         <div className="center-padding">
           <Grid container centered>
             <Grid.Column>
-              <Header as="h2" textAlign="center" inverted>Cuisine Type</Header>
+              <Header as="h2" textAlign="center" inverted>Cuisine Type:</Header>
               <Form.Group>
-                <Form.Field>
+                <Form.Field style={{padding: "15px"}}>
+                  <label style={{color: '#ffffff'}}>ToGo:</label>
                   <Form.Radio
                               toggle
                               readOnly
-                              label='ToGo'
                               defaultChecked={this.props.getTG}
                   />
                 </Form.Field>
-                <Form.Field>
-                  <Form.Radio toggle
+                <Form.Field style={{padding: "15px"}}>
+                  <label style={{color: '#ffffff'}}>Food Truck:</label>
+                  <Form.Radio
+                              toggle
                               readOnly
-                              label='FoodTruck'
                               defaultChecked={(this.props.getFT)}
                   />
 
                 </Form.Field>
-                <Form.Field>
-                  <Form.Radio toggle
+                <Form.Field style={{padding: "15px"}}>
+                  <label style={{color: '#ffffff'}}>Made To Order:</label>
+                  <Form.Radio
+                              toggle
                               readOnly
-                              label='MadeToOrder'
                               defaultChecked={this.props.getMTO}
                   />
                 </Form.Field>
-                <Form.Field>
-                  <Form.Radio toggle
+                <Form.Field style={{padding: "15px"}}>
+                  <label style={{color: '#ffffff'}}>Buffet:</label>
+                  <Form.Radio
+                              toggle
                               readOnly
-                              label='Buffet'
                               defaultChecked={this.props.getB}
                   />
                 </Form.Field>

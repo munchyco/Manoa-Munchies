@@ -19,7 +19,7 @@ export default class EditPrice extends React.Component {
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>Edit Price Range</Header>
                 <Form.Group>
-                  <label>Edit Price Range:</label>
+                  <label>Price Range:</label>
                   <Form.Field style={{padding: "15px"}}>
                     <label style={{color: '#ffffff'}}>$0 - $10:</label>
                     <Form.Radio toggle

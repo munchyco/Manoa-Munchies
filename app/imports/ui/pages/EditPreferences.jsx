@@ -267,7 +267,10 @@ Submit(){
             HGFC={this.trackGlutenFreeChange}
             HVC={this.trackVeganChange}
           />
-            <Button type='submit'>Submit</Button>
+            <Button type={'submit'}
+                    style={{marginLeft: "50%",
+                    marginRight: "50%"
+            }}>Submit Changes</Button>
           </Form >
         </div>
     );

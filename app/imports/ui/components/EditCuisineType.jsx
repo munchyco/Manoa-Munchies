@@ -20,7 +20,6 @@ export default class EditCuisineType extends React.Component {
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>Edit Cuisine Type</Header>
                 <Form.Group>
-                  <label>Cuisine Type:</label>
                   <Form.Field style={{padding: "15px"}}>
                     <label style={{color: '#ffffff'}}>ToGo:</label>
                     <Form.Radio toggle
