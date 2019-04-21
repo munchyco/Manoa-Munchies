@@ -12,7 +12,8 @@ export default class CuisineType extends React.Component {
         <div className="center-padding">
           <Grid container centered>
             <Grid.Column>
-              <Header as="h2" textAlign="center" inverted>Edit Cuisine Type</Header>
+              <Header as="h2" textAlign="center" inverted>Cuisine Type</Header>
+              <Form.Group>
                 <Form.Field>
                   <Form.Radio
                               toggle
@@ -43,6 +44,7 @@ export default class CuisineType extends React.Component {
                               defaultChecked={this.props.getB}
                   />
                 </Form.Field>
+              </Form.Group>
             </Grid.Column>
           </Grid>
         </div>

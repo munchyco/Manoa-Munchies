@@ -12,7 +12,7 @@ export default class Price extends React.Component {
         <div className="center-padding">
           <Grid container centered>
             <Grid.Column>
-              <Header as="h2" textAlign="center" inverted>Edit Price Range</Header>
+              <Header as="h2" textAlign="center" inverted>Price Range</Header>
               <Form.Group>
                 <Form.Field>
                   <Form.Radio toggle

@@ -3,6 +3,8 @@ import { Grid, Form, Header, Checkbox } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
+import '/client/style.css';
+import 'semantic-ui-css/semantic.min.css';
 
 export default class EditCuisineType extends React.Component {
 
@@ -18,32 +20,32 @@ export default class EditCuisineType extends React.Component {
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>Edit Cuisine Type</Header>
                 <Form.Group>
-                  <label>Cuisine Type</label>
-                  <Form.Field>
+                  <label>Cuisine Type:</label>
+                  <Form.Field style={{padding: "15px"}}>
+                    <label style={{color: '#ffffff'}}>ToGo:</label>
                     <Form.Radio toggle
-                                label='ToGo'
                                 defaultChecked={this.props.getTG}
                                 onChange={this.props.HTGC}
                     />
                   </Form.Field>
-                  <Form.Field>
+                  <Form.Field style={{padding: "15px"}}>
+                    <label style={{color: '#ffffff'}}>FoodTruck:</label>
                     <Form.Radio toggle
-                                label='FoodTruck'
                                 defaultChecked={(this.props.getFT)}
                                 onChange={this.props.HFTC}
                     />
 
                   </Form.Field>
-                  <Form.Field>
+                  <Form.Field style={{padding: "15px"}}>
+                    <label style={{color: '#ffffff'}}>MadeToOrder:</label>
                     <Form.Radio toggle
-                                label='MadeToOrder'
                                 defaultChecked={this.props.getMTO}
                                 onChange={this.props.HMTOC}
                     />
                   </Form.Field>
-                  <Form.Field>
+                  <Form.Field style={{padding: "15px"}}>
+                    <label style={{color: '#ffffff'}}>Buffet:</label>
                     <Form.Radio toggle
-                                label='Buffet'
                                 defaultChecked={this.props.getB}
                                 onChange={this.props.HBC}
                     />

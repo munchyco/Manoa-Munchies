@@ -17,25 +17,30 @@ export default class EditHealthOptions extends React.Component {
         <div className="center-padding">
           <Grid container centered>
             <Grid.Column>
-              <Header as="h2" textAlign="center" inverted>Edit Price Range</Header>
+              <Header as="h2" textAlign="center" inverted>Edit Price Range:</Header>
                 <Form.Group>
-                  <Form.Field>
+                  <label>Cuisine Type:</label>
+                  <Form.Field style={{padding: "15px"}}>
+                    <label style={{color: '#ffffff'}}>Vegan:</label>
                     <Form.Radio toggle
-                                label='Vegan'
                                 defaultChecked={this.props.getV}
                                 onChange={this.props.HVC}
                     />
                   </Form.Field>
-                  <Form.Radio toggle
-                              label='Gluten Free'
+                  <Form.Field style={{padding: "15px"}}>
+                    <label style={{color: '#ffffff'}}>Gluten Free:</label>
+                    <Form.Radio toggle
                               defaultChecked={this.props.getGF}
                               onChange={this.props.HGFC}
-                  />
-                  <Form.Radio toggle
-                              label='Healthy'
+                    />
+                  </Form.Field>
+                  <Form.Field style={{padding: "15px"}}>
+                    <label style={{color: '#ffffff'}}>Healthy:</label>
+                    <Form.Radio toggle
                               defaultChecked={this.props.getH}
                               onChange={this.props.HHC}
-                  />
+                    />
+                  </Form.Field>
                 </Form.Group>
             </Grid.Column>
           </Grid>

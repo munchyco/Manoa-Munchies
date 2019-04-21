@@ -12,7 +12,7 @@ export default class FoodTags extends React.Component {
         <div className="center-padding">
           <Grid container centered>
             <Grid.Column>
-              <Header as="h2" textAlign="center" inverted>Edit Favorite Food Types</Header>
+              <Header as="h2" textAlign="center" inverted>Favorite Food Types</Header>
               <Form.Group>
                 <Form.Field>
                   <label>Favorite Food Type 1</label>

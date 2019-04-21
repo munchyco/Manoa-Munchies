@@ -73,8 +73,8 @@ export default class EditFoodTags extends React.Component {
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>Edit Favorite Food Types</Header>
                 <Form.Group>
-                  <Form.Field>
-                    <label>Favorite Food Type 1</label>
+                  <Form.Field style={{padding: "15px"}}>
+                    <label style={{color: '#ffffff'}}>Favorite Food Type 1:</label>
                     <Dropdown
                         defaultValue={this.props.FT1}
                         selection
@@ -82,8 +82,8 @@ export default class EditFoodTags extends React.Component {
                         onChange={this.handleType1Change}
                     />
                   </Form.Field>
-                  <Form.Field>
-                    <label>Favorite Food Type 2</label>
+                  <Form.Field style={{padding: "15px"}}>
+                    <label style={{color: '#ffffff'}}>Favorite Food Type 2:</label>
                     <Dropdown
                         defaultValue={this.props.FT2}
                         selection
@@ -91,8 +91,8 @@ export default class EditFoodTags extends React.Component {
                         onChange={this.handleType2Change}
                     />
                   </Form.Field>
-                  <Form.Field>
-                    <label>Favorite Food Type 3</label>
+                  <Form.Field style={{padding: "15px"}}>
+                    <label style={{color: '#ffffff'}}>Favorite Food Type 3:</label>
                     <Dropdown
                         defaultValue={this.props.FT3}
                         selection
