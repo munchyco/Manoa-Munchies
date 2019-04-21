@@ -34,6 +34,11 @@ export default class EditFoodTags extends React.Component {
         text: 'Chinese',
         value: 'Chinese',
       },
+      {
+        key: 'Coffee',
+        text: 'Coffee',
+        value: 'Coffee',
+      }
     ]
 
     this.handleType1Change = this.handleType1Change.bind(this);
@@ -47,11 +52,13 @@ export default class EditFoodTags extends React.Component {
     let val = e.target.textContent;
     this.props.HFT1(val);
   }
+
   handleType2Change = (e, { value }) => {
     e.persist();
     let val = e.target.textContent;
     this.props.HFT2(val);
   }
+
   handleType3Change = (e, { value }) => {
     e.persist();
     let val = e.target.textContent;

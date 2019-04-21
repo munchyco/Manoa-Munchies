@@ -1,38 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
 import { Meteor } from 'meteor/meteor';
-import BottomFooter from '../components/BottomFooter';
 import EditCuisineType from '../components/EditCuisineType';
 import EditPrice from '../components/EditPrice';
 import EditFoodTags from '../components/EditFoodTags';
-import Users from '/imports/api/user/user.js';
+import { Users } from '/imports/api/user/user';
 import { Form, Button } from 'semantic-ui-react';
 import EditHealthOptions from '../components/EditHealthOptions';
+import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
 
-
-export default class EditPreferences extends React.Component {
+class EditPreferences extends React.Component {
 
   constructor(props) {
     super(props);
-    this.Tracker = {
-    foodTypeOne: String,    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
-    foodTypeTwo: String,
-    foodTypeThree: String,
-    vegan: Boolean,         //boolean values for whether the user cares about vegan, GF and healthy options.
-    glutenFree: Boolean,
-    healthy: Boolean,
-    ToGo: Boolean,
-    FoodTruck: Boolean,
-    MadeToOrder: Boolean,
-    Buffet: Boolean,
-    restaurantPrice1: Boolean, //typical price range student wants.
-    restaurantPrice2: Boolean,
-    restaurantPrice3: Boolean,
-    location: String,       //usual place on campus.
-    owner: String           //user account
-    }
+    let Tracker = this.props.user
     this.trackVegan = 0;
     this.trackGlutenFree = 0;
     this.trackHealthy = 0;
@@ -43,7 +27,7 @@ export default class EditPreferences extends React.Component {
     this.trackPrice1 = 0;
     this.trackPrice2 = 0;
     this.trackPrice3 = 0;
-
+    console.log(Tracker);
 
     this.handleHealthyChange = this.handleHealthyChange.bind(this);
     this.handleGlutenFreeChange = this.handleGlutenFreeChange.bind(this);
@@ -74,55 +58,55 @@ export default class EditPreferences extends React.Component {
   oddEven(number){
     if((number % 2) == 0){
       return false;
-    } else if((number % 2) == 1){
+    } else {
       return true;
     }
   }
 
   handleHealthyChange(){
-    if(this.oddEven(this.trackHealthy)){
+    if(this.oddEven(this.trackHealthy)) {
       this.Tracker.healthy = !this.Tracker.healthy;
     }
     this.trackHealthy = 0;
   }
 
   handleGlutenFreeChange(){
-    if(this.oddEven(this.trackGlutenFree)){
+    if(this.oddEven(this.trackGlutenFree)) {
       this.Tracker.glutenFree = !this.Tracker.glutenFree;
     }
     this.trackGlutenFree = 0;
   }
 
   handleVeganChange(){
-    if(this.oddEven(this.trackHealthy)){
+    if(this.oddEven(this.trackHealthy)) {
       this.Tracker.vegan = !this.Tracker.vegan;
     }
     this.trackHealthy = 0;
   }
 
   handleBuffetChange(){
-    if(this.oddEven(this.trackBuffet)){
+    if(this.oddEven(this.trackBuffet)) {
       this.Tracker.Buffet = !this.Tracker.Buffet;
     }
     this.trackBuffet = 0;
   }
 
-  handleToGoChange(){
-    if(this.oddEven(this.trackToGo)){
+  handleToGoChange() {
+    if(this.oddEven(this.trackToGo)) {
       this.Tracker.ToGo = !this.Tracker.ToGo;
     }
     this.trackToGo = 0;
   }
 
-  handleMadeToOrderChange(){
-    if(this.oddEven(this.trackMadeToOrder)){
+  handleMadeToOrderChange() {
+    if(this.oddEven(this.trackMadeToOrder)) {
       this.Tracker.MadeToOrder = !this.Tracker.MadeToOrder;
     }
     this.trackMadeToOrder = 0;
   }
 
-  handleFoodTruckChange(){
-    if(this.oddEven(this.trackFoodTruck)){
+  handleFoodTruckChange() {
+    if(this.oddEven(this.trackFoodTruck)) {
       this.Tracker.FoodTruck = !this.Tracker.FoodTruck;
     }
     this.trackFoodTruck = 0;
@@ -212,6 +196,7 @@ export default class EditPreferences extends React.Component {
     this.Tracker.restaurantPrice2 = true;
     this.Tracker.restaurantPrice3 = true;
   }
+
 Submit(){
   this.handleHealthyChange();
   this.handleGlutenFreeChange();
@@ -268,7 +253,7 @@ Submit(){
             HVC={this.trackVeganChange}
           />
             <Button type={'submit'}
-                    style={{marginLeft: "50%",
+                    style={ {marginLeft: "50%",
                     marginRight: "50%"
             }}>Submit Changes</Button>
           </Form >
@@ -277,4 +262,19 @@ Submit(){
   }
 }
 
-ReactDOM.render(<EditPreferences/>, document.getElementById('root'));
+
+/** Require an array of Stuff documents in the props. */
+EditPreferences.propTypes = {
+  user: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  const subscription = Meteor.subscribe('Users');
+  const username = this.user().username;
+  return {
+    user: Users.find({ owner: username }).fetch(),
+    ready: subscription.ready(),
+  };
+})(EditPreferences);
