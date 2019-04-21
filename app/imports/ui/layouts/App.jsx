@@ -10,7 +10,7 @@ import Landing from '../pages/Landing';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
-import AdminHome from '../pages/AdminHome';
+import ListVendors from '../pages/ListVendors';
 import Signout from '../pages/Signout';
 import AddVendor from '../pages/AddVendor';
 import ListAvailableVendors from '../pages/ListAvailableVendors';
@@ -39,7 +39,7 @@ class App extends React.Component {
               <ProtectedRoute path="/EditPreferences" component={EditPreferences}/>
               <ProtectedRoute path="/user" component={UserProfile}/>
               <ProtectedRoute path="/edit/:_id" component={VendorHome}/>
-              <AdminProtectedRoute path="/admin" component={AdminHome}/>
+              <AdminProtectedRoute path="/admin" component={ListVendors}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
