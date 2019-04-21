@@ -12,15 +12,17 @@ class NavBar extends React.Component {
     const menuStyle = { marginBottom: '10px' };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/">
+        <Menu.Item as={NavLink} activeClassName="" exact to="/userhome">
           <Header inverted as='h1'>Manoa Munchies</Header>
         </Menu.Item>
         {this.props.currentUser ? (
             [<Menu.Item as={NavLink} activeClassName="active" exact to="/toppick" key='toppick'>Top Picks</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/vendorhome" key='vendorhome'>Vendor Home</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/user" key='user'>User Profile</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/listvendors" key='listvendors'>Vendor List</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/addvendor" key='addvendor'>Add Vendor</Menu.Item>]
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/listvendors" key='listvendors'>Vendor List</Menu.Item>]
+        ) : ''}
+        {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
+            [<Menu.Item as={NavLink} activeClassName="active" exact to="/addvendor" key='addvendor'>Add Vendor</Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor" key='vendor'>Vendor</Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>

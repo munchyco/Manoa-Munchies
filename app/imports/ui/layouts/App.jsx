@@ -18,6 +18,8 @@ import VendorHome from '../pages/VendorHome';
 import UserProfile from '../pages/UserProfile';
 import TopPick from '../pages/TopPick';
 import BottomFooter from '../components/BottomFooter';
+import EditPreferences from '../pages/EditPreferences';
+import UserHomePage from '../pages/UserHomePage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -30,10 +32,12 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <ProtectedRoute path="/addvendor" component={AddVendor}/>
+              <ProtectedRoute path="/userhome" component={UserHomePage}/>
+              <VendorProtectedRoute path="/addvendor" component={AddVendor}/>
               <ProtectedRoute path="/listvendors" component={ListAvailableVendors}/>
               <ProtectedRoute path="/toppick" component={TopPick}/>
-              <ProtectedRoute path="/vendorhome" component={VendorHome}/>
+              <VendorProtectedRoute path="/vendor" component={VendorHome}/>
+              <ProtectedRoute path="/EditPreferences" component={EditPreferences}/>
               <ProtectedRoute path="/user" component={UserProfile}/>
               <ProtectedRoute path="/edit/:_id" component={VendorHome}/>
               <AdminProtectedRoute path="/admin" component={AdminHome}/>
@@ -66,6 +70,25 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
 );
 
 /**
+ * VendorProtectedRoute (see React Router v4 sample)
+ * Checks for Meteor login and vendor role before routing to the requested page, otherwise goes to signin page.
+ * @param {any} { component: Component, ...rest }
+ */
+const VendorProtectedRoute = ({ component: Component, ...rest }) => (
+    <Route
+        {...rest}
+        render={(props) => {
+          const isLogged = Meteor.userId() !== null;
+          const isVendor = Roles.userIsInRole(Meteor.userId(), 'vendor');
+          return (isLogged && isVendor) ?
+              (<Component {...props} />) :
+              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+              );
+        }}
+    />
+);
+
+/**
  * AdminProtectedRoute (see React Router v4 sample)
  * Checks for Meteor login and admin role before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
@@ -95,5 +118,10 @@ AdminProtectedRoute.propTypes = {
   component: PropTypes.func.isRequired,
   location: PropTypes.object,
 };
+
+VendorProtectedRoute.propTypes = {
+  component: PropTypes.func.isRequired,
+  location: PropTypes.object,
+}
 
 export default App;
