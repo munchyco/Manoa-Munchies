@@ -74,14 +74,6 @@ class AddVendor extends React.Component {
                   />
                 </Form.Field>
 
-                <Form.Field name='healthy'>
-                  <label>Healthy:</label>
-                  <Form.Radio toggle
-                              ischecked="false"
-                              isunchecked="true"
-                  />
-                </Form.Field>
-
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>

@@ -10,7 +10,6 @@ const UsersSchema = new SimpleSchema({
   foodTypeThree: String,
   vegan: Boolean,         //boolean values for whether the user cares about vegan, GF and healthy options.
   glutenFree: Boolean,
-  healthy: Boolean,
   ToGo: Boolean,
   FoodTruck: Boolean,
   MadeToOrder: Boolean,
