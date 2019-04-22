@@ -17,6 +17,9 @@ function createUser(email, password, role) {
   if (role === 'vendor') {
     Roles.addUsersToRoles(userID, 'vendor');
   }
+  if (role === 'customer') {
+    Roles.addUsersToRoles(userID, 'customer');
+  }
 }
 
 
