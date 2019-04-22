@@ -38,7 +38,7 @@ class App extends React.Component {
               <ProtectedRoute path="/toppick" component={TopPick}/>
               <VendorProtectedRoute path="/vendor" component={VendorHome}/>
               <ProtectedRoute path="/EditPreferences" component={EditPreferences}/>
-              <ProtectedRoute path="/user" component={UserProfile}/>
+              <CustomerProtectedRoute path="/user" component={UserProfile}/>
               <ProtectedRoute path="/edit/:_id" component={VendorHome}/>
               <AdminProtectedRoute path="/admin" component={AdminHome}/>
               <ProtectedRoute path="/signout" component={Signout}/>
@@ -81,6 +81,20 @@ const VendorProtectedRoute = ({ component: Component, ...rest }) => (
           const isLogged = Meteor.userId() !== null;
           const isVendor = Roles.userIsInRole(Meteor.userId(), 'vendor');
           return (isLogged && isVendor) ?
+              (<Component {...props} />) :
+              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+              );
+        }}
+    />
+);
+
+const CustomerProtectedRoute = ({ component: Component, ...rest }) => (
+    <Route
+        {...rest}
+        render={(props) => {
+          const isLogged = Meteor.userId() !== null;
+          const isCustomer = Roles.userIsInRole(Meteor.userId(), 'customer');
+          return (isLogged && isCustomer) ?
               (<Component {...props} />) :
               (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
               );
