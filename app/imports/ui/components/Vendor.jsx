@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Group, Image, Feed } from 'semantic-ui-react';
+import { Card, Group, Image, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -14,10 +14,25 @@ class Vendor extends React.Component {
         <Card centered>
           <Card.Content>
             <Card.Header>{this.props.vendor.name} </Card.Header>
+            <Image floated='right' size='mini' src={this.props.vendor.image} />
             <Card.Meta>{this.props.vendor.location}</Card.Meta>
             <Card.Description>
               {this.props.vendor.description}
             </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <p>Cuisine:</p>
+            <div className="ui three buttons">
+              <Button basic>
+                {this.props.vendor.foodTypeOne}
+              </Button>
+              <Button basic>
+                {this.props.vendor.foodTypeTwo}
+              </Button>
+              <Button basic>
+                {this.props.vendor.foodTypeThree}
+              </Button>
+            </div>
           </Card.Content>
         </Card>
     );
