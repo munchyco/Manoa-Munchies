@@ -1,16 +1,49 @@
 import React from 'react';
-import { Card, Group, Image, Button } from 'semantic-ui-react';
+import { Card, Group, Image, Button, Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Vendors } from '/imports/api/vendor/vendor';
 
 
-
-
 /** Renders a single row in the List Stuff table. See pages/ListContacts.jsx. */
 class Vendor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
   render() {
+
+    let content
+
+    if (this.state.isToggleOn == false)
+    {
+        content = <Card centered>
+          <Card.Content>
+            <p>Item 1</p>
+            <p>Item 2</p>
+            <p>Item 3</p>
+            <p>Item 4</p>
+            <p>Item 5</p>
+          </Card.Content>
+        </Card>
+
+    }
+
+    else {
+      content = ''
+    }
+
     return (
         <Card centered>
           <Card.Content>
@@ -35,8 +68,12 @@ class Vendor extends React.Component {
               </Button>
             </div>
             <div className="mysection">
-            <Button floated ='centered'>Available Items</Button>
+            <Button floated ='centered'onClick={this.handleClick}>{this.state.isToggleOn ? 'Available Menu Items' : 'Close'}</Button>
             </div>
+          </Card.Content>
+
+          <Card.Content extra>
+            {content}
           </Card.Content>
         </Card>
     );
