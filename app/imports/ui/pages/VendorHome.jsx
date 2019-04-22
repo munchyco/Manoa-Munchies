@@ -1,10 +1,11 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Button } from 'semantic-ui-react';
 import { Vendors } from '/imports/api/vendor/vendor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Vendor from '../components/Vendor';
+import { Roles } from 'meteor/alanning:roles';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class VendorHome extends React.Component {
@@ -19,7 +20,8 @@ class VendorHome extends React.Component {
     return (
         <div className="center-image">
         <Container>
-          <Header as="h2" textAlign="center" inverted>Vendor Lists</Header>
+          <Header as="h2" textAlign="center" inverted>Vendor Home</Header>
+          <Header as="h2" textAlign="center" inverted>Welcome back, {this.props.currentUser} </Header>
           <Card.Group>
             {this.props.vendors.map((vendor, index) => <Vendor key={index}
                                                                vendor={vendor}/>)}
@@ -34,6 +36,7 @@ class VendorHome extends React.Component {
 VendorHome.propTypes = {
   vendors: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
+  currentUser: PropTypes.string,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
@@ -43,5 +46,7 @@ export default withTracker(() => {
   return {
     vendors: Vendors.find({}).fetch(),
     ready: subscription.ready(),
+    currentUser: Meteor.user() ? Meteor.user().username : '',
   };
 })(VendorHome);
+
