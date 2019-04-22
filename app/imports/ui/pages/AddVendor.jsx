@@ -40,6 +40,7 @@ class AddVendor extends React.Component {
   }
 
   render() {
+    const value ='';
     return (
         <div className="center-padding">
         <Grid container centered>
@@ -51,12 +52,28 @@ class AddVendor extends React.Component {
                 <TextField name='foodTypeOne'/>
                 <TextField name='foodTypeTwo'/>
                 <TextField name='foodTypeThree'/>
-                <TextField name='vegan'/>
-                <TextField name='glutenFree'/>
                 <TextField name='vendorPrice'/>
                 <TextField name='vendorType'/>
                 <TextField name='location'/>
                 <TextField name='image'/>
+
+                <Form.Field name='vegan'>
+                  <label>Vegan:</label>
+                  <Form.Radio
+                            toggle
+                            ischecked="false"
+                            isunchecked="true"
+                  />
+                </Form.Field>
+
+                <Form.Field name='glutenFree'>
+                  <label>Gluten Free:</label>
+                  <Form.Radio toggle
+                              ischecked="false"
+                              isunchecked="true"
+                  />
+                </Form.Field>
+
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>

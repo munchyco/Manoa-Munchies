@@ -40,6 +40,7 @@
   background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
   background-size: cover;
   height: 600px;
+  padding-top: 20px;
   margin-top: -10px;
 }
 
@@ -144,7 +145,7 @@
   color: white;
   font-size: 90px;
   margin-top: 15%;
-  margin-left: 20%;
+  margin-left: 23%;
 }
 
 .user-home-under{
@@ -152,12 +153,12 @@
   color: white;
   font-size: 30px;
   margin-top: 9%;
-  margin-left: 38%;
+  margin-left: 42%;
 }
 
 .search-bar{
   padding-top: 50px;
-  margin-left: 40%;
+  margin-left: 43.5%;
 }
 
 #picSize{
