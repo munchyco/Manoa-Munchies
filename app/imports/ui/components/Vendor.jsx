@@ -7,6 +7,7 @@ import { Vendors } from '/imports/api/vendor/vendor';
 
 
 
+
 /** Renders a single row in the List Stuff table. See pages/ListContacts.jsx. */
 class Vendor extends React.Component {
   render() {
@@ -32,6 +33,9 @@ class Vendor extends React.Component {
               <Button basic>
                 {this.props.vendor.foodTypeThree}
               </Button>
+            </div>
+            <div className="mysection">
+            <Button floated ='centered'>Available Items</Button>
             </div>
           </Card.Content>
         </Card>

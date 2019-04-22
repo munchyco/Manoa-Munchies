@@ -166,3 +166,8 @@
   height: 200px;
 
 }
+
+.mysection{
+  display: flex;
+  justify-content: center;
+}
