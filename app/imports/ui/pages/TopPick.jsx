@@ -1,18 +1,18 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Header, Loader, Card } from 'semantic-ui-react';
-import { Vendors } from '/imports/api/vendor/vendor';
+import { Foods } from '/imports/api/food/food';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
-import Vendor from '../components/Vendor';
+import Food from '../components/Food';
 
 
 
 
-/** Renders a table containing all of the Vendor documents. */
+/** Renders a table containing all of the Food documents. */
 class TopPick extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -27,8 +27,8 @@ class TopPick extends React.Component {
         <Container>
           <Header as="h2" textAlign="center" inverted>Today's Top Pick</Header>
           <Card.Group>
-            {this.props.vendors.map((vendor, index) => <Vendor key={index}
-                                                                vendor={vendor}/>)}
+            {this.props.foods.map((food, index) => <Food key={index}
+                                                                food={food}/>)}
           </Card.Group>
         </Container>
         </div>
@@ -36,18 +36,18 @@ class TopPick extends React.Component {
   }
 }
 
-/** Require an array of Vendor documents in the props. */
+/** Require an array of Food documents in the props. */
 TopPick.propTypes = {
-  vendors: PropTypes.array.isRequired,
+  foods: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
-  // Get access to Vendor documents.
-  const subscription = Meteor.subscribe('AllVendors');
+  // Get access to Food documents.
+  const subscription = Meteor.subscribe('AllFoods');
   return {
-    vendors: Vendors.find({}).fetch(),
+    foods: Foods.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(TopPick);
