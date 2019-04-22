@@ -22,9 +22,9 @@ function createUser(email, password, role) {
     Roles.addUsersToRoles(userID, 'customer');
       Users.insert(
           {
-            foodTypeOne: "default",    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
-            foodTypeTwo: "default",
-            foodTypeThree: "default",
+            foodTypeOne: "Korean",    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
+            foodTypeTwo: "Korean",
+            foodTypeThree: "Korean",
             vegan: true,         //boolean values for whether the user cares about vegan, GF and healthy options.
             glutenFree: true,
             ToGo: true,
@@ -34,7 +34,7 @@ function createUser(email, password, role) {
             restaurantPrice1: true, //typical price range student wants.
             restaurantPrice2: true,
             restaurantPrice3: true,
-            owner: email
+            owner: "jeb3@hawaii.edu"
           }
       );
 

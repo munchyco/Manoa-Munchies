@@ -4,6 +4,7 @@ import { Container, Form, Grid, Header, Message, Segment, Dropdown } from 'seman
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
+import { Users } from '/imports/api/user/user';
 
 /**
  * Signup component is similar to signin component, but we attempt to create a new user instead.
@@ -54,7 +55,26 @@ export default class Signup extends React.Component {
         alert(err);
       } else {
         console.log('success');// success!
-        this.setState({finished: true});
+        this.setState({ finished: true });
+        if (this.state.role === "customer") {
+          Users.insert(
+              {
+                foodTypeOne: "Korean",    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
+                foodTypeTwo: "Korean",
+                foodTypeThree: "Korean",
+                vegan: true,         //boolean values for whether the user cares about vegan, GF and healthy options.
+                glutenFree: true,
+                ToGo: true,
+                FoodTruck: true,
+                MadeToOrder: true,
+                Buffet: true,
+                restaurantPrice1: true, //typical price range student wants.
+                restaurantPrice2: true,
+                restaurantPrice3: true,
+                owner: this.state.email
+              }
+          )
+        }
       }
     });
   }

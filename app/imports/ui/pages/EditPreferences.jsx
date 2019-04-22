@@ -16,7 +16,7 @@ class EditPreferences extends React.Component {
 
   constructor(props) {
     super(props);
-    let Tracker = this.props.user
+    let Tracker = this.props.user;
     this.trackVegan = 0;
     this.trackGlutenFree = 0;
     this.trackHealthy = 0;
@@ -272,9 +272,8 @@ EditPreferences.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   const subscription = Meteor.subscribe('Users');
-  const username = this.user().username;
   return {
-    user: Users.find({ owner: username }).fetch(),
+    user: Users.find({}).fetch([0]),
     ready: subscription.ready(),
   };
 })(EditPreferences);
