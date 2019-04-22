@@ -1,4 +1,21 @@
-{
+{ "defaultUserProfile": [
+  {
+    "foodTypeOne": "Chinese",
+    "foodTypeTwo": "American",
+    "foodTypeThree": "Hawaiian",
+    "vegan": false,
+    "glutenFree": false,
+    "ToGo": true,
+    "FoodTruck": true,
+    "MadeToOrder": true,
+    "Buffet": true,
+    "restaurantPrice1": true,
+    "restaurantPrice2": true,
+    "restaurantPrice3": true,
+    "location": "Campus Center",
+    "owner": "admin@foo.com"
+  }
+],
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme", "role": "customer"},
