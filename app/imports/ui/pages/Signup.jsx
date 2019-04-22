@@ -4,6 +4,7 @@ import { Container, Form, Grid, Header, Message, Segment, Dropdown } from 'seman
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
+import AutoForm from 'uniforms-semantic/AutoForm';
 
 /**
  * Signup component is similar to signin component, but we attempt to create a new user instead.
@@ -75,8 +76,8 @@ export default class Signup extends React.Component {
               <Header as="h2" textAlign="center">
                 Register your account
               </Header>
-              <Form onSubmit={this.handleSubmit}>
-                <Segment stacked>
+              <Form onSubmit={this.handleSubmit} color='black' inverted>
+                <Segment stacked inverted>
                   <Form.Input
                       label="Email"
                       icon="user"
@@ -108,7 +109,7 @@ export default class Signup extends React.Component {
                   <Form.Button content="Submit"/>
                 </Segment>
               </Form>
-              <Message>
+              <Message color='black' inverted>
                 Already have an account? Login <Link to="/signin">here</Link>
               </Message>
               {this.state.error === '' ? (
