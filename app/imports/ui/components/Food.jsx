@@ -12,8 +12,8 @@ class Food extends React.Component {
   render() {
     return (
         <Card centered>
+          <Image floated ='centered' src={this.props.food.image} id={"picSize"}/>
           <Card.Content>
-            <Image size = 'medium' src={this.props.food.image} id={"picSize"}/>
             <Card.Header>{this.props.food.name} </Card.Header>
             <Card.Meta>{this.props.food.location}</Card.Meta>
             <Card.Description>
