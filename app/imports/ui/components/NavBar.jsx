@@ -6,10 +6,18 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Header } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
+
+
+let menuStyle = {
+  color: '#024731',
+  marginBottom: '10px',
+  backgroundColor: '#024731',
+  fontFamily: 'Exo 2',
+};
+
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const menuStyle = { marginBottom: '10px' };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/userhome">

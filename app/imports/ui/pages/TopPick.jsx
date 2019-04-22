@@ -23,9 +23,9 @@ class TopPick extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className="center-image">
+        <div className="center-image-toppicks">
         <Container>
-          <Header as="h2" textAlign="center" inverted>Today's Top Pick</Header>
+          <Header as="h2" textAlign="center" inverted>Today's Top Picks</Header>
           <Card.Group>
             {this.props.foods.map((food, index) => <Food key={index}
                                                                 food={food}/>)}
