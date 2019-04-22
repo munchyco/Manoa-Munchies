@@ -154,7 +154,7 @@
       "location": "L&L in Paradise Palms Café",
       "image": "https://www.hawaiianbarbecue.com/wp-content/uploads/2016/07/Chicken_Katsu-optimized.png",
       "description": "$12.95",
-      "owner": "john@foo.com"
+      "owner": "llbbq@foo.com"
     },
 
     {"name": "Ice Americano",
@@ -169,7 +169,7 @@
       "location": "Dunkin Donuts in Paradise Palms Café",
       "image": "https://www.gannett-cdn.com/-mm-/8eedd1f306cf362844aca109869da523ef4f3e4d/c=0-147-791-594/local/-/media/2016/08/27/TreasureCoast/T0015294427--199249.JPG?width=3200&height=1680&fit=crop",
       "description": "$2.49",
-      "owner": "john@foo.com"
+      "owner": "dunkin@foo.com"
     },
 
     {"name": "Shanghai Angus Steak",
@@ -184,7 +184,7 @@
       "location": "Panda Express in Paradise Palms Café (2 locations)",
       "image": "https://i1.wp.com/www.grubgrade.com/wp-content/uploads/2012/04/Shanghai-Angus-Steak-Panda-Express.jpg?resize=500%2C360&ssl=1",
       "description": "+$2.00 extra",
-      "owner": "john@foo.com"
+      "owner": "panda@foo.com"
     },
 
     {"name": "Mix Poke Bowl",
