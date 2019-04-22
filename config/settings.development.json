@@ -153,5 +153,99 @@
       "description": "Holoholo Grill features healthy, locally grown salads, sandwiches, and grab-and-go items at affordable prices. They are committed to using the freshest island-grown ingredients sourced directly from farmers and fishermen.",
       "owner": "holoholo@foo.com"
     }
+  ],
+
+  "defaultFoods": [
+    {"name": "Chicken Katsu",
+      "foodTypeOne": "Japanese",
+      "foodTypeTwo": "Chinese",
+      "foodTypeThree": "Korean",
+      "vegan": true,
+      "glutenFree": true,
+      "healthy": true,
+      "foodPrice": "$$",
+      "foodType": "food truck",
+      "location": "L&L in Paradise Palms Café",
+      "image": "https://www.hawaiianbarbecue.com/wp-content/uploads/2016/07/Chicken_Katsu-optimized.png",
+      "description": "$12.95",
+      "owner": "john@foo.com"
+    },
+
+    {"name": "Ice Americano",
+      "foodTypeOne": "Japanese",
+      "foodTypeTwo": "Chinese",
+      "foodTypeThree": "Korean",
+      "vegan": true,
+      "glutenFree": true,
+      "healthy": true,
+      "foodPrice": "$$",
+      "foodType": "food truck",
+      "location": "Dunkin Donuts in Paradise Palms Café",
+      "image": "https://www.gannett-cdn.com/-mm-/8eedd1f306cf362844aca109869da523ef4f3e4d/c=0-147-791-594/local/-/media/2016/08/27/TreasureCoast/T0015294427--199249.JPG?width=3200&height=1680&fit=crop",
+      "description": "$2.49",
+      "owner": "john@foo.com"
+    },
+
+    {"name": "Shanghai Angus Steak",
+      "foodTypeOne": "Japanese",
+      "foodTypeTwo": "Chinese",
+      "foodTypeThree": "Korean",
+      "vegan": true,
+      "glutenFree": true,
+      "healthy": true,
+      "foodPrice": "$$",
+      "foodType": "food truck",
+      "location": "Panda Express in Paradise Palms Café (2 locations)",
+      "image": "https://i1.wp.com/www.grubgrade.com/wp-content/uploads/2012/04/Shanghai-Angus-Steak-Panda-Express.jpg?resize=500%2C360&ssl=1",
+      "description": "+$2.00 extra",
+      "owner": "john@foo.com"
+    },
+
+    {"name": "Mix Poke Bowl",
+      "foodTypeOne": "Japanese",
+      "foodTypeTwo": "Chinese",
+      "foodTypeThree": "Korean",
+      "vegan": true,
+      "glutenFree": true,
+      "healthy": true,
+      "foodPrice": "$$",
+      "foodType": "food truck",
+      "location": "Stir Fresh in Campus Center)",
+      "image": "https://s3-media4.fl.yelpcdn.com/bphoto/Fb2XrKUdIMY5CC01mGQCnw/o.jpg",
+      "description": "$13.49",
+      "owner": "john@foo.com"
+    },
+
+    {"name": "Teppanyaki Steak",
+      "foodTypeOne": "Japanese",
+      "foodTypeTwo": "Chinese",
+      "foodTypeThree": "Korean",
+      "vegan": true,
+      "glutenFree": true,
+      "healthy": true,
+      "foodPrice": "$$",
+      "foodType": "food truck",
+      "location": "Bluetruck on University Avenue",
+      "image": "https://s3-media4.fl.yelpcdn.com/bphoto/QXgOMDm-fTp0uwBABSp6-Q/o.jpg",
+      "description": "$12.99",
+      "owner": "john@foo.com"
+    },
+
+    {"name": "Bibimbap",
+      "foodTypeOne": "Japanese",
+      "foodTypeTwo": "Chinese",
+      "foodTypeThree": "Korean",
+      "vegan": true,
+      "glutenFree": true,
+      "healthy": true,
+      "foodPrice": "$$",
+      "foodType": "food truck",
+      "location": "Cafeteria in Campus Center",
+      "image": "https://thegirlonbloor.com/wp-content/uploads/2015/08/30-Minute-Korean-Bibimbap-Recipe-7.jpg",
+      "description": "$10.99",
+      "owner": "john@foo.com"
+    }
+
+
   ]
 }

@@ -1,5 +1,6 @@
 import './accounts.js';
 import './vendor.js';
+import './food.js';
 import { Meteor } from 'meteor/meteor';
 
 
