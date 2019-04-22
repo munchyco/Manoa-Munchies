@@ -11,7 +11,7 @@ function addData(data) {
 /** Initialize the collection if empty. */
 if (Vendors.find().count() === 0) {
   if (Meteor.settings.defaultItems) {
-    console.log('Creating default Contacts.');
+    console.log('Creating default Vendors.');
     Meteor.settings.defaultItems.map(data => addData(data));
   }
 }

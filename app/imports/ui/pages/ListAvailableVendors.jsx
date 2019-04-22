@@ -20,7 +20,7 @@ class ListAvailableVendors extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className="center-image">
+        <div className="center-image-listvendors">
           <Container>
             <Header as="h2" textAlign="center" inverted>Vendor List</Header>
             <Card.Group>
@@ -42,7 +42,7 @@ ListAvailableVendors.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Vendor documents.
-  const subscription = Meteor.subscribe('Vendors');
+  const subscription = Meteor.subscribe('AllVendors');
   return {
     vendors: Vendors.find({}).fetch(),
     ready: subscription.ready(),

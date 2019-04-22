@@ -54,6 +54,14 @@
   margin-top: -10px;
 }
 
+center-image-listvendors{
+  background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
+  background-size: cover;
+  height: 950px;
+  padding-top: 20px;
+  margin-top: -10px;
+}
+
 .center-text{
   margin-top: 40%;
   margin-left: 20%;
