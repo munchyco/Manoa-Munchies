@@ -19,5 +19,22 @@
       "description": "Its chicken katsu",
       "owner": "john@foo.com"
     }
+  ],
+  "defaultUserSettings": [
+    {
+      "foodTypeOne": "Default",
+      "foodTypeTwo": "Default",
+      "foodTypeThree": "Default",
+      "vegan": true,
+      "glutenFree": true,
+      "ToGo": true,
+      "FoodTruck": true,
+      "MadeToOrder": true,
+      "Buffet": true,
+      "restaurantPrice1": true,
+      "restaurantPrice2": true,
+      "restaurantPrice3": true,
+      "owner": "johnn@foo.com"
+    }
   ]
 }
