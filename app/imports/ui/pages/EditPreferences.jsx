@@ -16,7 +16,7 @@ class EditPreferences extends React.Component {
 
   constructor(props) {
     super(props);
-    let Tracker = this.props.user;
+    let Tracker = Users.find( { owner: Meteor.user().username } ).fetch([0]);
     this.trackVegan = 0;
     this.trackGlutenFree = 0;
     this.trackHealthy = 0;
@@ -209,6 +209,25 @@ Submit(){
   this.handlePrice2Change();
   this.handlePrice3Change();
     console.log(this.Tracker);
+  Users.update(
+      { owner: Meteor.user().username },
+      {
+        $set: {
+          foodTypeOne: this.Tracker.foodTypeOne,    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
+          foodTypeTwo: this.Tracker.foodTypeTwo,
+          foodTypeThree: this.Tracker.foodTypeThree,
+          vegan: this.Tracker.vegan,         //boolean values for whether the user cares about vegan, GF and healthy options.
+          glutenFree: this.Tracker.glutenFree,
+          ToGo: this.Tracker.ToGo,
+          FoodTruck: this.Tracker.FoodTruck,
+          MadeToOrder: this.Tracker.MadeToOrder,
+          Buffet: this.Tracker.Buffet,
+          restaurantPrice1: this.Tracker.restaurantPrice1, //typical price range student wants.
+          restaurantPrice2: this.Tracker.restaurantPrice2,
+          restaurantPrice3: this.Tracker.restaurantPrice3,
+        }
+      }
+  );
 }
 
   render() {
@@ -255,7 +274,7 @@ Submit(){
             <Button type={'submit'}
                     style={ {marginLeft: "50%",
                     marginRight: "50%"
-            }}>Submit Changes</Button>
+                    }}><a href={'http://munchiesmanoa.meteorapp.com/#/user'}>Submit Changes</a></Button>
           </Form >
         </div>
     );
@@ -272,8 +291,9 @@ EditPreferences.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   const subscription = Meteor.subscribe('Users');
+
   return {
-    user: Users.find({}).fetch([0]),
+    user: Users.find().fetch(),
     ready: subscription.ready(),
   };
 })(EditPreferences);
