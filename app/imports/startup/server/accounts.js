@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
+import { Users } from '/imports/api/user/user';
 
 /* eslint-disable no-console */
 
@@ -19,7 +20,25 @@ function createUser(email, password, role) {
   }
   if (role === 'customer') {
     Roles.addUsersToRoles(userID, 'customer');
-  }
+      Users.insert(
+          {
+            foodTypeOne: "default",    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
+            foodTypeTwo: "default",
+            foodTypeThree: "default",
+            vegan: true,         //boolean values for whether the user cares about vegan, GF and healthy options.
+            glutenFree: true,
+            ToGo: true,
+            FoodTruck: true,
+            MadeToOrder: true,
+            Buffet: true,
+            restaurantPrice1: true, //typical price range student wants.
+            restaurantPrice2: true,
+            restaurantPrice3: true,
+            owner: email
+          }
+      );
+
+    }
 }
 
 
