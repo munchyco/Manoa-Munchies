@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 .manoa-background {
   background: url('https://i.ibb.co/5Wd0VTN/background.png') no-repeat center center fixed;
@@ -7,6 +8,7 @@
 
 .green-background {
   background-color: #004030;
+  padding-bottom: 800px;
 }
 
 .white {
@@ -40,6 +42,14 @@
   background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
   background-size: cover;
   height: 600px;
+  padding-top: 20px;
+  margin-top: -10px;
+}
+
+.center-image-toppicks{
+  background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
+  background-size: cover;
+  height: 750px;
   padding-top: 20px;
   margin-top: -10px;
 }
