@@ -22,6 +22,7 @@ class EditUserProfile extends React.Component {
     this.state = this.props.doc;
     this.submit = this.submit.bind(this);
   }
+
   /** On successful submit, insert the data. */
   submit(data) {
     const { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } = data;
@@ -86,13 +87,8 @@ EditUserProfile.propTypes = {
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
-  const ownerName = Meteor.call('getUsername', {}, (err) => {
-    if (err) {
-      alert(err);
-    } else {
-      console.log('successfully retrieved ownerName in tracker');// success!
-    }
-  });
+  const ownerName = Meteor.user().username;
+  console.log(this.ownerName);
   const subscription = Meteor.subscribe('Users');
   return {
     doc: Users.findOne({owner: ownerName}),
