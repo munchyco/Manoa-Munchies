@@ -9,6 +9,11 @@ import { Vendors } from '/imports/api/vendor/vendor';
 
 /** Renders a single row in the List Stuff table. See pages/ListContacts.jsx. */
 class VendorsAdmin extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
+  
   render() {
     return (
         <Card centered>
@@ -20,7 +25,7 @@ class VendorsAdmin extends React.Component {
               {this.props.vendor.description}
             </Card.Description>
             <Button attached={'bottom'}>
-              
+              onClick={this.onClick}
             </Button>
           </Card.Content>
         </Card>
