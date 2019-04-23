@@ -12,35 +12,31 @@ function addData(data) {
 
 
 Meteor.methods({
-  'updatingRole'({role}) {
+  'updatingRole'({ role }) {
     Roles.addUsersToRoles(Meteor.userId(), role);
-    if(role=="customer"){
+    if (role === 'customer') {
       Meteor.settings.defaultUserProfile.map(data => addData(data));
       const thisOwner = Meteor.user().username;
-      Users.update({owner: "admin@foo.com"},{$set:{owner: thisOwner}});
-      console.log('Added '+thisOwner+' with default profile');
+      Users.update({ owner: 'admin@foo.com' }, { $set: { owner: thisOwner } });
+      console.log('Added ' + thisOwner + ' with default profile');
     }
-  }
+  },
 });
 
 Meteor.methods({
   'getUsername'() {
     return Meteor.user().username;
-  }
+  },
 });
 
 Meteor.methods({
-  'getID'({ownerName}) {
-    return Users.findOne({owner: ownerName})._id;
-  }
+  'getID'({ ownerName }) {
+    return Users.findOne({ owner: ownerName })._id;
+  },
 });
 
 Meteor.methods({
   'updateMyUser'({ foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName }) {
-    Users.update({owner: ownerName},{$set:{foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location}});
-  }
-})
-
-
-
-
+    Users.update({ owner: ownerName }, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } });
+  },
+});
