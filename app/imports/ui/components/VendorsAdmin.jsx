@@ -1,26 +1,27 @@
 import React from 'react';
+import { Card, Group, Image, Feed, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-import { Card } from 'semantic-ui-react';
+import { withRouter, Link } from 'react-router-dom';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Vendors } from '/imports/api/vendor/vendor';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+
+
+/** Renders a single row in the List Stuff table. See pages/ListContacts.jsx. */
 class VendorsAdmin extends React.Component {
   render() {
     return (
         <Card centered>
+          <Image floated ='centered' src={this.props.vendor.image} id={"picSize"}/>
           <Card.Content>
-            <Card.Header>
-              {this.props.vendor.name}
-            </Card.Header>
-            <Card.Meta>
-              {this.props.vendor.location}
-            </Card.Meta>
+            <Card.Header>{this.props.vendor.name} </Card.Header>
+            <Card.Meta>{this.props.vendor.location}</Card.Meta>
             <Card.Description>
               {this.props.vendor.description}
             </Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            {this.props.vendor.foodTypeOne}{this.props.vendor.foodTypeTwo}{this.props.vendor.foodTypeThree}
+            <Button attached={'bottom'}>
+              
+            </Button>
           </Card.Content>
         </Card>
     );

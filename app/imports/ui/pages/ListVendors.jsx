@@ -20,7 +20,7 @@ class ListVendors extends React.Component {
         <Container>
           <Header as="h2" textAlign="center" inverted>List Venders</Header>
           <Card.Group>
-            {this.props.vendors.map((vendor, index) => <VendorsAdmin key={index} contact={vendor} />)}
+            {this.props.vendors.map((vendor, index) => <VendorsAdmin key={index} vendor={vendor} />)}
           </Card.Group>
         </Container>
     );
@@ -36,7 +36,8 @@ ListVendors.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('contactAdmin');
+  const subscription = Meteor.subscribe('AllVendors');
+  console.log(Vendors.find({}).fetch());
   return {
     vendors: Vendors.find({}).fetch(),
     ready: subscription.ready(),
