@@ -19,20 +19,13 @@ import PropTypes from 'prop-types';
 class EditUserProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.doc;
     this.submit = this.submit.bind(this);
   }
 
   /** On successful submit, insert the data. */
   submit(data) {
     const { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } = data;
-    const ownerName = Meteor.call('getUsername', {}, (err) => {
-      if (err) {
-        alert(err);
-      } else {
-        console.log('successfully retrieved owners name');// success!
-      }
-    });
+    const ownerName = Meteor.user().username;
     Meteor.call('updateMyUser', {
       foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName
     }, (error) => (error ?
@@ -58,7 +51,7 @@ class EditUserProfile extends React.Component {
                 <SelectField name='foodTypeTwo' options={foodOptions} />
                 <SelectField name='foodTypeThree' options={foodOptions} />
                 <Form.Group inline>
-                  <BoolField name='vegan' /*value={Users.findOne({owner: Meteor.user().username}).vegan}*/ value={this.state.vegan} /><BoolField name='glutenFree' />
+                  <BoolField name='vegan'   /><BoolField name='glutenFree' />
                 </Form.Group>
                 <Form.Group inline>
                 <BoolField name='ToGo'/><BoolField name='FoodTruck' /><BoolField name='MadeToOrder' /><BoolField name='Buffet' />
@@ -88,10 +81,9 @@ EditUserProfile.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
   const ownerName = Meteor.user().username;
-  console.log(this.ownerName);
   const subscription = Meteor.subscribe('Users');
   return {
-    doc: Users.findOne({owner: ownerName}),
+    doc: Users.findOne({owner: Meteor.user().username}),
     ready: subscription.ready(),
   };
 })(EditUserProfile);
