@@ -153,12 +153,13 @@ class EditUserProfile extends React.Component {
                 <SelectField name='foodTypeTwo' options={foodOptions} />
                 <SelectField name='foodTypeThree' options={foodOptions} />
                 <Form.Group inline>
-                  <BoolField name='vegan' value={Users.findOne({ owner: Meteor.user().username }).vegan}/>
+                  <BoolField name='vegan'/>
                   <BoolField name='glutenFree' />
                 </Form.Group>
                 <Form.Group inline>
-                <BoolField name='ToGo' value={Users.findOne({ owner: Meteor.user().username }).ToGo}/>
-                <BoolField name='FoodTruck' /><BoolField name='MadeToOrder' /><BoolField name='Buffet' />
+                <BoolField name='ToGo'/>
+                <BoolField name='FoodTruck'/>
+                <BoolField name='MadeToOrder' /><BoolField name='Buffet' />
                 </Form.Group>
                 <Form.Group inline>
                 <BoolField name='restaurantPrice1' label='$0-10' />
@@ -186,16 +187,9 @@ EditUserProfile.propTypes = {
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
-  const ownerName = Meteor.call('getUsername', {}, (err) => {
-    if (err) {
-      Bert.alert(err);
-    } else {
-      console.log('successfully retrieved ownerName in tracker');// success!
-    }
-  });
   const subscription = Meteor.subscribe('Users');
   return {
-    doc: Users.findOne({ owner: ownerName }),
+    doc: Users.findOne({owner: Meteor.user().username}),
     ready: subscription.ready(),
   };
 })(EditUserProfile);
