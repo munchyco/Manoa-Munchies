@@ -132,8 +132,6 @@ class EditUserProfile extends React.Component {
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
    // Users.update({_id:id}, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo,
     // FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } },
-
-    console.log(this.props.doc.vegan);
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
