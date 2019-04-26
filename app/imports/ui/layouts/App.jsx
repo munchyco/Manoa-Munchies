@@ -21,6 +21,7 @@ import BottomFooter from '../components/BottomFooter';
 import EditPreferences from '../pages/EditPreferences';
 import UserHomePage from '../pages/UserHomePage';
 import EditUserProfile from '../pages/EditUserProfile';
+import AdminUser from '../pages/AdminUser';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -42,6 +43,7 @@ class App extends React.Component {
               <CustomerProtectedRoute path="/user" component={EditUserProfile}/>
               <ProtectedRoute path="/edit/:_id" component={VendorHome}/>
               <AdminProtectedRoute path="/admin" component={AdminHome}/>
+              <AdminProtectedRoute path="/adminUser" component={AdminUser}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
