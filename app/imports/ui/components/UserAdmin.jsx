@@ -12,14 +12,12 @@ class UserAdmin extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { isToggleOn: true };
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
     this.onClick = this.onClick.bind(this);
   }
 
   handleClick(id) {
-    this.setState(prevState => ({ isToggleOn: !prevState.isToggleOn }));
     this.onClick(id);
   }
 
@@ -44,9 +42,11 @@ class UserAdmin extends React.Component {
         <Card centered>
           <Card.Content>
             <Card.Header>{this.props.user.owner} </Card.Header>
-            <Card.Meta>{this.props.user.location}{this.props.user.foodTypeTwo}{this.props.user.foodTypeThree}</Card.Meta>
+            <Card.Meta>{this.props.user.location}</Card.Meta>
             <Card.Description>
-              {this.props.user.foodTypeOne}{this.props.user.foodTypeTwo}{this.props.user.foodTypeThree}
+              {this.props.user.foodTypeOne}
+              {this.props.user.foodTypeTwo}
+              {this.props.user.foodTypeThree}
             </Card.Description>
             <Button attached={'bottom'}
                     content={'Delete'}

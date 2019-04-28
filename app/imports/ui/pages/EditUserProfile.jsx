@@ -113,30 +113,82 @@ const textStyle = {
 };
 
 class EditUserProfile extends React.Component {
-  /** On successful submit, insert the data. */
-  submit(data) {
-    const { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck,
-      MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } = data;
-    const ownerName = Meteor.call('getUsername', {}, (err) => {
-      if (err) {
-        Bert.alert(err);
-      } else {
-        console.log('successfully retrieved owners name');// success!
-      }
-    });
-    Meteor.call('updateMyUser', {
-      foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet,
-      restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName,
-    }, (error) => (error ?
-        Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
-        Bert.alert({ type: 'success', message: 'Update succeeded' })));
-   // Users.update({_id:id}, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo,
-    // FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } },
+
+  constructor(props) {
+    super(props);
+    // This binding is necessary to make `this` work in the callback
+    this.handleNoDoc = this.handleNoDoc.bind(this);
+    this.submit = this.submit.bind(this);
+    this.noDoc = this.noDoc.bind(this);
+    this.setDoc = this.setDoc.bind(this);
+    this.state = {};
+    console.log(this.state);
   }
 
+  /** On successful submit, insert the data. */
+  submit(data) {
+    const {
+      foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck,
+      MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location
+    } = data;
+    console.log(foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck,
+        MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location);
+    const ownerName = Meteor.user().username;
+    console.log(ownerName);
+    if (!this.props.docFound) {
+      Meteor.call('addMyUser', {
+        foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet,
+        restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName,
+      }, (error) => (error ?
+          Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
+          Bert.alert({ type: 'success', message: 'Update succeeded' })));
+    } else {
+      Meteor.call('updateMyUser', {
+        foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet,
+        restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName,
+      }, (error) => (error ?
+          Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
+          Bert.alert({ type: 'success', message: 'Update succeeded' })));
+      // Users.update({_id:id}, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo,
+      // FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } },
+    }
+  }
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
+    this.state = this.handleNoDoc();
+    console.log(this.state);
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  noDoc(){
+    const doc = {
+      foodTypeOne: "Chinese",
+      foodTypeTwo: "American",
+      foodTypeThree: "Hawaiian",
+      vegan: false,
+      glutenFree: false,
+      ToGo: true,
+      FoodTruck: true,
+      MadeToOrder: true,
+      Buffet: true,
+      restaurantPrice1: true,
+      restaurantPrice2: true,
+      restaurantPrice3: true,
+      location: "Campus Center",
+    };
+    return doc;
+  }
+
+  setDoc(){
+    return this.props.doc;
+  }
+
+  handleNoDoc(){
+    if (this.props.docFound) {
+      return this.setDoc();
+    } else {
+      return this.noDoc();
+    }
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -145,7 +197,7 @@ class EditUserProfile extends React.Component {
         <Grid container centered style={styles}>
           <Grid.Column>
             <Header as="h2" textAlign="center" style={textStyle}>Edit Profile</Header>
-            <AutoForm schema={UsersSchema} onSubmit={this.submit} model={this.props.doc} color='black' inverted>
+            <AutoForm schema={UsersSchema} onSubmit={this.submit} model={this.state} color='black' inverted>
               <Segment inverted>
                 <SelectField name='foodTypeOne' options={foodOptions} />
                 <SelectField name='foodTypeTwo' options={foodOptions} />
@@ -181,12 +233,21 @@ EditUserProfile.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
+  docFound: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   const subscription = Meteor.subscribe('Users');
+  let found = false;
+  if (Users.find({owner: Meteor.user().username}).fetch({}).length === 0){
+    found = false;
+  } else {
+    found = true;
+  }
+  console.log(found);
   return {
+    docFound: found,
     doc: Users.findOne({owner: Meteor.user().username}),
     ready: subscription.ready(),
   };
