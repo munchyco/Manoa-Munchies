@@ -142,8 +142,14 @@ center-image-listvendors{
 }
 
 .green-background {
+  margin-top: 15px;
   background-color: #004030;
   color: white;
+  padding-bottom: 10px;
+}
+
+.signout-format {
+  margin-bottom: 25px;
 }
 
 .ui.borderless.middlemenu.menu {
