@@ -182,10 +182,31 @@ center-image-listvendors{
 #picSize{
  width: 200px;
   height: 200px;
-
+  border-radius: 50% !important;
 }
 
 .mysection{
   display: flex;
   justify-content: center;
+}
+
+.roundedPics {
+  border-radius: 50%;
+}
+
+.ui.card,
+.ui.cards>.card {
+  background-color: #004030 !important;
+}
+
+.ui.card>.content,
+.ui.cards>.card>.content {
+  background-color: white !important;
+  color: white !important;
+}
+
+.ui.card>.content.extra,
+.ui.cards>.card>.content.extra {
+  background-color: white !important;
+  color: white !important;
 }
