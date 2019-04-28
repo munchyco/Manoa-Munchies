@@ -215,3 +215,8 @@ center-image-listvendors{
 .ui.cards>.card>.content.extra {
   background-color: white !important;
 }
+
+.change-height-of-dropdown {
+  min-height: auto !important;
+  height: 1em;
+}

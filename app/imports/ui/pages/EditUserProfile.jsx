@@ -128,7 +128,7 @@ class EditUserProfile extends React.Component {
   submit(data) {
     const {
       foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck,
-      MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location
+      MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location,
     } = data;
     const ownerName = Meteor.user().username;
     if (!this.props.docFound) {
@@ -149,17 +149,18 @@ class EditUserProfile extends React.Component {
       // FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } },
     }
   }
+
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
-    this.state = this.handleNoDoc();
+    this.setState(this.handleNoDoc());
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
-  noDoc(){
+  noDoc() {
     const doc = {
-      foodTypeOne: "Chinese",
-      foodTypeTwo: "American",
-      foodTypeThree: "Hawaiian",
+      foodTypeOne: 'Chinese',
+      foodTypeTwo: 'American',
+      foodTypeThree: 'Hawaiian',
       vegan: false,
       glutenFree: false,
       ToGo: true,
@@ -169,21 +170,20 @@ class EditUserProfile extends React.Component {
       restaurantPrice1: true,
       restaurantPrice2: true,
       restaurantPrice3: true,
-      location: "Campus Center",
+      location: 'Campus Center',
     };
     return doc;
   }
 
-  setDoc(){
+  setDoc() {
     return this.props.doc;
   }
 
-  handleNoDoc(){
+  handleNoDoc() {
     if (this.props.docFound) {
       return this.setDoc();
-    } else {
-      return this.noDoc();
     }
+    return this.noDoc();
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -235,14 +235,14 @@ EditUserProfile.propTypes = {
 export default withTracker(() => {
   const subscription = Meteor.subscribe('Users');
   let found = false;
-  if (Users.find({owner: Meteor.user().username}).fetch({}).length === 0){
+  if (Users.find({ owner: Meteor.user().username }).fetch({}).length === 0) {
     found = false;
   } else {
     found = true;
   }
   return {
     docFound: found,
-    doc: Users.findOne({owner: Meteor.user().username}),
+    doc: Users.findOne({ owner: Meteor.user().username }),
     ready: subscription.ready(),
   };
 })(EditUserProfile);
