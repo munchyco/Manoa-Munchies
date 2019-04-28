@@ -24,10 +24,14 @@ class Footer extends React.Component {
               <hr/>
               <List>
                 <List.Item>
-                  <a className="white">Twitter <Icon size='large' name='twitter square'> </Icon></a>
+                  <a className="white">Twitter
+                    <Icon size='large' name='twitter square'></Icon>
+                  </a>
                 </List.Item>
                 <List.Item>
-                  <a className="white">Facebook <Icon size='large' name='facebook square'> </Icon></a>
+                  <a className="white">Facebook
+                    <Icon size='large' name='facebook square'></Icon>
+                  </a>
                 </List.Item>
               </List>
             </Grid.Column>

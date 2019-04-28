@@ -12,7 +12,7 @@ let menuStyle = {
   color: '#024731',
   marginBottom: '10px',
   backgroundColor: '#024731',
-  fontFamily: 'Exo 2',
+  fontFamily: 'Quicksand',
 };
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
