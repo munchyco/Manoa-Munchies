@@ -47,7 +47,6 @@ AdminUser.propTypes = {
 export default withTracker(() => {
   // Get access to Vendor documents.
   const subscription = Meteor.subscribe('AllUsers');
-  console.log(Users.find({}).fetch());
   return {
     users: Users.find({}).fetch(),
     ready: subscription.ready(),

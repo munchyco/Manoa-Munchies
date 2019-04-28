@@ -44,7 +44,10 @@ Meteor.methods({
 
 Meteor.methods({
   'deleteUser'({ id }) {
+    const username = Users.findOne({_id: id}).owner;
+    console.log(username);
     Users.remove({ _id: id });
+    Meteor.users.remove({ username: username });
   },
 });
 

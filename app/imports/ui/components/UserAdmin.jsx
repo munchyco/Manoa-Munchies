@@ -32,7 +32,6 @@ class UserAdmin extends React.Component {
 
   /** On submit, insert the data. */
   onClick(id) {
-    console.log(id);
     Meteor.call('deleteUser', { id });
   }
 
