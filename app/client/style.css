@@ -49,7 +49,7 @@
 .center-image-toppicks{
   background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
   background-size: cover;
-  height: 750px;
+  height: 850px;
   padding-top: 20px;
   margin-top: -10px;
 }
@@ -183,6 +183,7 @@ center-image-listvendors{
  width: 200px;
   height: 200px;
   border-radius: 50% !important;
+  margin-top: 20px;
 }
 
 .mysection{
@@ -195,18 +196,22 @@ center-image-listvendors{
 }
 
 .ui.card,
+.ui.cards{
+  border: none !important;
+}
+
+.ui.card,
 .ui.cards>.card {
   background-color: #004030 !important;
+  border: none !important;
 }
 
 .ui.card>.content,
 .ui.cards>.card>.content {
   background-color: white !important;
-  color: white !important;
 }
 
 .ui.card>.content.extra,
 .ui.cards>.card>.content.extra {
   background-color: white !important;
-  color: white !important;
 }

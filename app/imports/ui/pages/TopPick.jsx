@@ -4,12 +4,9 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Foods } from '/imports/api/food/food';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
 import Food from '../components/Food';
-
-
 
 
 /** Renders a table containing all of the Food documents. */
@@ -23,10 +20,10 @@ class TopPick extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className="center-image-toppicks">
+        <div className="center-image-toppicks" style={ { border: 'none' } }>
         <Container>
-          <Header as="h2" textAlign="center" inverted>Today's Top Picks</Header>
-          <Card.Group>
+          <Header as="h2" textAlign="center" style={ { paddingBottom: '30px' } } inverted>Today's Top Picks</Header>
+          <Card.Group style={ { border: 'none' } }>
             {this.props.foods.map((food, index) => <Food key={index}
                                                                 food={food}/>)}
           </Card.Group>
