@@ -122,7 +122,6 @@ class EditUserProfile extends React.Component {
     this.noDoc = this.noDoc.bind(this);
     this.setDoc = this.setDoc.bind(this);
     this.state = {};
-    console.log(this.state);
   }
 
   /** On successful submit, insert the data. */
@@ -131,10 +130,7 @@ class EditUserProfile extends React.Component {
       foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck,
       MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location
     } = data;
-    console.log(foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck,
-        MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location);
     const ownerName = Meteor.user().username;
-    console.log(ownerName);
     if (!this.props.docFound) {
       Meteor.call('addMyUser', {
         foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet,
@@ -156,7 +152,6 @@ class EditUserProfile extends React.Component {
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     this.state = this.handleNoDoc();
-    console.log(this.state);
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
@@ -245,7 +240,6 @@ export default withTracker(() => {
   } else {
     found = true;
   }
-  console.log(found);
   return {
     docFound: found,
     doc: Users.findOne({owner: Meteor.user().username}),
