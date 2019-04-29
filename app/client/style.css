@@ -30,13 +30,13 @@
   font-family: 'Quicksand';
 }
 
-.white-logo-under{
+.white-logo-under {
   font-family: 'Quicksand', Light;
   color: white;
   font-size: 20px;
 }
 
-.center-image{
+.center-image {
   background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
   background-size: cover;
   height: 800px;
@@ -45,16 +45,7 @@
   font-family: 'Quicksand';
 }
 
-.center-image-toppicks{
-  background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
-  background-size: cover;
-  height: 850px;
-  padding-top: 20px;
-  margin-top: -10px;
-  font-family: 'Quicksand';
-}
-
-center-image-listvendors{
+.listvendors-format {
   background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
   background-size: cover;
   height: 950px;
@@ -63,26 +54,26 @@ center-image-listvendors{
   font-family: 'Quicksand';
 }
 
-.center-text{
+.center-text {
   margin-top: 40%;
   margin-left: 20%;
 }
 
-.under-text{
+.under-text {
   margin-top: 10%;
   margin-left: 24%;
 }
 .body{
   color: white;
 }
-.description{
+.description {
   font-family: 'Quicksand', Light;
   color: white;
   font-size: 15px;
   margin-top: 40%;
 }
 
-.description-box{
+.description-box {
   margin-top: 120%;
 }
 
@@ -180,6 +171,15 @@ center-image-listvendors{
   font-family: 'Quicksand';
 }
 
+.toppicks-format{
+  background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
+  background-size: cover;
+  height: 850px;
+  padding-top: 20px;
+  margin-top: -10px;
+  font-family: 'Quicksand';
+}
+
 .ui.borderless.middlemenu.menu {
   box-shadow: none;
   border: none;
@@ -192,33 +192,45 @@ center-image-listvendors{
   color: white;
 }
 
-.user-home{
+.user-home {
   font-family: 'Quicksand', Light;
   color: white;
   font-size: 90px;
   margin-top: 15%;
-  margin-left: 23%;
+  margin-left: 20.5%;
 }
 
-.user-home-under{
+.user-home-under {
   font-family: 'Quicksand', Light;
   color: white;
   font-size: 30px;
   margin-top: 9%;
-  margin-left: 42%;
+  margin-left: 40.5%;
+  padding-bottom: 80px;
 }
 
-.search-bar{
-  padding-top: 50px;
-  margin-left: 43.5%;
+.user-home-twitter{
+  font-family: 'Quicksand', Light;
+  color: white;
+  font-size: 30px;
+  margin-top: 9%;
+  margin-left: 6.2%;
+  padding-bottom: 80px;
 }
+
+.home-columns{
+  text-align: center;
+}
+
+.column-text{
+  padding-top: 10px;
 
 .ui.card,
 .ui.cards>.card {
   background-color: #004030;
 }
 
-#picSize{
+#picSize {
  width: 200px;
   height: 200px;
   border-radius: 50% !important;
@@ -226,7 +238,7 @@ center-image-listvendors{
   margin-bottom: 20px;
 }
 
-.mysection{
+.mysection {
   display: flex;
   justify-content: center;
 }
@@ -236,7 +248,7 @@ center-image-listvendors{
 }
 
 .ui.card,
-.ui.cards{
+.ui.cards {
   border: none !important;
 }
 
