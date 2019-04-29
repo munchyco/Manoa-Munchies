@@ -11,7 +11,7 @@ import VendorAdmin from '../components/VendorAdmin';
 
 
 /** Renders a table containing all of the Vendor documents. */
-class AdminHome extends React.Component {
+class AdminViewVendors extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -38,7 +38,7 @@ class AdminHome extends React.Component {
 }
 
 /** Require an array of Vendor documents in the props. */
-AdminHome.propTypes = {
+AdminViewVendors.propTypes = {
   vendors: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -51,4 +51,4 @@ export default withTracker(() => {
     vendors: Vendors.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(AdminHome);
+})(AdminViewVendors);
