@@ -35,7 +35,6 @@ class VendorAdmin extends React.Component {
 
   /** On submit, insert the data. */
   onClick(id) {
-    console.log(id);
     Meteor.call('deleteVendor', { id });
   }
 
@@ -43,14 +42,16 @@ class VendorAdmin extends React.Component {
   render() {
     return (
         <Card centered>
-          <Image floated ='centered' src={this.props.vendor.image} id={"picSize"}/>
+          <Image floated ='centered' src={this.props.vendor.image} id={'picSize'}/>
           <Card.Content>
             <Card.Header>{this.props.vendor.name} </Card.Header>
             <Card.Meta>{this.props.vendor.location}</Card.Meta>
             <Card.Description>
               {this.props.vendor.description}
             </Card.Description>
-            <Button attached={'bottom'}
+            <Button style={ { marginTop: '25px' } }
+                    negative={'true'}
+                    attached={'bottom'}
                     content={'Delete'}
                     onClick={() => { this.handleClick(this.props.vendor._id); } }>
 
