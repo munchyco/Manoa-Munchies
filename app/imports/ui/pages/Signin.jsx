@@ -50,8 +50,8 @@ export default class Signin extends React.Component {
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
-              <Header as="h2" textAlign="center">
-                Login to your account
+              <Header as="h2" textAlign="center" inverted>
+                <p className="consistent-font">Login to your account</p>
               </Header>
               <Form onSubmit={this.handleSubmit} color='black' inverted>
                 <Segment stacked inverted>

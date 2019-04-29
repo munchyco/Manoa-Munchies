@@ -42,6 +42,7 @@
   height: 800px;
   padding-top: 20px;
   margin-top: -10px;
+  font-family: 'Quicksand';
 }
 
 .center-image-toppicks{
@@ -50,6 +51,7 @@
   height: 850px;
   padding-top: 20px;
   margin-top: -10px;
+  font-family: 'Quicksand';
 }
 
 center-image-listvendors{
@@ -58,6 +60,7 @@ center-image-listvendors{
   height: 950px;
   padding-top: 20px;
   margin-top: -10px;
+  font-family: 'Quicksand';
 }
 
 .center-text{

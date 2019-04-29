@@ -20,8 +20,12 @@ class VendorHome extends React.Component {
     return (
         <div className="center-image">
         <Container>
-          <Header as="h2" textAlign="center" inverted>Vendor Home</Header>
-          <Header as="h2" textAlign="center" inverted>Welcome back, {this.props.currentUser} </Header>
+          <Header as="h2" textAlign="center" inverted>
+            <p className="consistent-font">Vendor Home</p>
+          </Header>
+          <Header as="h2" textAlign="center" inverted>
+            <p className="consistent-font">Welcome back, {this.props.currentUser}</p>
+          </Header>
           <Card.Group>
             {this.props.vendors.map((vendor, index) => <Vendor key={index}
                                                                vendor={vendor}/>)}
