@@ -12,7 +12,7 @@ let menuStyle = {
   color: '#024731',
   marginBottom: '10px',
   backgroundColor: '#024731',
-  fontFamily: 'Exo 2',
+  fontFamily: 'Quicksand',
 };
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
@@ -21,7 +21,9 @@ class NavBar extends React.Component {
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/userhome">
-          <Header inverted as='h1'>Manoa Munchies</Header>
+          <Header inverted as='h1'>
+            <p className="consistent-font">Manoa Munchies</p>
+          </Header>
         </Menu.Item>
         {this.props.currentUser ? '' : ''}
         {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
@@ -34,7 +36,8 @@ class NavBar extends React.Component {
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/listvendors" key='listvendors'>Vendor List</Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
+            [<Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/adminUser" key='adminUser'>View Users</Menu.Item>]
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (

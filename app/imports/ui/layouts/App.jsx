@@ -10,7 +10,7 @@ import Landing from '../pages/Landing';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
-import AdminHome from '../pages/AdminHome';
+import AdminViewVendors from '../pages/AdminViewVendors';
 import Signout from '../pages/Signout';
 import AddVendor from '../pages/AddVendor';
 import ListAvailableVendors from '../pages/ListAvailableVendors';
@@ -21,6 +21,7 @@ import BottomFooter from '../components/BottomFooter';
 import EditPreferences from '../pages/EditPreferences';
 import UserHomePage from '../pages/UserHomePage';
 import EditUserProfile from '../pages/EditUserProfile';
+import AdminUser from '../pages/AdminUser';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -41,7 +42,8 @@ class App extends React.Component {
               <ProtectedRoute path="/EditPreferences" component={EditUserProfile}/>
               <CustomerProtectedRoute path="/user" component={EditUserProfile}/>
               <ProtectedRoute path="/edit/:_id" component={VendorHome}/>
-              <AdminProtectedRoute path="/admin" component={AdminHome}/>
+              <AdminProtectedRoute path="/admin" component={AdminViewVendors}/>
+              <AdminProtectedRoute path="/adminUser" component={AdminUser}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

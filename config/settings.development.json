@@ -248,7 +248,109 @@
       "description": "$10.99",
       "owner": "john@foo.com"
     }
+  ],
+  "foodOptions": [
+  {
+    "label": "Chinese",
+    "value": "Chinese"
+  },
+  {
+    "label": "American",
+    "value": "American"
+  },
+  {
+    "label": "Vietnamese",
+    "value": "Vietnamese"
+  },
+  {
+    "label": "Hawaiian",
+    "value": "Hawaiian"
+  },
+  {
+    "label": "BBQ",
+    "value": "BBQ"
+  },
+  {
+    "label": "Mongolian",
+    "value": "Mongolian"
+  },
+  {
+    "label": "Breakfast",
+    "value": "Breakfast"
+  },
+  {
+    "label": "Donuts",
+    "value": "Donuts"
+  },
+  {
+    "label": "Coffee",
+    "value": "Coffee"
+  },
+  {
+    "label": "French",
+    "value": "French"
+  },
+  {
+    "label": "Egyptian",
+    "value": "Egyptian"
+  },
+  {
+    "label": "Greek",
+    "value": "Greek"
+  },
+  {
+    "label": "Vegetarian",
+    "value": "Vegetarian"
+  },
+  {
+    "label": "Health",
+    "value": "Health"
+  },
+  {
+    "label": "Sandwiches",
+    "value": "Sandwiches"
+  },
+  {
+    "label": "Japanese",
+    "value": "Japanese"
+  },
+  {
+    "label": "Korean",
+    "value": "Korean"
+  }
+],
 
+  "locationOptions": [
+    {
+      "label": "Paradise Palms",
+      "value": "Paradise Palms"
+    },
+    {
+      "label": "Campus Center",
+      "value": "Campus Center"
+    },
+    {
+      "label": "Athletic Complex",
+      "value": "Athletic Complex"
+    },
+    {
+      "label": "Sustainability Courtyard",
+      "value": "Sustainability Courtyard"
+    }
+  ],
 
+  "priceOptions": [
+    {
+      "label": "$: $0-10 Entrees",
+      "value": "$"
+    },
+    {
+      "label": "$$: $10-20 Entrees",
+      "value": "$$"
+    },
+    {
+      "label": "$$$: $20+ Entrees",
+      "value": "$$$"
+    }
   ]
 }

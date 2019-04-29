@@ -4,6 +4,7 @@ import './food.js';
 import './user.js';
 import { Meteor } from 'meteor/meteor';
 import { Users } from '../../api/user/user.js';
+import { Vendors } from '../../api/vendor/vendor.js';
 import { Bert } from 'meteor/themeteorchef:bert';
 
 function addData(data) {
@@ -26,21 +27,40 @@ Meteor.methods({
 Meteor.methods({
   'getUsername'() {
     return Meteor.user().username;
-  }
+  },
 });
 
 Meteor.methods({
   'getID'({ownerName}) {
     return Users.findOne({owner: ownerName})._id;
-  }
+  },
 });
+
+Meteor.methods({
+  'deleteVendor'({ id }) {
+    Vendors.remove({ _id: id });
+  },
+});
+
+Meteor.methods({
+  'deleteUser'({ id }) {
+    const username = Users.findOne({_id: id}).owner;
+    console.log(username);
+    Users.remove({ _id: id });
+    Meteor.users.remove({ username: username });
+  },
+});
+
+
+Meteor.methods({
+  'addMyUser'({ foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName }) {
+    Users.insert(
+        {foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, owner: ownerName});
+} },
+);
 
 Meteor.methods({
   'updateMyUser'({ foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName }) {
     Users.update({owner: ownerName},{$set:{foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location}});
-  }
-})
-
-
-
-
+  },
+});

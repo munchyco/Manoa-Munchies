@@ -6,7 +6,7 @@ class NotFound extends React.Component {
   render() {
     return (
       <Header as="h2" textAlign="center">
-        <p>Page not found</p>
+        <p className="consistent-font">Page not found</p>
       </Header>
     );
   }

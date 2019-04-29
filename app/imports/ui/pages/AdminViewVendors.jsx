@@ -7,15 +7,17 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
-import Vendor from '../components/Vendor';
+import VendorAdmin from '../components/VendorAdmin';
+
 
 /** Renders a table containing all of the Vendor documents. */
-class ListAvailableVendors extends React.Component {
+class AdminViewVendors extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
+
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
@@ -26,8 +28,10 @@ class ListAvailableVendors extends React.Component {
               <p className="consistent-font">Vendor List</p>
             </Header>
             <Card.Group>
-              {this.props.vendors.map((vendor, index) => <Vendor key={index}
-                                                                 vendor={vendor}/>)}
+              {this.props.vendors.map((vendor, index) => <VendorAdmin key={index}
+                                                                 vendor={vendor}
+              />)
+              }
             </Card.Group>
           </Container>
         </div>
@@ -36,7 +40,7 @@ class ListAvailableVendors extends React.Component {
 }
 
 /** Require an array of Vendor documents in the props. */
-ListAvailableVendors.propTypes = {
+AdminViewVendors.propTypes = {
   vendors: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -49,4 +53,4 @@ export default withTracker(() => {
     vendors: Vendors.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ListAvailableVendors);
+})(AdminViewVendors);

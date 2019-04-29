@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
-@import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 .manoa-background {
   background: url('https://i.ibb.co/5Wd0VTN/background.png') no-repeat center center fixed;
   background-size: cover;
-}
-
-.green-background {
-  background-color: #004030;
-  padding-bottom: 800px;
 }
 
 .white {
@@ -26,10 +20,14 @@
   color: #004030;
 }
 
-.white-logo{
+.white-logo {
   font-family: 'Quicksand';
   color: white;
   font-size: 40px;
+}
+
+.consistent-font {
+  font-family: 'Quicksand';
 }
 
 .white-logo-under{
@@ -44,14 +42,16 @@
   height: 800px;
   padding-top: 20px;
   margin-top: -10px;
+  font-family: 'Quicksand';
 }
 
 .center-image-toppicks{
   background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
   background-size: cover;
-  height: 750px;
+  height: 850px;
   padding-top: 20px;
   margin-top: -10px;
+  font-family: 'Quicksand';
 }
 
 center-image-listvendors{
@@ -60,6 +60,7 @@ center-image-listvendors{
   height: 950px;
   padding-top: 20px;
   margin-top: -10px;
+  font-family: 'Quicksand';
 }
 
 .center-text{
@@ -121,11 +122,6 @@ center-image-listvendors{
 .Tight {
 }
 
-.green-background {
-  background-color: #004030;
-  color: white;
-}
-
 .ui.borderless.middlemenu.menu {
   box-shadow: none;
   border: none;
@@ -142,8 +138,46 @@ center-image-listvendors{
 }
 
 .green-background {
+  margin-top: 15px;
   background-color: #004030;
   color: white;
+  padding-bottom: 15px;
+  font-family: 'Quicksand';
+}
+
+.signout-format {
+  margin-top: 50px;
+  margin-bottom: 547px;
+}
+
+.signin-format {
+  margin-top: 100px;
+  margin-bottom: 193px;
+}
+
+.signup-format {
+  margin-top: 100px;
+  margin-bottom: 141px;
+}
+
+.userhome-format {
+  background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
+  background-size: cover;
+  height: 737px;
+  padding-top: 20px;
+  margin-top: -10px;
+  margin-bottom: -134px;
+  font-family: 'Quicksand';
+}
+
+.vendorhome-format {
+  background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
+  background-size: cover;
+  height: 737px;
+  padding-top: 20px;
+  margin-top: -10px;
+  margin-bottom: -134px;
+  font-family: 'Quicksand';
 }
 
 .ui.borderless.middlemenu.menu {
@@ -179,13 +213,50 @@ center-image-listvendors{
   margin-left: 43.5%;
 }
 
+.ui.card,
+.ui.cards>.card {
+  background-color: #004030;
+}
+
 #picSize{
  width: 200px;
   height: 200px;
-
+  border-radius: 50% !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .mysection{
   display: flex;
   justify-content: center;
+}
+
+.roundedPics {
+  border-radius: 50%;
+}
+
+.ui.card,
+.ui.cards{
+  border: none !important;
+}
+
+.ui.card,
+.ui.cards>.card {
+  background-color: #004030 !important;
+  border: none !important;
+}
+
+.ui.card>.content,
+.ui.cards>.card>.content {
+  background-color: white !important;
+}
+
+.ui.card>.content.extra,
+.ui.cards>.card>.content.extra {
+  background-color: white !important;
+}
+
+.change-height-of-dropdown {
+  min-height: auto !important;
+  height: 1em;
 }
