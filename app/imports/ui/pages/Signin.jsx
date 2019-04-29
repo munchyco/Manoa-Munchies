@@ -47,7 +47,7 @@ export default class Signin extends React.Component {
     }
     // Otherwise return the Login form.
     return (
-        <Container>
+        <Container className="signin-format">
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>
@@ -76,7 +76,7 @@ export default class Signin extends React.Component {
                   <Form.Button content="Submit"/>
                 </Segment>
               </Form>
-              <Message color='black' inverted={'true'}>
+              <Message className="consistent-font" color='black' inverted>
                 <Link to="/signup">Click here to Register</Link>
               </Message>
               {this.state.error === '' ? (
