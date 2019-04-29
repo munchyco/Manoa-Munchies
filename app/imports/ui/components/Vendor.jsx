@@ -62,7 +62,7 @@ class Vendor extends React.Component {
               </Button>
             </div>
             <div className="mysection">
-            <Button floated ='centered'onClick={this.handleClick}>
+            <Button centered='true' onClick={this.handleClick}>
               {this.state.isToggleOn ? 'Available Menu Items' : 'Close'}
             </Button>
             </div>
