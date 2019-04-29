@@ -15,7 +15,7 @@ import Signout from '../pages/Signout';
 import AddVendor from '../pages/AddVendor';
 import ListAvailableVendors from '../pages/ListAvailableVendors';
 import VendorHome from '../pages/VendorHome';
-import UserProfile from '../pages/UserProfile';
+import EditStore from '../pages/EditStore';
 import TopPick from '../pages/TopPick';
 import BottomFooter from '../components/BottomFooter';
 import EditPreferences from '../pages/EditPreferences';
@@ -39,6 +39,7 @@ class App extends React.Component {
               <CustomerProtectedRoute path="/listvendors" component={ListAvailableVendors}/>
               <CustomerProtectedRoute path="/toppick" component={TopPick}/>
               <VendorProtectedRoute path="/vendor" component={VendorHome}/>
+              <VendorProtectedRoute path="/storeEdit" component={EditStore}/>
               <ProtectedRoute path="/EditPreferences" component={EditUserProfile}/>
               <CustomerProtectedRoute path="/user" component={EditUserProfile}/>
               <ProtectedRoute path="/edit/:_id" component={VendorHome}/>
