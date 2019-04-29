@@ -21,7 +21,9 @@ class NavBar extends React.Component {
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/userhome">
-          <Header inverted as='h1'>Manoa Munchies</Header>
+          <Header inverted as='h1'>
+            <p className="consistent-font">Manoa Munchies</p>
+          </Header>
         </Menu.Item>
         {this.props.currentUser ? '' : ''}
         {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (

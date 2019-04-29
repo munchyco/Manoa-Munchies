@@ -22,7 +22,9 @@ class ListAvailableVendors extends React.Component {
     return (
         <div className="center-image-listvendors">
           <Container>
-            <Header as="h2" textAlign="center" inverted>Vendor List</Header>
+            <Header as="h2" textAlign="center" inverted>
+              <p className="consistent-font">Vendor List</p>
+            </Header>
             <Card.Group>
               {this.props.vendors.map((vendor, index) => <Vendor key={index}
                                                                  vendor={vendor}/>)}
