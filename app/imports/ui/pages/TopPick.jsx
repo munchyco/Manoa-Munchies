@@ -7,7 +7,9 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
+import { filter } from 'underscore';
 import Food from '../components/Food';
+
 
 const textStyle = {
   fontSize: '40px',
@@ -28,7 +30,7 @@ class TopPick extends React.Component {
         <div className="toppicks-format" style={{ border: 'none' }}>
           <Container>
             <Header as="h2" textAlign="center" style={textStyle} inverted>
-              Today's Top Picks
+              Top Picks Based On Your Preferences!
             </Header>
             <Card.Group style={{ border: 'none' }}>
               {this.props.foods.map((food, index) => <Food key={index}
@@ -49,9 +51,31 @@ TopPick.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Food documents.
-  const subscription = Meteor.subscribe('UserPreferredFoods');
+  const subscription = Meteor.subscribe('AllFoods');
+  const subscription2 = Meteor.subscribe('Users');
+  const foodsArray = Foods.find({}).fetch();
+  const userProfile = Users.find();
   return {
-    foods: Foods.find({}).fetch(),
-    ready: subscription.ready(),
+    foods: filter(foodsArray, function (food) {
+      if ((userProfile.vegan === food.vegan) &&
+          (userProfile.glutenFree === food.glutenFree) &&
+          (userProfile.location === food.location) &&
+          (food.foodTypeOne === userProfile.foodTypeOne || food.foodTypeTwo === userProfile.foodTypeOne ||
+              food.foodTypeThree === userProfile.foodTypeOne || food.foodTypeOne === userProfile.foodTypeTwo ||
+              food.foodTypeTwo === userProfile.foodTypeTwo || food.foodTypeThree === userProfile.foodTypeTwo ||
+              food.foodTypeOne === userProfile.foodTypeThree || food.foodTypeTwo === userProfile.foodTypeThree ||
+              food.foodTypeThree === userProfile.foodTypeThree) &&
+          ((userProfile.restaurantPrice1 === true && food.foodPrice === '$') ||
+              (userProfile.restaurantPrice2 === true && food.foodPrice === '$$') ||
+              (userProfile.restaurantPrice3 === true && food.foodPrice === '$$$')) &&
+          ((userProfile.ToGo === true && food.foodType === 'to go') ||
+              (userProfile.FoodTruck === true && food.foodType === 'food truck') ||
+              (userProfile.MadeToOrder === true && food.foodType === 'made to order') ||
+              (userProfile.Buffet === true && food.foodType === 'buffet'))) {
+          return true;
+      }
+      return false;
+    }),
+    ready: (subscription.ready() && subscription2.ready()),
   };
 })(TopPick);

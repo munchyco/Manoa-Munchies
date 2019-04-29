@@ -50,6 +50,7 @@ Meteor.publish('UserPreferredFoods', function publish() {
             ] },
             { vegan: Users.findOne({ owner: Meteor.user().username }).vegan },
             { glutenFree: Users.findOne({ owner: Meteor.user().username }).glutenFree },
+        { location: Users.findOne({ owner: Meteor.user().username }).location },
     );
   }
   return this.ready();
@@ -63,5 +64,3 @@ Meteor.publish('FoodsAdmin', function publish() {
   }
   return this.ready();
 });
-
-
