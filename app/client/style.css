@@ -222,8 +222,9 @@
   text-align: center;
 }
 
-.column-text{
+.column-text {
   padding-top: 10px;
+}
 
 .ui.card,
 .ui.cards>.card {
