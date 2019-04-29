@@ -26,7 +26,7 @@ class Vendor extends React.Component {
 
     let content
 
-    if (this.state.isToggleOn == false)
+    if (this.state.isToggleOn === false)
     {
         content = <Card centered>
           <Card.Content>
