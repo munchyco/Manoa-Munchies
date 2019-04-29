@@ -8,6 +8,10 @@ import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
 import Food from '../components/Food';
 
+const textStyle = {
+  fontSize: '40px',
+  fontFamily: 'Quicksand',
+};
 
 /** Renders a table containing all of the Food documents. */
 class TopPick extends React.Component {
@@ -20,18 +24,18 @@ class TopPick extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className="center-image-toppicks" style={ { border: 'none' } }>
-        <Container>
-          <Header as="h2" textAlign="center" style={ { paddingBottom: '30px' } } inverted>
-            <p className="consistent-font">Today's Top Picks</p>
-          </Header>
-          <Card.Group style={ { border: 'none' } }>
-            {this.props.foods.map((food, index) => <Food key={index}
-                                                                food={food}/>)}
-          </Card.Group>
-        </Container>
+        <div className="toppicks-format" style={{ border: 'none' }}>
+          <Container>
+            <Header as="h2" textAlign="center" style={textStyle} inverted>
+              Today's Top Picks
+            </Header>
+            <Card.Group style={{ border: 'none' }}>
+              {this.props.foods.map((food, index) => <Food key={index}
+                                                           food={food}/>)}
+            </Card.Group>
+          </Container>
         </div>
-  );
+    );
   }
 }
 

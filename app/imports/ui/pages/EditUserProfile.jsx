@@ -108,8 +108,8 @@ const styles = {
 };
 
 const textStyle = {
-  color: 'White',
-  fontSize: '72px',
+  fontSize: '40px',
+  fontFamily: 'Quicksand',
 };
 
 class EditUserProfile extends React.Component {
@@ -191,7 +191,7 @@ class EditUserProfile extends React.Component {
     return (
         <Grid container centered style={styles}>
           <Grid.Column>
-            <Header as="h2" textAlign="center" style={textStyle}>Edit Profile</Header>
+            <Header as="h2" textAlign="center" style={textStyle} inverted>Edit Profile</Header>
             <AutoForm schema={UsersSchema} onSubmit={this.submit} model={this.state} color='black' inverted={'true'}>
               <Segment inverted>
                 <SelectField name='foodTypeOne' options={foodOptions} />

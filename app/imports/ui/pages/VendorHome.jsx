@@ -7,6 +7,11 @@ import PropTypes from 'prop-types';
 import Vendor from '../components/Vendor';
 import { Roles } from 'meteor/alanning:roles';
 
+const textStyle = {
+  fontSize: '40px',
+  fontFamily: 'Quicksand',
+};
+
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class VendorHome extends React.Component {
 
@@ -20,8 +25,8 @@ class VendorHome extends React.Component {
     return (
         <div className="vendorhome-format">
           <Container>
-            <Header as="h2" textAlign="center" inverted>
-              <p className="consistent-font">Vendor Home</p>
+            <Header as="h2" textAlign="center" style={textStyle} inverted>
+              Vendor Home
             </Header>
             <Header as="h2" textAlign="center" inverted>
               <p className="consistent-font">Welcome back, {this.props.currentUser}</p>

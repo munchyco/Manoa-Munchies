@@ -9,6 +9,11 @@ import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
 import Vendor from '../components/Vendor';
 
+const textStyle = {
+  fontSize: '40px',
+  fontFamily: 'Quicksand',
+};
+
 /** Renders a table containing all of the Vendor documents. */
 class ListAvailableVendors extends React.Component {
 
@@ -20,10 +25,10 @@ class ListAvailableVendors extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className="center-image-listvendors">
+        <div className="listvendors-format">
           <Container>
-            <Header as="h2" textAlign="center" inverted>
-              <p className="consistent-font">Vendor List</p>
+            <Header as="h2" textAlign="center" style={textStyle} inverted>
+              Vendor List
             </Header>
             <Card.Group>
               {this.props.vendors.map((vendor, index) => <Vendor key={index}
