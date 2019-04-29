@@ -146,7 +146,38 @@ center-image-listvendors{
 }
 
 .signout-format {
-  margin-bottom: 25px;
+  margin-top: 50px;
+  margin-bottom: 547px;
+}
+
+.signin-format {
+  margin-top: 100px;
+  margin-bottom: 193px;
+}
+
+.signup-format {
+  margin-top: 100px;
+  margin-bottom: 141px;
+}
+
+.userhome-format {
+  background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
+  background-size: cover;
+  height: 737px;
+  padding-top: 20px;
+  margin-top: -10px;
+  margin-bottom: -134px;
+  font-family: 'Quicksand';
+}
+
+.vendorhome-format {
+  background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
+  background-size: cover;
+  height: 737px;
+  padding-top: 20px;
+  margin-top: -10px;
+  margin-bottom: -134px;
+  font-family: 'Quicksand';
 }
 
 .ui.borderless.middlemenu.menu {
