@@ -42,7 +42,7 @@ class VendorAdmin extends React.Component {
   render() {
     return (
         <Card centered>
-          <Image floated ='centered' src={this.props.vendor.image} id={'picSize'}/>
+          <Image centered src={this.props.vendor.image} id={'picSize'}/>
           <Card.Content>
             <Card.Header>{this.props.vendor.name} </Card.Header>
             <Card.Meta>{this.props.vendor.location}</Card.Meta>
@@ -50,7 +50,7 @@ class VendorAdmin extends React.Component {
               {this.props.vendor.description}
             </Card.Description>
             <Button style={ { marginTop: '25px' } }
-                    negative={'true'}
+                    negative={true}
                     attached={'bottom'}
                     content={'Delete'}
                     onClick={() => { this.handleClick(this.props.vendor._id); } }>

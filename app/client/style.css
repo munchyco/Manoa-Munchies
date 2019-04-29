@@ -213,11 +213,17 @@ center-image-listvendors{
   margin-left: 43.5%;
 }
 
+.ui.card,
+.ui.cards>.card {
+  background-color: #004030;
+}
+
 #picSize{
  width: 200px;
   height: 200px;
   border-radius: 50% !important;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .mysection{
