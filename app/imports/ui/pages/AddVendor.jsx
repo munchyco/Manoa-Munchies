@@ -83,6 +83,25 @@ const foodOptions = [
   },
 ];
 
+const vendorTypes = [
+  {
+    label: 'To-Go',
+    value: 'ToGo',
+  },
+  {
+    label: 'Made-To-Order',
+    value: 'MadeToOrder',
+  },
+  {
+    label: 'Food Truck',
+    value: 'FoodTruck',
+  },
+  {
+    label: 'Buffet',
+    value: 'Buffet',
+  },
+];
+
 const locationOptions = [
   {
     label: 'Paradise Palms',
@@ -130,7 +149,6 @@ class AddVendor extends React.Component {
     super(props);
     this.submit = this.submit.bind(this);
     this.insertCallback = this.insertCallback.bind(this);
-    this.formRef = null;
   }
 
   /** Notify the user of the results of the submit. If successful, clear the form. */
@@ -182,9 +200,9 @@ class AddVendor extends React.Component {
                                style={{ color: 'white' }}
                   />
                 </Form.Group>
-                <SelectField name='vendorPrice' options={priceOptions}/>
-                <TextField name='vendorType'/>
-                <SelectField name='location' options={locationOptions}/>
+                <SelectField name='vendorPrice' options={priceOptions} placeholder='Select Average Price'/>
+                <SelectField name='vendorType' options={vendorTypes} placeholder='Select Vendor Type'/>
+                <SelectField name='location' options={locationOptions} placeholder='Select Location'/>
                 <TextField name='image' label='Image URL (Please link a square image!)'/>
                 <Form.Group inline>
                   <BoolField name='vegan'/>
