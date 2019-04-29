@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Foods } from '../../api/food/food.js';
+import { Users } from '../../api/user/user';
 
 /** Initialize the database with a default data document. */
 function addData(data) {
@@ -30,6 +31,26 @@ Meteor.publish('AllFoods', function publish() {
   if (this.userId) {
     //  const username = Meteor.users.findOne(this.userId).username;
     return Foods.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish('UserPreferredFoods', function publish() {
+  if (this.userId) {
+    return Foods.find(
+        { $or: [{ foodTypeOne: Users.findOne({ owner: Meteor.user().username }).foodTypeOne },
+              { foodTypeOne: Users.findOne({ owner: Meteor.user().username }).foodTypeTwo },
+              { foodTypeOne: Users.findOne({ owner: Meteor.user().username }).foodTypeThree },
+              { foodTypeTwo: Users.findOne({ owner: Meteor.user().username }).foodTypeOne },
+              { foodTypeTwo: Users.findOne({ owner: Meteor.user().username }).foodTypeTwo },
+              { foodTypeTwo: Users.findOne({ owner: Meteor.user().username }).foodTypeThree },
+              { foodTypeThree: Users.findOne({ owner: Meteor.user().username }).foodTypeOne },
+              { foodTypeThree: Users.findOne({ owner: Meteor.user().username }).foodTypeTwo },
+              { foodTypeThree: Users.findOne({ owner: Meteor.user().username }).foodTypeThree },
+            ] },
+            { vegan: Users.findOne({ owner: Meteor.user().username }).vegan },
+            { glutenFree: Users.findOne({ owner: Meteor.user().username }).glutenFree },
+    );
   }
   return this.ready();
 });

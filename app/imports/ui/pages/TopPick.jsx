@@ -2,6 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Foods } from '/imports/api/food/food';
+import { Users } from '/imports/api/user/user';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import '/client/style.css';
@@ -42,7 +43,7 @@ TopPick.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Food documents.
-  const subscription = Meteor.subscribe('AllFoods');
+  const subscription = Meteor.subscribe('UserPreferredFoods');
   return {
     foods: Foods.find({}).fetch(),
     ready: subscription.ready(),
