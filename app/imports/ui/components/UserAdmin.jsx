@@ -41,13 +41,26 @@ class UserAdmin extends React.Component {
         <Card centered>
           <Card.Content>
             <Card.Header>{this.props.user.owner} </Card.Header>
-            <Card.Meta>{this.props.user.location}</Card.Meta>
-            <Card.Description>
-              {this.props.user.foodTypeOne}
-              {this.props.user.foodTypeTwo}
-              {this.props.user.foodTypeThree}
-            </Card.Description>
-            <Button attached={'bottom'}
+            <Card.Description>{this.props.user.location}</Card.Description>
+          </Card.Content>
+        <Card.Content textAlign={'center'} >
+          <p><b>Food Type 1:  </b></p>
+          <p>  </p>
+          {this.props.user.foodTypeOne}
+        </Card.Content>
+          <Card.Content textAlign={'center'} >
+            <p><b>Food Type 2:  </b></p>
+            <p>  </p>
+            {this.props.user.foodTypeTwo}
+          </Card.Content>
+          <Card.Content textAlign={'center'} >
+            <p><b>Food Type 3:  </b></p>
+            <p>  </p>
+            {this.props.user.foodTypeThree}
+          </Card.Content>
+          <Card.Content>
+            <Button negative={true}
+                    attached={'bottom'}
                     content={'Delete'}
                     onClick={() => { this.handleClick(this.props.user._id); } }>
 
