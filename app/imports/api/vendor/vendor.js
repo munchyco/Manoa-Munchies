@@ -5,20 +5,55 @@ import { Tracker } from 'meteor/tracker';
 const Vendors = new Mongo.Collection('Vendors');
 
 const VendorsSchema = new SimpleSchema({
-  name: String,
-  foodTypeOne: String,     //food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
-  foodTypeTwo: String,
-  foodTypeThree: String,
-  vegan: Boolean,          //boolean values for whether the restaurant offers vegan, GF and healthy options.
-  glutenFree: Boolean,
-  vendorPrice: String, //this will be either $/$$/$$$
-  vendorType: String,  //vendor types such as "Food Truck", "Pre-made To-go," "Made To Order"
-  location: String,        //dining hall, potentially coordinates lat/long that could be used to get distance to user?
-  image: String,           //image of food/logo
-  description: String,     //tagline for vendor
-  owner: String            //vendor POC account
+foodTypeOne: {
+  type: String,
+      optional: false,
+},    // favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
+foodTypeTwo: {
+  type: String,
+      optional: false,
+},
+foodTypeThree: {
+  type: String,
+      optional: false,
+},
+name: {
+  type: String,
+      optional: false,
+},
+image: {
+  type: String,
+      optional: false,
+},
+description: {
+  type: String,
+      optional: false,
+},
+vegan: {
+  type: Boolean,
+      optional: true,
+},
+glutenFree: {
+  type: Boolean,
+      optional: true,
+},
+vendorType: {
+  type: String,
+      optional: false,
+},
+vendorPrice: {
+  type: String,
+      optional: false,
+}, //typical price range student wants.
+location: {
+  type: String,
+      optional: false,
+},       //usual place on campus.
+owner: {
+  type: String,
+      optional: false,
+}           //user account
 }, { tracker: Tracker });
-
 Vendors.attachSchema(VendorsSchema);
 
 export { Vendors, VendorsSchema };

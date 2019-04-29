@@ -204,7 +204,8 @@ class EditUserProfile extends React.Component {
                 <Form.Group inline>
                 <BoolField name='ToGo'/>
                 <BoolField name='FoodTruck'/>
-                <BoolField name='MadeToOrder' /><BoolField name='Buffet' />
+                <BoolField name='MadeToOrder' />
+                <BoolField name='Buffet' />
                 </Form.Group>
                 <Form.Group inline>
                 <BoolField name='restaurantPrice1' label='$0-10' />
