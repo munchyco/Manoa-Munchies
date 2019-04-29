@@ -226,10 +226,6 @@
   padding-top: 10px;
 }
 
-.ui.card,
-.ui.cards>.card {
-  background-color: #004030;
-}
 
 #picSize {
  width: 200px;
