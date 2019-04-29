@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
-@import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 .manoa-background {
   background: url('https://i.ibb.co/5Wd0VTN/background.png') no-repeat center center fixed;
   background-size: cover;
-}
-
-.green-background {
-  background-color: #004030;
-  padding-bottom: 800px;
 }
 
 .white {
@@ -26,10 +20,14 @@
   color: #004030;
 }
 
-.white-logo{
+.white-logo {
   font-family: 'Quicksand';
   color: white;
   font-size: 40px;
+}
+
+.consistent-font {
+  font-family: 'Quicksand';
 }
 
 .white-logo-under{
@@ -121,11 +119,6 @@ center-image-listvendors{
 .Tight {
 }
 
-.green-background {
-  background-color: #004030;
-  color: white;
-}
-
 .ui.borderless.middlemenu.menu {
   box-shadow: none;
   border: none;
@@ -142,8 +135,15 @@ center-image-listvendors{
 }
 
 .green-background {
+  margin-top: 15px;
   background-color: #004030;
   color: white;
+  padding-bottom: 15px;
+  font-family: 'Quicksand';
+}
+
+.signout-format {
+  margin-bottom: 25px;
 }
 
 .ui.borderless.middlemenu.menu {
