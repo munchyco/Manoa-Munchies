@@ -117,6 +117,11 @@ const priceOptions = [
   },
 ];
 
+const textStyle = {
+  fontSize: '40px',
+  fontFamily: 'Quicksand',
+};
+
 /** Renders the Page for adding a document. */
 class AddVendor extends React.Component {
 
@@ -152,8 +157,8 @@ class AddVendor extends React.Component {
         <div className="center-padding">
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>
-              <p className="consistent-font">Add Vendor</p>
+            <Header as="h2" textAlign="center" style={textStyle} inverted>
+              <p>Add Vendor</p>
             </Header>
             <AutoForm ref={(ref) => { this.formRef = ref; }}
                       schema={VendorsSchema} onSubmit={this.submit}>
