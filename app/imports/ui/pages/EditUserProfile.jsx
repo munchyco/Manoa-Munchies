@@ -152,7 +152,7 @@ class EditUserProfile extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
-    this.state=this.handleNoDoc();
+    this.state = this.handleNoDoc();
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
@@ -192,7 +192,7 @@ class EditUserProfile extends React.Component {
         <Grid container centered style={styles}>
           <Grid.Column>
             <Header as="h2" textAlign="center" style={textStyle}>Edit Profile</Header>
-            <AutoForm schema={UsersSchema} onSubmit={this.submit} model={this.state} color='black' inverted>
+            <AutoForm schema={UsersSchema} onSubmit={this.submit} model={this.state} color='black' inverted={'true'}>
               <Segment inverted>
                 <SelectField name='foodTypeOne' options={foodOptions} />
                 <SelectField name='foodTypeTwo' options={foodOptions} />

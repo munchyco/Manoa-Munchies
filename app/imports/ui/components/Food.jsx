@@ -9,7 +9,7 @@ class Food extends React.Component {
   render() {
     return (
         <Card color='black' style={ { border: 'none' } } centered>
-          <Image floated ='centered' src={this.props.food.image} id={'picSize'} />
+          <Image centered src={this.props.food.image} id={'picSize'} />
           <Card.Content style={ { border: 'none' } }>
             <Card.Header>{this.props.food.name} </Card.Header>
             <Card.Meta>{this.props.food.location}</Card.Meta>

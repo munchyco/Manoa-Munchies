@@ -23,7 +23,9 @@ class TopPick extends React.Component {
     return (
         <div className="center-image-toppicks" style={ { border: 'none' } }>
         <Container>
-          <Header as="h2" textAlign="center" style={ { paddingBottom: '30px' } } inverted>Today's Top Picks</Header>
+          <Header as="h2" textAlign="center" style={ { paddingBottom: '30px' } } inverted>
+            <p className="consistent-font">Today's Top Picks</p>
+          </Header>
           <Card.Group style={ { border: 'none' } }>
             {this.props.foods.map((food, index) => <Food key={index}
                                                                 food={food}/>)}

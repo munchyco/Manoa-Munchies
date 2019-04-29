@@ -24,7 +24,9 @@ class AdminUser extends React.Component {
     return (
         <div className="center-image-listvendors">
           <Container>
-            <Header as="h2" textAlign="center" inverted>User List</Header>
+            <Header as="h2" textAlign="center" inverted>
+              <p className="consistent-font">User List</p>
+            </Header>
             <Card.Group>
               {this.props.users.map((user, index) => <UserAdmin key={index}
                                                                 user={user}

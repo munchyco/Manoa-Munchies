@@ -70,11 +70,11 @@ export default class Signup extends React.Component {
       return <Redirect to="/"/>;
     }
     return (
-        <Container>
+        <Container className="signup-format">
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
-              <Header as="h2" textAlign="center">
-                Register your account
+              <Header as="h2" textAlign="center" inverted>
+                <p className="consistent-font">Register your account</p>
               </Header>
               <Form onSubmit={this.handleSubmit} color='black' inverted>
                 <Segment stacked inverted>
@@ -109,7 +109,7 @@ export default class Signup extends React.Component {
                   <Form.Button content="Submit"/>
                 </Segment>
               </Form>
-              <Message color='black' inverted>
+              <Message className="consistent-font" color='black' inverted>
                 Already have an account? Login <Link to="/signin">here</Link>
               </Message>
               {this.state.error === '' ? (

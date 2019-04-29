@@ -5,14 +5,15 @@ import { Container, Grid, Search } from 'semantic-ui-react';
 class UserHomePage extends React.Component {
   render() {
     return (
-        <div className="center-image">
-          <Container><Grid columns={1}>
-            <Grid.Column>
-              <div className={'user-home'}>Welcome back!</div>
-              <div className={'user-home-under'}>Lets get started.</div>
-              <Search className={'search-bar'}></Search>
-            </Grid.Column>
-          </Grid>
+        <div className="userhome-format">
+          <Container>
+            <Grid columns={1}>
+              <Grid.Column>
+                <div className={'user-home'}>Welcome back!</div>
+                <div className={'user-home-under'}>Lets get started.</div>
+                <Search className={'search-bar'}></Search>
+              </Grid.Column>
+            </Grid>
           </Container></div>
     );
   }
