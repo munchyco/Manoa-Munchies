@@ -10,6 +10,6 @@ export default class TopMenu extends React.Component {
           <Menu.Item>View Users</Menu.Item>
           <Menu.Item position={'right'}> jeb3@hawaii.edu </Menu.Item>
         </Menu>
-    )
+    );
   }
 }

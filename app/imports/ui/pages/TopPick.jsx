@@ -58,13 +58,13 @@ TopPick.propTypes = {
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
-  // Get access to Food documents.
   const subscription = Meteor.subscribe('AllFoods');
   const subscription2 = Meteor.subscribe('Users');
   const foodsArray = Foods.find({}).fetch();
   const userProfile = Users.findOne();
   return {
-    foods: shuffleArray(filter(foodsArray, function (food) {  //filters based on User preferences and shuffles
+    /** filters based on User preferences and shuffles */
+    foods: shuffleArray(filter(foodsArray, function (food) {
       if ((userProfile.vegan === food.vegan) &&
           (userProfile.glutenFree === food.glutenFree) &&
           (userProfile.location === food.location) &&

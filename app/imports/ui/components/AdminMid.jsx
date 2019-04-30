@@ -7,6 +7,6 @@ export default class AdminMid extends React.Component {
         <div className={'bump'}>
         <Image fluid src='https://i.ibb.co/5Wd0VTN/background.png'></Image>
         </div>
-    )
+    );
   }
 }

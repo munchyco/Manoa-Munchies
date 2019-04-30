@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
+import { Button } from 'semantic-ui-react';
 import CuisineType from '../components/CuisineType';
 import Price from '../components/Price';
 import FoodTags from '../components/FoodTags';
 import HealthOptions from '../components/HealthOptions';
-import { Button, Form } from 'semantic-ui-react';
 
 
 export default class UserProfile extends React.Component {
@@ -14,31 +14,32 @@ export default class UserProfile extends React.Component {
   constructor(props) {
     super(props);
     this.Tracker = {
-      foodTypeOne: String,    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
+      foodTypeOne: String,
       foodTypeTwo: String,
       foodTypeThree: String,
-      vegan: Boolean,         //boolean values for whether the user cares about vegan, GF and healthy options.
+      vegan: Boolean,
       glutenFree: Boolean,
       healthy: Boolean,
       ToGo: Boolean,
       FoodTruck: Boolean,
       MadeToOrder: Boolean,
       Buffet: Boolean,
-      restaurantPrice1: Boolean, //typical price range student wants.
+      restaurantPrice1: Boolean,
       restaurantPrice2: Boolean,
       restaurantPrice3: Boolean,
-      location: String,       //usual place on campus.
-      owner: String           //user account
-    }
+      location: String,
+      owner: String,
+    };
   }
+
   setUp() {
     this.Tracker.ToGo = true;
     this.Tracker.FoodTruck = false;
     this.Tracker.MadeToOrder = true;
     this.Tracker.Buffet = true;
-    this.Tracker.foodTypeOne = "Chinese";
-    this.Tracker.foodTypeTwo = "Korean";
-    this.Tracker.foodTypeThree = "American";
+    this.Tracker.foodTypeOne = 'Chinese';
+    this.Tracker.foodTypeTwo = 'Korean';
+    this.Tracker.foodTypeThree = 'American';
     this.Tracker.vegan = false;
     this.Tracker.healthy = false;
     this.Tracker.glutenFree = true;
@@ -72,8 +73,8 @@ export default class UserProfile extends React.Component {
                 getGF={this.Tracker.glutenFree}
                 getH={this.Tracker.healthy}
             />
-            <Button style={{marginLeft: "50%",
-                            marginRight: "50%"
+            <Button style={{ marginLeft: '50%',
+                            marginRight: '50%',
             }}>Edit Preferences</Button>
         </div>
     );
