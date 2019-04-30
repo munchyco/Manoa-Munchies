@@ -83,7 +83,7 @@ export default withTracker(() => {
           return true;
       }
       return false;
-    }).slice(0, 5)),
+    })).slice(0, 5),
     ready: (subscription.ready() && subscription2.ready()),
   };
 })(TopPick);
