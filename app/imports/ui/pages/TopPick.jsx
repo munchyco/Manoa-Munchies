@@ -64,7 +64,7 @@ export default withTracker(() => {
   const foodsArray = Foods.find({}).fetch();
   const userProfile = Users.findOne();
   return {
-    foods: shuffleArray(filter(foodsArray, function (food) {
+    foods: shuffleArray(filter(foodsArray, function (food) {  //filters based on User preferences and shuffles
       if ((userProfile.vegan === food.vegan) &&
           (userProfile.glutenFree === food.glutenFree) &&
           (userProfile.location === food.location) &&
