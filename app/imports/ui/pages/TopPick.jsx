@@ -54,7 +54,7 @@ export default withTracker(() => {
   const subscription = Meteor.subscribe('AllFoods');
   const subscription2 = Meteor.subscribe('Users');
   const foodsArray = Foods.find({}).fetch();
-  const userProfile = Users.find();
+  const userProfile = Users.findOne();
   return {
     foods: filter(foodsArray, function (food) {
       if ((userProfile.vegan === food.vegan) &&
@@ -75,7 +75,7 @@ export default withTracker(() => {
           return true;
       }
       return false;
-    }),
+    }).slice(0, 5),
     ready: (subscription.ready() && subscription2.ready()),
   };
 })(TopPick);
