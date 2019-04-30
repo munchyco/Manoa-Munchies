@@ -5,7 +5,7 @@ import { Vendors } from '/imports/api/vendor/vendor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Vendor from '../components/Vendor';
-import { Roles } from 'meteor/alanning:roles';
+import { Foods } from '/imports/api/food/food';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class VendorHome extends React.Component {
@@ -37,6 +37,7 @@ VendorHome.propTypes = {
   vendors: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
   currentUser: PropTypes.string,
+  foods: PropTypes.array.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
@@ -47,6 +48,6 @@ export default withTracker(() => {
     vendors: Vendors.find({}).fetch(),
     ready: subscription.ready(),
     currentUser: Meteor.user() ? Meteor.user().username : '',
+    foods: Foods.find({ location: this.props.vendor.location, name: this.props.vendor.name }).fetch(),
   };
 })(VendorHome);
-

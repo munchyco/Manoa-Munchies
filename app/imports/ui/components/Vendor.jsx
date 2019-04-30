@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Image, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import FoodInsert from '../components/FoodInsert';
 
 
 /** Renders a single row in the List Stuff table. See pages/ListContacts.jsx. */
@@ -27,11 +28,10 @@ class Vendor extends React.Component {
     if (this.state.isToggleOn === false) {
         content = <Card centered>
           <Card.Content>
-            <p>Item 1</p>
-            <p>Item 2</p>
-            <p>Item 3</p>
-            <p>Item 4</p>
-            <p>Item 5</p>
+            <Card.Group style={ { border: 'none' } }>
+                {this.props.foods.map((food, index) => <FoodInsert key={index}
+                                                             food={food}/>)}
+            </Card.Group>
           </Card.Content>
         </Card>;
 } else {
@@ -79,6 +79,8 @@ class Vendor extends React.Component {
 /** Require a document to be passed to this component. */
 Vendor.propTypes = {
   vendor: PropTypes.object.isRequired,
+  foods: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
