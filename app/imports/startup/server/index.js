@@ -65,7 +65,8 @@ Meteor.methods({
 
 Meteor.methods({
   'updateMyStore'({ foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName }) {
-    Vendors.update({ owner: ownerName, location: location }, { $set:{ foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName } });
+    console.log(foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName );
+    Vendors.update({ owner: ownerName, location: location }, { $set:{ foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice } });
   },
 });
 

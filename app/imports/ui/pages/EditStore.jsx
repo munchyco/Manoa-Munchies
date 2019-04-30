@@ -8,6 +8,7 @@ import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import SelectField from 'uniforms-semantic/SelectField';
 import BoolField from 'uniforms-semantic/BoolField';
+import TextField from 'uniforms-semantic/TextField';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -23,24 +24,7 @@ const styles = {
   marginBottom: '100px',
 };
 
-const locations = [
-  {
-    label: 'Paradise Palms',
-    value: 'Paradise Palms',
-  },
-  {
-    label: 'Campus Center',
-    value: 'Campus Center',
-  },
-  {
-    label: 'Athletic Complex',
-    value: 'Athletic Complex',
-  },
-  {
-    label: 'Sustainability Courtyard',
-    value: 'Sustainability Courtyard',
-  },
-];
+
 const foodOptions = [
   {
     label: 'Chinese',
@@ -111,6 +95,38 @@ const foodOptions = [
     value: 'Korean',
   },
 ];
+const priceOptions = [
+  {
+    label: '$: $0-10 Entrees',
+    value: '$',
+  },
+  {
+    label: '$$: $10-20 Entrees',
+    value: '$$',
+  },
+  {
+    label: '$$$: $20+ Entrees',
+    value: '$$$',
+  },
+];
+const vendorTypes = [
+  {
+    label: 'To-Go',
+    value: 'ToGo',
+  },
+  {
+    label: 'Made-To-Order',
+    value: 'MadeToOrder',
+  },
+  {
+    label: 'Food Truck',
+    value: 'FoodTruck',
+  },
+  {
+    label: 'Buffet',
+    value: 'Buffet',
+  },
+];
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class EditStore extends React.Component {
@@ -118,13 +134,8 @@ class EditStore extends React.Component {
   /** On successful submit, insert the data. */
   submit(data) {
     const { foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location } = data;
-    const ownerName = Meteor.call('getUsername', {}, (err) => {
-      if (err) {
-        Bert.alert(err);
-      } else {
-        console.log('successfully retrieved owners name');// success!
-      }
-    });
+    console.log(data);
+    const ownerName = Meteor.user().username;
     Meteor.call('updateMyStore', {
       foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName },
         (error) => (error ?
@@ -136,31 +147,33 @@ class EditStore extends React.Component {
 
 getStores() {
   const vendorLocations = _.pluck(this.props.vendors, 'location');
- let locationList = [{value: ''}];
-  if (_.contains(vendorLocations, "Paradise Palms")){
+ const locationList = [{value: ''}];
+ locationList.pop();
+  if (_.contains(vendorLocations, 'Paradise Palms')){
     locationList.push( {
       label: 'Paradise Palms',
       value: 'Paradise Palms',
     });
   }
-  if (_.contains(vendorLocations, "Athletic Complex")) {
+  if (_.contains(vendorLocations, 'Athletic Complex')) {
     locationList.push({
       label: 'Athletic Complex',
       value: 'Athletic Complex',
     });
   }
-    if (_.contains(vendorLocations, "Sustainability Courtyard")) {
+    if (_.contains(vendorLocations, 'Sustainability Courtyard')) {
       locationList.push({
         label: 'Sustainability Courtyard',
         value: 'Sustainability Courtyard',
       });
     }
-      if (_.contains(vendorLocations, "Athletic Complex")){
+      if (_.contains(vendorLocations, 'Campus Center')){
         locationList.push( {
-          label: 'Athletic Complex',
-          value: 'Athletic Complex',
+          label: 'Campus Center',
+          value: 'Campus Center',
         });
   }
+      locationList
   return locationList;
   }
 
@@ -177,20 +190,17 @@ getStores() {
             <Header as="h2" textAlign="center" style={textStyle}>Edit Profile</Header>
             <AutoForm schema={VendorsSchema} onSubmit={this.submit} color='black' inverted>
               <Segment inverted>
-                <HiddenField name='name' />
-                <SelectField name='location' options={location}/>
-                <SelectField name='foodTypeOne' options={foodOptions} />
-                <SelectField name='foodTypeTwo' options={foodOptions} />
-                <SelectField name='foodTypeThree' options={foodOptions} />
+                <TextField name='name' />
+                <TextField name='description' />
+                <SelectField name='location' placeholder options={location}/>
+                <SelectField name='foodTypeOne' options={foodOptions} placeholder='Food Type One' />
+                <SelectField name='foodTypeTwo' options={foodOptions} placeholder='Food Type Two'/>
+                <SelectField name='foodTypeThree' options={foodOptions} placeholder='Food Type Three'/>
+                <SelectField name='vendorType' options={vendorTypes} placeholder='Select Vendor Type'/>
+                <SelectField name='vendorPrice' options={priceOptions} placeholder='Select Vendor Price'/>
                 <Form.Group inline>
                   <BoolField name='vegan'/>
                   <BoolField name='glutenFree' />
-                </Form.Group>
-                <Form.Group inline>
-                  <SelectField name='vendorType' options={foodOptions} />
-                </Form.Group>
-                <Form.Group inline>
-                  <SelectField name='vendorPrice' options={foodOptions} />
                 </Form.Group>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
