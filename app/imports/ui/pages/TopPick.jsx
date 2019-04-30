@@ -42,6 +42,13 @@ class TopPick extends React.Component {
   }
 }
 
+function shuffleArray(inputArray) {
+  for (let i = inputArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [inputArray[i], inputArray[j]] = [inputArray[j], inputArray[i]];
+  }
+}
+
 /** Require an array of Food documents in the props. */
 TopPick.propTypes = {
   foods: PropTypes.array.isRequired,
@@ -56,7 +63,7 @@ export default withTracker(() => {
   const foodsArray = Foods.find({}).fetch();
   const userProfile = Users.findOne();
   return {
-    foods: filter(foodsArray, function (food) {
+    foods: shuffleArray(filter(foodsArray, function (food) {
       if ((userProfile.vegan === food.vegan) &&
           (userProfile.glutenFree === food.glutenFree) &&
           (userProfile.location === food.location) &&
@@ -75,7 +82,7 @@ export default withTracker(() => {
           return true;
       }
       return false;
-    }).slice(0, 5),
+    }).slice(0, 5)),
     ready: (subscription.ready() && subscription2.ready()),
   };
 })(TopPick);
