@@ -19,15 +19,15 @@ foodTypeThree: {
 },
 name: {
   type: String,
-      optional: false,
+      optional: true,
 },
 image: {
   type: String,
-      optional: false,
+      optional: true,
 },
 description: {
   type: String,
-      optional: false,
+      optional: true,
 },
 vegan: {
   type: Boolean,
@@ -47,11 +47,11 @@ vendorPrice: {
 }, //typical price range student wants.
 location: {
   type: String,
-      optional: false,
+      optional: true,
 },       //usual place on campus.
 owner: {
   type: String,
-      optional: false,
+      optional: true,
 }           //user account
 }, { tracker: Tracker });
 Vendors.attachSchema(VendorsSchema);

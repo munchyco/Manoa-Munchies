@@ -59,7 +59,7 @@ class UserAdmin extends React.Component {
             {this.props.user.foodTypeThree}
           </Card.Content>
           <Card.Content>
-            <Button type={'negative'}
+            <Button negative={true}
                     attached={'bottom'}
                     content={'Delete'}
                     onClick={() => { this.handleClick(this.props.user._id); } }>
