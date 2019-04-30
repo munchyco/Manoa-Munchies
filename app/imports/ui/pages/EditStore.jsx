@@ -135,16 +135,42 @@ class EditStore extends React.Component {
   }
 
 getStores() {
-  return _.pluck(this.props.vendors, 'location');
-}
+  const vendorLocations = _.pluck(this.props.vendors, 'location');
+ let locationList = [{value: ''}];
+  if (_.contains(vendorLocations, "Paradise Palms")){
+    locationList.push( {
+      label: 'Paradise Palms',
+      value: 'Paradise Palms',
+    });
+  }
+  if (_.contains(vendorLocations, "Athletic Complex")) {
+    locationList.push({
+      label: 'Athletic Complex',
+      value: 'Athletic Complex',
+    });
+  }
+    if (_.contains(vendorLocations, "Sustainability Courtyard")) {
+      locationList.push({
+        label: 'Sustainability Courtyard',
+        value: 'Sustainability Courtyard',
+      });
+    }
+      if (_.contains(vendorLocations, "Athletic Complex")){
+        locationList.push( {
+          label: 'Athletic Complex',
+          value: 'Athletic Complex',
+        });
+  }
+  return locationList;
+  }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+    return (this.props.ready) ? this.renderPage(this.getStores()) : <Loader active>Getting data</Loader>;
   }
 
   /** Render the page once subscriptions have been received. */
-  renderPage() {
+  renderPage(location) {
     return (
         <Grid container centered style={styles}>
           <Grid.Column>
@@ -152,7 +178,7 @@ getStores() {
             <AutoForm schema={VendorsSchema} onSubmit={this.submit} color='black' inverted>
               <Segment inverted>
                 <HiddenField name='name' />
-                <SelectField name='location' options={() => this.getStores()}/>
+                <SelectField name='location' options={location}/>
                 <SelectField name='foodTypeOne' options={foodOptions} />
                 <SelectField name='foodTypeTwo' options={foodOptions} />
                 <SelectField name='foodTypeThree' options={foodOptions} />
