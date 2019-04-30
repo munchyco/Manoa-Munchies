@@ -23,6 +23,24 @@ const styles = {
   marginBottom: '100px',
 };
 
+const locations = [
+  {
+    label: 'Paradise Palms',
+    value: 'Paradise Palms',
+  },
+  {
+    label: 'Campus Center',
+    value: 'Campus Center',
+  },
+  {
+    label: 'Athletic Complex',
+    value: 'Athletic Complex',
+  },
+  {
+    label: 'Sustainability Courtyard',
+    value: 'Sustainability Courtyard',
+  },
+];
 const foodOptions = [
   {
     label: 'Chinese',
