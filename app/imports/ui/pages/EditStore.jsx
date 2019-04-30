@@ -136,19 +136,37 @@ class EditStore extends React.Component {
     const { foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location } = data;
     console.log(data);
     const ownerName = Meteor.user().username;
-    Meteor.call('updateMyStore', {
-      foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName },
-        (error) => (error ?
-        Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
-        Bert.alert({ type: 'success', message: 'Update succeeded' })));
-    // Users.update({_id:id}, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo,
-    // FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } },
+    if (!location) {
+      Bert.alert({ type: 'danger', message: 'You have no stores' });
+    } else {
+      Meteor.call('updateMyStore', {
+            foodTypeOne,
+            foodTypeTwo,
+            foodTypeThree,
+            name,
+            description,
+            vegan,
+            glutenFree,
+            vendorType,
+            vendorPrice,
+            location,
+            ownerName
+          },
+          (error) => (error ?
+              Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
+              Bert.alert({ type: 'success', message: 'Update succeeded' })));
+      // Users.update({_id:id}, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo,
+      // FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } },
+    }
   }
 
 getStores() {
   const vendorLocations = _.pluck(this.props.vendors, 'location');
  const locationList = [{value: ''}];
  locationList.pop();
+ if (this.props.vendors.length < 1){
+   Bert.alert({ type: 'danger', message: 'You have no stores' });
+ }
   if (_.contains(vendorLocations, 'Paradise Palms')){
     locationList.push( {
       label: 'Paradise Palms',
@@ -173,7 +191,6 @@ getStores() {
           value: 'Campus Center',
         });
   }
-      locationList
   return locationList;
   }
 
