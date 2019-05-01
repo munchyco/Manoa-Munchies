@@ -18,7 +18,6 @@ import VendorHome from '../pages/VendorHome';
 import EditStore from '../pages/EditStore';
 import TopPick from '../pages/TopPick';
 import BottomFooter from '../components/BottomFooter';
-import EditPreferences from '../pages/EditPreferences';
 import UserHomePage from '../pages/UserHomePage';
 import EditUserProfile from '../pages/EditUserProfile';
 import AdminUser from '../pages/AdminUser';
