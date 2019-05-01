@@ -57,7 +57,8 @@
 .listvendors-format {
   background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
   background-size: cover;
-  height: 1100px;
+  min-height: 1100px;
+  height: auto;
   padding-top: 20px;
   margin-top: -10px;
   font-family: 'Quicksand';
@@ -175,7 +176,8 @@
 .vendorhome-format {
   background: no-repeat url("https://i.ibb.co/5Wd0VTN/background.png");
   background-size: cover;
-  height: 737px;
+  min-height: 987px;
+  height: auto;
   padding-top: 20px;
   margin-top: -10px;
   margin-bottom: -134px;
@@ -239,8 +241,8 @@
 
 
 #picSize {
- width: 200px;
-  height: 200px;
+ width: 150px;
+  height: 150px;
   border-radius: 50% !important;
   margin-top: 20px;
   margin-bottom: 20px;
