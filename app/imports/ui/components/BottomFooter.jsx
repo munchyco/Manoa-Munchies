@@ -34,6 +34,6 @@ export default class BottomFooter extends React.Component {
           </Grid>
           </Container>
         </div>
-    )
+    );
   }
 }

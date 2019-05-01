@@ -13,8 +13,8 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
 
-//trouble here is that we need to be able to select which location to update. can do it with a primary form, or could
-//do it with a distinct URL? not sure.
+/** trouble here is that we need to be able to select which location to update. can do it with a primary form, */
+/** or could do it with a distinct URL? not sure. */
 
 
 const textStyle = {

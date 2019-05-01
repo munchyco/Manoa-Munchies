@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Grid, Button, Container } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
