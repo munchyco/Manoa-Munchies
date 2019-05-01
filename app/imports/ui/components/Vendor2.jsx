@@ -35,7 +35,7 @@ class Vendor2 extends React.Component {
         <Card.Content>
           <Card.Group>
             {this.props.foods.map(function(food, index) {
-               if((food.vendorName) === a)
+               if((food.restaurantName) === a)
                {
                  return <Food key={index}
                              food={food}/>
