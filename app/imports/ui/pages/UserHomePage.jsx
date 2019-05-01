@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Icon, Segment } from 'semantic-ui-react';
+import { Container, Grid, Icon, Divider, Segment } from 'semantic-ui-react';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 /** Render a Not Found page if the user enters a URL that doesn't match any route. */
@@ -12,11 +12,11 @@ class UserHomePage extends React.Component {
               <div className={'user-home'}>Welcome back!</div>
               <div className={'user-home-under'}>Lets get started.</div>
               <Segment>
-                <Grid columns={3}>
+                <Grid columns={2}>
                   <Grid.Column className={'home-columns'}>
                     <Icon size='massive' name='user'></Icon>
-                    <div className={'column-text'}>Add and edit your Food Vendors by clicking on the
-                      &lsquo;Add Vendor&rsquo; &lsquo;Vendor Edit Your Stores&rsquo; section in the
+                    <div className={'column-text'}>Discover and edit your preferences by clicking on the
+                      &lsquo;User Profile&rsquo; section in the
                       navigation bar.</div>
                   </Grid.Column>
                   <Grid.Column className={'home-columns'}>
@@ -25,13 +25,8 @@ class UserHomePage extends React.Component {
                       clicking on the
                       &lsquo;Vendor List&rsquo; or &lsquo;Top Picks&rsquo; section in the navigation bar.</div>
                   </Grid.Column>
-                  <Grid.Column className={'home-columns'}>
-                    <Icon size='massive' name='briefcase'></Icon>
-                    <div className={'column-text'}> (*VENDORS ONLY*) Add and edit your Food Vendors by clicking
-                      the &lsquo;Add Vendor&rsquo; or &lsquo;Vendor Edit Your Stores&rsquo; section in the
-                      navigation bar.</div>
-                  </Grid.Column>
                 </Grid>
+                <Divider vertical>Or</Divider>
               </Segment>
               <div className={'user-home-twitter'}>Keep up to date with our Twitter for announcements on weekly
                 Top Picks!</div>
