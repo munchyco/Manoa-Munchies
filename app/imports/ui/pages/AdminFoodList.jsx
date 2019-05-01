@@ -10,7 +10,7 @@ import FoodDelete from '../components/FoodDelete';
 
 
 /** Renders a table containing all of the Vendor documents. */
-class VendorViewFoods extends React.Component {
+class AdminFoodList extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -28,7 +28,7 @@ class VendorViewFoods extends React.Component {
             </Header>
             <Card.Group>
               {this.props.foods.map((food, index) => <FoodDelete key={index}
-                                                                      food={food}
+                                                                 food={food}
               />)
               }
             </Card.Group>
@@ -39,7 +39,7 @@ class VendorViewFoods extends React.Component {
 }
 
 /** Require an array of Vendor documents in the props. */
-VendorViewFoods.propTypes = {
+AdminFoodList.propTypes = {
   foods: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -47,9 +47,9 @@ VendorViewFoods.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Vendor documents.
-  const subscription = Meteor.subscribe('Foods');
+  const subscription = Meteor.subscribe('AllFoods');
   return {
-    foods: Foods.find({ owner: Meteor.user().username }).fetch(),
+    foods: Foods.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(VendorViewFoods);
+})(AdminFoodList);

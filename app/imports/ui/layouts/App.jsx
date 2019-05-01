@@ -22,6 +22,7 @@ import EditUserProfile from '../pages/EditUserProfile';
 import AddFood from '../pages/AddFood';
 import AdminUser from '../pages/AdminUser';
 import VendorViewFoods from '../pages/VendorViewFoods';
+import AdminFoodList from '../pages/AdminFoodList';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -46,6 +47,7 @@ class App extends React.Component {
               <CustomerProtectedRoute path="/user" component={EditUserProfile}/>
               <ProtectedRoute path="/edit/:_id" component={VendorHome}/>
               <AdminProtectedRoute path="/admin" component={AdminViewVendors}/>
+              <AdminProtectedRoute path="/adminFoodList" component={AdminFoodList}/>
               <AdminProtectedRoute path="/adminUser" component={AdminUser}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
