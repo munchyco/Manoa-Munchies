@@ -105,6 +105,14 @@ const foodOptions = [
     label: 'Spanish',
     value: 'Spanish',
   },
+  {
+    label: 'Juice',
+    value: 'Juice',
+  },
+  {
+    label: 'Pizza',
+    value: 'Pizza',
+  },
 ];
 
 const vendorTypes = [
@@ -162,6 +170,10 @@ const locationOptions = [
   {
     label: 'Krauss Hall',
     value: 'Krauss Hall',
+  },
+  {
+    label: 'Hemenway Hall',
+    value: 'Hemenway Hall',
   },
 ];
 
