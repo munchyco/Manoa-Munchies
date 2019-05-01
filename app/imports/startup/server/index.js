@@ -95,47 +95,21 @@ Meteor.methods({
   } });
 
 Meteor.methods({
-  'removeFood'({ name,
-                 foodTypeOne,
-                 foodTypeTwo,
-                 foodTypeThree,
-                 vegan,
-                 glutenFree,
-                 foodPrice,
-                 foodType,
-                 location,
-                 image,
-                 description,
-                 restaurantName,
-                 owner }) {
-    Foods.remove(
-        { name: name,
-          foodTypeOne: foodTypeOne,
-          foodTypeTwo: foodTypeTwo,
-          foodTypeThree: foodTypeThree,
-          vegan: vegan,
-          glutenFree: glutenFree,
-          foodPrice: foodPrice,
-          foodType: foodType,
-          location: location,
-          image: image,
-          description: description,
-          restaurantName: restaurantName,
-          ownerName: owner },
-    );
-  } },
-);
+  'removeFood'({ id }) {
+    Foods.remove({ _id: id });
+  },
+});
 
 Meteor.methods({
   'updateMyStore'({ foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName }) {
-    console.log(foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName );
-    Vendors.update({ owner: ownerName, location: location }, { $set:{ foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice } });
+    console.log(foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName);
+    Vendors.update({ owner: ownerName, location: location }, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice } });
   },
 });
 
 Meteor.methods({
   'updateMyUser'({ foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName }) {
-    Users.update({owner: ownerName},{$set:{foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location}});
+    Users.update({ owner: ownerName }, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } });
   },
 });
 
