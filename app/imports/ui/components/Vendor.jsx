@@ -48,7 +48,7 @@ class Vendor extends React.Component {
     }
 
     return (
-        <Card centered>
+        <Card centered id={'cardSize'}>
           <Card.Content>
             <Card.Header>{this.props.vendor.name} </Card.Header>
             <Image floated='right' size='tiny' src={this.props.vendor.image} />
@@ -72,13 +72,12 @@ class Vendor extends React.Component {
             </div>
           </Card.Content>
           <Card.Content extra>
-            <p>Items:</p>
             <div className="ui two buttons">
               <Button as={NavLink} activeClassName="active" exact to="/vendorAddFood" key='vendorAddFood' color = 'blue'>
-                Add
+                Add Items
               </Button>
               <Button as={NavLink} activeClassName="active" exact to="/vendorFoodList" key='vendorFoodList' color = 'red'>
-                Delete
+                Delete Items
               </Button>
             </div>
           </Card.Content>
