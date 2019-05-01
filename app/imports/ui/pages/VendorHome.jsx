@@ -4,7 +4,7 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Vendors } from '/imports/api/vendor/vendor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import Vendor2 from '../components/Vendor2';
+import Vendor from '../components/Vendor';
 
 const textStyle = {
   fontSize: '40px',
@@ -31,7 +31,7 @@ class VendorHome extends React.Component {
               <p className="consistent-font">Welcome back, {this.props.currentUser}</p>
             </Header>
             <Card.Group>
-              {this.props.vendors.map((vendor, index) => <Vendor2 key={index}
+              {this.props.vendors.map((vendor, index) => <Vendor key={index}
                                                                  vendor={vendor}/>)}
             </Card.Group>
           </Container>

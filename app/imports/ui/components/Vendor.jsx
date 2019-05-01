@@ -1,8 +1,10 @@
 import React from 'react';
 import { Card, Image, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-
+import { withRouter, NavLink } from 'react-router-dom';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Foods } from '/imports/api/food/food';
+import Food from '../components/Food';
 
 /** Renders a single row in the List Stuff table. See pages/ListContacts.jsx. */
 class Vendor extends React.Component {
@@ -20,23 +22,28 @@ class Vendor extends React.Component {
     }));
   }
 
+
   render() {
 
     let content;
-
+    const a = this.props.vendor.name;
 
     if (this.state.isToggleOn === false) {
 
-        content = <Card centered>
-          <Card.Content>
-            <p>Item 1</p>
-            <p>Item 2</p>
-            <p>Item 3</p>
-            <p>Item 4</p>
-            <p>Item 5</p>
-          </Card.Content>
-        </Card>;
-} else {
+      content = <Card centered>
+        <Card.Content>
+          <Card.Group>
+            {this.props.foods.map(function(food, index) {
+              if ((food.restaurantName) === a) {
+                return <Food key={index}
+                             food={food}/>;
+              }
+            })}
+          </Card.Group>
+        </Card.Content>
+      </Card>;
+
+    } else {
       content = '';
     }
 
@@ -44,7 +51,7 @@ class Vendor extends React.Component {
         <Card centered>
           <Card.Content>
             <Card.Header>{this.props.vendor.name} </Card.Header>
-            <Image floated='right' size='mini' src={this.props.vendor.image} />
+            <Image floated='right' size='tiny' src={this.props.vendor.image} />
             <Card.Meta>{this.props.vendor.location}</Card.Meta>
             <Card.Description>
               {this.props.vendor.description}
@@ -63,16 +70,29 @@ class Vendor extends React.Component {
                 {this.props.vendor.foodTypeThree}
               </Button>
             </div>
-            <div className="mysection">
-            <Button centered='true' onClick={this.handleClick}>
-              {this.state.isToggleOn ? 'Available Menu Items' : 'Close'}
-            </Button>
+          </Card.Content>
+          <Card.Content extra>
+            <p>Items:</p>
+            <div className="ui two buttons">
+              <Button as={NavLink} activeClassName="active" exact to="/vendorAddFood" key='vendorAddFood' color = 'blue'>
+                Add
+              </Button>
+              <Button as={NavLink} activeClassName="active" exact to="/vendorFoodList" key='vendorFoodList' color = 'red'>
+                Delete
+              </Button>
             </div>
           </Card.Content>
-
+          <Card.Content extra>
+            <div className="mysection">
+              <Button centered='true' onClick={this.handleClick}>
+                {this.state.isToggleOn ? 'Available Menu Items' : 'Close'}
+              </Button>
+            </div>
+          </Card.Content>
           <Card.Content extra>
             {content}
           </Card.Content>
+
         </Card>
     );
   }
@@ -81,7 +101,18 @@ class Vendor extends React.Component {
 /** Require a document to be passed to this component. */
 Vendor.propTypes = {
   vendor: PropTypes.object.isRequired,
+  foods: PropTypes.array.isRequired,
+
 };
 
+const subscription = Meteor.subscribe('AllFoods');
+
+const VendorContainer = withTracker(() => ({
+  ready: subscription.ready(),
+  currentUser: Meteor.user() ? Meteor.user().username : '',
+  foods: Foods.find({}).fetch(),
+}))(Vendor);
+
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
-export default withRouter(Vendor);
+export default withRouter(VendorContainer);
+
