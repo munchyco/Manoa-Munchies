@@ -19,7 +19,9 @@ import TopPick from '../pages/TopPick';
 import BottomFooter from '../components/BottomFooter';
 import UserHomePage from '../pages/UserHomePage';
 import EditUserProfile from '../pages/EditUserProfile';
+import AddFood from '../pages/AddFood';
 import AdminUser from '../pages/AdminUser';
+import VendorViewFoods from '../pages/VendorViewFoods';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -38,6 +40,8 @@ class App extends React.Component {
               <CustomerProtectedRoute path="/toppick" component={TopPick}/>
               <VendorProtectedRoute path="/vendor" component={VendorHome}/>
               <VendorProtectedRoute path="/storeEdit" component={EditStore}/>
+              <VendorProtectedRoute path="/vendorAddFood" component={AddFood}/>
+              <VendorProtectedRoute path="/vendorFoodList" component={VendorViewFoods}/>
               <ProtectedRoute path="/EditPreferences" component={EditUserProfile}/>
               <CustomerProtectedRoute path="/user" component={EditUserProfile}/>
               <ProtectedRoute path="/edit/:_id" component={VendorHome}/>

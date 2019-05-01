@@ -58,21 +58,58 @@ Meteor.methods({
                 MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName }) {
     Users.insert(
         { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder,
-          Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, owner: ownerName }
+          Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, owner: ownerName },
           );
 } },
 );
 
 Meteor.methods({
+  'addNewFood'({ name,
+                 foodTypeOne,
+                 foodTypeTwo,
+                 foodTypeThree,
+                 vegan,
+                 glutenFree,
+                 foodPrice,
+                 foodType,
+                 location,
+                 image,
+                 description,
+                 restaurantName,
+                 owner }) {
+    Foods.insert(
+        { name,
+          foodTypeOne,
+          foodTypeTwo,
+          foodTypeThree,
+          vegan,
+          glutenFree,
+          foodPrice,
+          foodType,
+          location,
+          image,
+          description,
+          restaurantName,
+          owner },
+    );
+  } });
+
+Meteor.methods({
+  'removeFood'({ id }) {
+    Foods.remove({ _id: id });
+  },
+});
+
+Meteor.methods({
   'updateMyStore'({ foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName }) {
-    console.log(foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName );
-    Vendors.update({ owner: ownerName, location: location }, { $set:{ foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice } });
+    console.log(foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location, ownerName);
+    Vendors.update({ owner: ownerName, location: location }, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice } });
   },
 });
 
 Meteor.methods({
   'updateMyUser'({ foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName }) {
-    Users.update({owner: ownerName},{$set:{foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location}});
+    Users.update({ owner: ownerName }, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } });
   },
 });
 
