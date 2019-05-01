@@ -94,7 +94,40 @@ const foodOptions = [
     label: 'Korean',
     value: 'Korean',
   },
+  {
+    label: 'Nepali',
+    value: 'Nepali',
+  },
+  {
+    label: 'Indian',
+    value: 'Indian',
+  },
+  {
+    label: 'Malaysian',
+    value: 'Malaysian',
+  },
+  {
+    label: 'Ramen',
+    value: 'Ramen',
+  },
+  {
+    label: 'Mexican',
+    value: 'Mexican',
+  },
+  {
+    label: 'Spanish',
+    value: 'Spanish',
+  },
+  {
+    label: 'Juice',
+    value: 'Juice',
+  },
+  {
+    label: 'Pizza',
+    value: 'Pizza',
+  },
 ];
+
 const priceOptions = [
   {
     label: '$: $0-10 Entrees',
@@ -178,17 +211,53 @@ getStores() {
       value: 'Athletic Complex',
     });
   }
-    if (_.contains(vendorLocations, 'Sustainability Courtyard')) {
+  if (_.contains(vendorLocations, 'Sustainability Courtyard')) {
       locationList.push({
         label: 'Sustainability Courtyard',
         value: 'Sustainability Courtyard',
       });
     }
-      if (_.contains(vendorLocations, 'Campus Center')) {
+  if (_.contains(vendorLocations, 'Campus Center')) {
         locationList.push({
           label: 'Campus Center',
           value: 'Campus Center',
         });
+  }
+  if (_.contains(vendorLocations, 'Shidler Hall')) {
+    locationList.push({
+      label: 'Shidler Hall',
+      value: 'Shidler Hall',
+    });
+  }
+  if (_.contains(vendorLocations, 'Holmes Hall')) {
+    locationList.push({
+      label: 'Holmes Hall',
+      value: 'Holmes Hall',
+    });
+  }
+  if (_.contains(vendorLocations, 'Post Building')) {
+    locationList.push({
+      label: 'Post Building',
+      value: 'Post Building',
+    });
+  }
+  if (_.contains(vendorLocations, 'Center for Korean Studies')) {
+    locationList.push({
+      label: 'Center for Korean Studies',
+      value: 'Center for Korean Studies',
+    });
+  }
+  if (_.contains(vendorLocations, 'Krauss Hall')) {
+    locationList.push({
+      label: 'Krauss Hall',
+      value: 'Krauss Hall',
+    });
+  }
+  if (_.contains(vendorLocations, 'Hemenway Hall')) {
+    locationList.push({
+      label: 'Hemenway Hall',
+      value: 'Hemenway Hall',
+    });
   }
   return locationList;
   }
