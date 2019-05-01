@@ -61,7 +61,7 @@ export default withTracker(() => {
   const subscription = Meteor.subscribe('AllFoods');
   const subscription2 = Meteor.subscribe('Users');
   const foodsArray = Foods.find({}).fetch();
-  const userProfile = Users.findOne();
+  const userProfile = Users.findOne({ owner: Meteor.user().username });
   return {
     /** filters based on User preferences and shuffles */
     foods: shuffleArray(filter(foodsArray, function (food) {
