@@ -133,11 +133,11 @@ class EditStore extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location } = data;
+    const { foodTypeOne, foodTypeTwo, foodTypeThree, name, description, image, vegan, glutenFree, vendorType, vendorPrice, location } = data;
     console.log(data);
     const ownerName = Meteor.user().username;
     if (!location) {
-      Bert.alert({ type: 'danger', message: 'You have no stores' });
+      Bert.alert({ type: 'danger', message: 'You have no stores, you cannot edit what you do not have' });
     } else {
       Meteor.call('updateMyStore', {
             foodTypeOne,
@@ -145,6 +145,7 @@ class EditStore extends React.Component {
             foodTypeThree,
             name,
             description,
+            image,
             vegan,
             glutenFree,
             vendorType,
@@ -207,8 +208,9 @@ getStores() {
             <Header as="h2" textAlign="center" style={textStyle}>Edit Profile</Header>
             <AutoForm schema={VendorsSchema} onSubmit={this.submit} color='black' inverted>
               <Segment inverted>
-                <TextField name='name' />
-                <TextField name='description' />
+                <TextField name='name'/>
+                <TextField name='description'/>
+                <TextField name='image'/>
                 <SelectField name='location' placeholder options={location}/>
                 <SelectField name='foodTypeOne' options={foodOptions} placeholder='Food Type One' />
                 <SelectField name='foodTypeTwo' options={foodOptions} placeholder='Food Type Two'/>
