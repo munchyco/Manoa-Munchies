@@ -24,6 +24,7 @@ const styles = {
   marginBottom: '100px',
 };
 
+
 const foodOptions = [
   {
     label: 'Chinese',
@@ -93,40 +94,7 @@ const foodOptions = [
     label: 'Korean',
     value: 'Korean',
   },
-  {
-    label: 'Nepali',
-    value: 'Nepali',
-  },
-  {
-    label: 'Indian',
-    value: 'Indian',
-  },
-  {
-    label: 'Malaysian',
-    value: 'Malaysian',
-  },
-  {
-    label: 'Ramen',
-    value: 'Ramen',
-  },
-  {
-    label: 'Mexican',
-    value: 'Mexican',
-  },
-  {
-    label: 'Spanish',
-    value: 'Spanish',
-  },
-  {
-    label: 'Juice',
-    value: 'Juice',
-  },
-  {
-    label: 'Pizza',
-    value: 'Pizza',
-  },
 ];
-
 const priceOptions = [
   {
     label: '$: $0-10 Entrees',

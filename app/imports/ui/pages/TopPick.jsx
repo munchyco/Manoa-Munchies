@@ -65,8 +65,8 @@ export default withTracker(() => {
   return {
     /** filters based on User preferences and shuffles */
     foods: shuffleArray(filter(foodsArray, function (food) {
-      if (((userProfile.vegan === food.vegan) || (userProfile.vegan === false)) &&
-          ((userProfile.glutenFree === food.glutenFree) || (userProfile.glutenFree === false)) &&
+      if ((userProfile.vegan === food.vegan) &&
+          (userProfile.glutenFree === food.glutenFree) &&
           (userProfile.location === food.location) &&
           (food.foodTypeOne === userProfile.foodTypeOne || food.foodTypeTwo === userProfile.foodTypeOne ||
               food.foodTypeThree === userProfile.foodTypeOne || food.foodTypeOne === userProfile.foodTypeTwo ||
