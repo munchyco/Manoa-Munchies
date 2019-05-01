@@ -58,9 +58,72 @@ Meteor.methods({
                 MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, ownerName }) {
     Users.insert(
         { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo, FoodTruck, MadeToOrder,
-          Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, owner: ownerName }
+          Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location, owner: ownerName },
           );
 } },
+);
+
+Meteor.methods({
+  'addNewFood'({ name,
+                 foodTypeOne,
+                 foodTypeTwo,
+                 foodTypeThree,
+                 vegan,
+                 glutenFree,
+                 foodPrice,
+                 foodType,
+                 location,
+                 image,
+                 description,
+                 restaurantName,
+                 owner }) {
+    Foods.insert(
+        { name,
+          foodTypeOne,
+          foodTypeTwo,
+          foodTypeThree,
+          vegan,
+          glutenFree,
+          foodPrice,
+          foodType,
+          location,
+          image,
+          description,
+          restaurantName,
+          owner },
+    );
+  } });
+
+Meteor.methods({
+  'removeFood'({ name,
+                 foodTypeOne,
+                 foodTypeTwo,
+                 foodTypeThree,
+                 vegan,
+                 glutenFree,
+                 foodPrice,
+                 foodType,
+                 location,
+                 image,
+                 description,
+                 restaurantName,
+                 owner }) {
+    Foods.remove(
+        { name: name,
+          foodTypeOne: foodTypeOne,
+          foodTypeTwo: foodTypeTwo,
+          foodTypeThree: foodTypeThree,
+          vegan: vegan,
+          glutenFree: glutenFree,
+          foodPrice: foodPrice,
+          foodType: foodType,
+          location: location,
+          image: image,
+          description: description,
+          restaurantName: restaurantName,
+          ownerName: owner },
+    );
+  } },
 );
 
 Meteor.methods({
