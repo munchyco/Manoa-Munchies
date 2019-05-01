@@ -4,7 +4,6 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Vendors } from '/imports/api/vendor/vendor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
 import VendorAdmin from '../components/VendorAdmin';

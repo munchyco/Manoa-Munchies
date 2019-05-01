@@ -273,7 +273,7 @@ getStores() {
         <Grid container centered style={styles}>
           <Grid.Column>
             <Header as="h2" textAlign="center" style={textStyle}>Edit Profile</Header>
-            <AutoForm schema={VendorsSchema} onSubmit={this.submit} color='black' inverted>
+            <AutoForm schema={VendorsSchema} onSubmit={this.submit} color='black' inverted={'true'}>
               <Segment inverted>
                 <TextField name='name' />
                 <TextField name='description' />

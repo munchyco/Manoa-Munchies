@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import 'semantic-ui-css/semantic.css';
@@ -139,6 +138,11 @@ AdminProtectedRoute.propTypes = {
 VendorProtectedRoute.propTypes = {
   component: PropTypes.func.isRequired,
   location: PropTypes.object,
-}
+};
+
+CustomerProtectedRoute.propTypes = {
+  component: PropTypes.func.isRequired,
+  location: PropTypes.object,
+};
 
 export default App;
