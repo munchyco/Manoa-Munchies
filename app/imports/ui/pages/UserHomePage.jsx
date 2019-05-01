@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Icon, Divider, Segment } from 'semantic-ui-react';
+import { Container, Grid, Icon, Segment } from 'semantic-ui-react';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 /** Render a Not Found page if the user enters a URL that doesn't match any route. */
@@ -26,7 +26,7 @@ class UserHomePage extends React.Component {
                       &lsquo;Vendor List&rsquo; or &lsquo;Top Picks&rsquo; section in the navigation bar.</div>
                   </Grid.Column>
                   <Grid.Column className={'home-columns'}>
-                    <Icon size='massive' name='briefcase'></Icon>
+                    <Icon size='massive' name='briefcase'> </Icon>
                     <div className={'column-text'}> (*VENDORS ONLY*) Add and edit your Food Vendors by clicking
                       the &lsquo;Add Vendor&rsquo; or &lsquo;Vendor Edit Your Stores&rsquo; section in the
                       navigation bar.</div>
