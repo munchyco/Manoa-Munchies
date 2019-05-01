@@ -400,75 +400,75 @@
     }
   ],
   "foodOptions": [
-  {
-    "label": "Chinese",
-    "value": "Chinese"
-  },
-  {
-    "label": "American",
-    "value": "American"
-  },
-  {
-    "label": "Vietnamese",
-    "value": "Vietnamese"
-  },
-  {
-    "label": "Hawaiian",
-    "value": "Hawaiian"
-  },
-  {
-    "label": "BBQ",
-    "value": "BBQ"
-  },
-  {
-    "label": "Mongolian",
-    "value": "Mongolian"
-  },
-  {
-    "label": "Breakfast",
-    "value": "Breakfast"
-  },
-  {
-    "label": "Donuts",
-    "value": "Donuts"
-  },
-  {
-    "label": "Coffee",
-    "value": "Coffee"
-  },
-  {
-    "label": "French",
-    "value": "French"
-  },
-  {
-    "label": "Egyptian",
-    "value": "Egyptian"
-  },
-  {
-    "label": "Greek",
-    "value": "Greek"
-  },
-  {
-    "label": "Vegetarian",
-    "value": "Vegetarian"
-  },
-  {
-    "label": "Health",
-    "value": "Health"
-  },
-  {
-    "label": "Sandwiches",
-    "value": "Sandwiches"
-  },
-  {
-    "label": "Japanese",
-    "value": "Japanese"
-  },
-  {
-    "label": "Korean",
-    "value": "Korean"
-  }
-],
+    {
+      "label": "Chinese",
+      "value": "Chinese"
+    },
+    {
+      "label": "American",
+      "value": "American"
+    },
+    {
+      "label": "Vietnamese",
+      "value": "Vietnamese"
+    },
+    {
+      "label": "Hawaiian",
+      "value": "Hawaiian"
+    },
+    {
+      "label": "BBQ",
+      "value": "BBQ"
+    },
+    {
+      "label": "Mongolian",
+      "value": "Mongolian"
+    },
+    {
+      "label": "Breakfast",
+      "value": "Breakfast"
+    },
+    {
+      "label": "Donuts",
+      "value": "Donuts"
+    },
+    {
+      "label": "Coffee",
+      "value": "Coffee"
+    },
+    {
+      "label": "French",
+      "value": "French"
+    },
+    {
+      "label": "Egyptian",
+      "value": "Egyptian"
+    },
+    {
+      "label": "Greek",
+      "value": "Greek"
+    },
+    {
+      "label": "Vegetarian",
+      "value": "Vegetarian"
+    },
+    {
+      "label": "Health",
+      "value": "Health"
+    },
+    {
+      "label": "Sandwiches",
+      "value": "Sandwiches"
+    },
+    {
+      "label": "Japanese",
+      "value": "Japanese"
+    },
+    {
+      "label": "Korean",
+      "value": "Korean"
+    }
+  ],
 
   "locationOptions": [
     {
