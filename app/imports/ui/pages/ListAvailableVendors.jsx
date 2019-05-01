@@ -58,7 +58,7 @@ export default withTracker(() => {
   // Get access to Vendor documents.
   const subscription = Meteor.subscribe('AllVendors');
   return {
-    vendors: shuffleArray(Vendors.find({}).fetch()).slice(0, 5),
+    vendors: shuffleArray(Vendors.find({}).fetch()).slice(0, 6),
     ready: subscription.ready(),
   };
 })(ListAvailableVendors);

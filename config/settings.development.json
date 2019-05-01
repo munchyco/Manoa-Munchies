@@ -275,7 +275,7 @@
       "vendorPrice": "$",
       "vendorType": "FoodTruck",
       "location": "Campus Center",
-      "image": "https://content-service.sodexomyway.com/media/Sodexo-56_tcm247-32584_w808_h424_n.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Jamba_Juice_logo.svg/1200px-Jamba_Juice_logo.svg.png",
       "description": "Jamba Juice Hawaii is the category-defining leader in Hawaii for freshly blended-to-order fruit smoothies, juices and healthy snacks.",
       "owner": "jj@foo.com"
     },
@@ -289,7 +289,7 @@
       "vendorPrice": "$",
       "vendorType": "To-Go",
       "location": "Campus Center",
-      "image": "https://content-service.sodexomyway.com/media/Pizza-Hut_Personal%20Pizzas_1920x976_tcm247-8261_w808_h424_n.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Pizza_Hut_logo.svg/1200px-Pizza_Hut_logo.svg.png",
       "description": "Pizza is always a go-to option when you can't decide what to have for lunch. Our Pizza Hut Express location has daily pan Pizza Hut Photo pizza specials, breadsticks, and the popular Wingstreet items! Six different sauces for the wings are offered, and you can even mix and match your favorites. Who knows, you might just create a combo so great, we'll add it to our menu!",
       "owner": "pizzahut@foo.com"
     },
@@ -303,7 +303,7 @@
       "vendorPrice": "$",
       "vendorType": "To-Go",
       "location": "Campus Center",
-      "image": "https://content-service.sodexomyway.com/media/Starbucks-Cold_1920x976_tcm247-8167_w808_h424_n.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png",
       "description": "With a full menu, as well as seasonal and specialty items, coffee fanatics are sure to be pleased. Also available are pastries, fruit cups, and bottled beverages for your purchase. Our location strives to give you the very same experience found at any other Starbucks across the nation. By the way, Starbucks is one of the few retail locations open later into the evening -- perfect for hanging out with some friends or studying! ",
       "owner": "starbucks@foo.com"
     },
@@ -317,7 +317,7 @@
       "vendorPrice": "$",
       "vendorType": "To-Go",
       "location": "Campus Center",
-      "image": "https://content-service.sodexomyway.com/media/stirfresh1_tcm247-32788_w1024_n.jpg",
+      "image": "https://s3-media4.fl.yelpcdn.com/bphoto/f-PX0wDCoejZeaHMT-Q1QA/348s.jpg",
       "description": "Stir-Fresh brings a budget conscious, fresh and healthy, Asian stir fry restaurant to the first floor of Campus Center. Come down today and build your own stir fry, choose a protein and sauce and your lunch will be tossed hot by our expert chefs. Not in the mood for stir fry? Choose from one of our signature bowls. Stop by today and enjoy the Stir-Fresh experience",
       "owner": "stirfresh@foo.com"
     },
@@ -331,7 +331,7 @@
       "vendorPrice": "$$",
       "vendorType": "To-Go",
       "location": "Hemenway Hall",
-      "image": "https://content-service.sodexomyway.com/media/BaLe2_tcm247-32793_w1024_n.jpg?url=https://uhm.sodexomyway.com/",
+      "image": "https://igx.4sqi.net/img/general/200x200/12058905_KnXWvsQ-dfCvyQWcWWlOwkzYi1joIccMnKnnt2KqF3s.jpg",
       "description": "Ba-Le is the perfect stop if you're craving something a little different. Pastries, sandwiches, and pre-made salads are some of their quick lunch options. Also very popular at Ba-Le is pho noodle soup, pad thai, and banh mi sandwiches for those Asian food cravings. Spend your meal time at Ba-Le for a variety of foods and flavors! ",
       "owner": "bale@foo.com"
     }
