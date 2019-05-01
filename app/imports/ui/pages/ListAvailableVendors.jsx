@@ -6,7 +6,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
-import Vendor from '../components/Vendor';
+import Vendor2 from '../components/Vendor2';
 
 const textStyle = {
   fontSize: '40px',
@@ -30,7 +30,7 @@ class ListAvailableVendors extends React.Component {
               Vendor List
             </Header>
             <Card.Group>
-              {this.props.vendors.map((vendor, index) => <Vendor key={index}
+              {this.props.vendors.map((vendor, index) => <Vendor2 key={index}
                                                                  vendor={vendor}/>)}
             </Card.Group>
           </Container>

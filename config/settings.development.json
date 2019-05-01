@@ -160,6 +160,7 @@
 
   "defaultFoods": [
     {"name": "Chicken Katsu",
+      "vendorName": "L&L Hawaiian Barbecue",
       "foodTypeOne": "Japanese",
       "foodTypeTwo": "Chinese",
       "foodTypeThree": "Korean",
@@ -175,6 +176,7 @@
     },
 
     {"name": "Ice Americano",
+      "vendorName": "Dunkin Donuts",
       "foodTypeOne": "Japanese",
       "foodTypeTwo": "Chinese",
       "foodTypeThree": "Korean",
@@ -190,6 +192,7 @@
     },
 
     {"name": "Shanghai Angus Steak",
+      "vendorName": "Panda Express",
       "foodTypeOne": "Japanese",
       "foodTypeTwo": "American",
       "foodTypeThree": "Korean",
@@ -205,6 +208,7 @@
     },
 
     {"name": "Mix Poke Bowl",
+      "vendorName": "Govinda's Pure Vegetarian Restaurant",
       "foodTypeOne": "Japanese",
       "foodTypeTwo": "Chinese",
       "foodTypeThree": "Korean",
@@ -216,10 +220,11 @@
       "location": "Campus Center",
       "image": "https://s3-media4.fl.yelpcdn.com/bphoto/Fb2XrKUdIMY5CC01mGQCnw/o.jpg",
       "description": "$13.49",
-      "owner": "john@foo.com"
+      "owner": "govindas@foo.com"
     },
 
     {"name": "Teppanyaki Steak",
+      "vendorName": "Holoholo Grill",
       "foodTypeOne": "Japanese",
       "foodTypeTwo": "Chinese",
       "foodTypeThree": "Korean",
@@ -231,10 +236,11 @@
       "location": "University Avenue",
       "image": "https://s3-media4.fl.yelpcdn.com/bphoto/QXgOMDm-fTp0uwBABSp6-Q/o.jpg",
       "description": "$12.99",
-      "owner": "john@foo.com"
+      "owner": "holoholo@foo.com"
     },
 
     {"name": "Bibimbap",
+      "vendorName": "L&L Hawaiian Barbecue",
       "foodTypeOne": "Japanese",
       "foodTypeTwo": "American",
       "foodTypeThree": "Korean",
@@ -246,7 +252,7 @@
       "location": "Campus Center",
       "image": "https://thegirlonbloor.com/wp-content/uploads/2015/08/30-Minute-Korean-Bibimbap-Recipe-7.jpg",
       "description": "$10.99",
-      "owner": "john@foo.com"
+      "owner": "llbbq@foo.com"
     }
   ],
   "foodOptions": [

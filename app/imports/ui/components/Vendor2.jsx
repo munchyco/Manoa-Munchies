@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Foods } from '/imports/api/food/food';
 import { Roles } from 'meteor/alanning:roles';
-import Food2 from '../components/Food2';
+import Food from '../components/Food';
 
 /** Renders a single row in the List Stuff table. See pages/ListContacts.jsx. */
 class Vendor2 extends React.Component {
@@ -24,22 +24,26 @@ class Vendor2 extends React.Component {
   }
 
 
-
   render() {
 
     let content;
-
+    let a = this.props.vendor.name;
 
     if (this.state.isToggleOn === false) {
 
       content = <Card centered>
         <Card.Content>
           <Card.Group>
-            {this.props.foods.map((food, index) => <Food2 key={index}
-                                                                food={food}/>)}
+            {this.props.foods.map(function(food, index) {
+               if((food.vendorName) === a)
+               {
+                 return <Food key={index}
+                             food={food}/>
+               }})}
           </Card.Group>
         </Card.Content>
       </Card>;
+
     } else {
       content = '';
     }
@@ -74,11 +78,6 @@ class Vendor2 extends React.Component {
             </div>
           </Card.Content>
           <Card.Content extra>
-            <Button basic>
-              <p>Click</p>
-            </Button>
-          </Card.Content>
-          <Card.Content extra>
             {content}
           </Card.Content>
 
@@ -94,7 +93,7 @@ Vendor2.propTypes = {
 
 };
 
-const subscription = Meteor.subscribe('Foods');
+const subscription = Meteor.subscribe('AllFoods');
 
 const VendorContainer = withTracker(() => ({
   ready: subscription.ready(),

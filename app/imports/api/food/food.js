@@ -6,6 +6,7 @@ const Foods = new Mongo.Collection('Foods');
 
 const FoodsSchema = new SimpleSchema({
   name: String,
+  vendorName: String,
   foodTypeOne: String,     //food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
   foodTypeTwo: String,
   foodTypeThree: String,
