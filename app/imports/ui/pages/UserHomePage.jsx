@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Icon, Divider, Segment } from 'semantic-ui-react';
+import { Container, Grid, Icon, Segment } from 'semantic-ui-react';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 /** Render a Not Found page if the user enters a URL that doesn't match any route. */

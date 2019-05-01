@@ -18,19 +18,31 @@ class NavBar extends React.Component {
   render() {
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/userhome">
+        {this.props.currentUser === '' ? (
+        <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header inverted as='h1'>
-            <p className="consistent-font">Manoa Munchies</p>
+            <p className="consistent-font">Mānoa Munchies</p>
           </Header>
         </Menu.Item>
+            ) : ''}
         {this.props.currentUser ? '' : ''}
         {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/addvendor" key='addvendor'>Add Vendor</Menu.Item>,
+            [<Menu.Item as={NavLink} activeClassName="" exact to="/userhome">
+              <Header inverted as='h1'>
+                <p className="consistent-font">Mānoa Munchies</p>
+              </Header>
+            </Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/addvendor" key='addvendor'>Add Vendor</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor" key='vendor'>Vendor Home</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/storeEdit" key='storeEdit'>Vendor Edit Your Stores</Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'customer') ? (
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/toppick" key='toppick'>Top Picks</Menu.Item>,
+            [<Menu.Item as={NavLink} activeClassName="" exact to="/userhome">
+              <Header inverted as='h1'>
+                <p className="consistent-font">Mānoa Munchies</p>
+              </Header>
+            </Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/toppick" key='toppick'>Top Picks</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/user" key='user'>User Profile</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/listvendors" key='listvendors'>Vendor List</Menu.Item>]
         ) : ''}
