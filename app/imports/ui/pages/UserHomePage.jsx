@@ -26,7 +26,7 @@ class UserHomePage extends React.Component {
                       &lsquo;Vendor List&rsquo; or &lsquo;Top Picks&rsquo; section in the navigation bar.</div>
                   </Grid.Column>
                   <Grid.Column className={'home-columns'}>
-                    <Icon size='massive' name='briefcase'></Icon>
+                    <Icon size='massive' name='briefcase'> </Icon>
                     <div className={'column-text'}> (*VENDORS ONLY*) Add and edit your Food Vendors by clicking
                       the &lsquo;Add Vendor&rsquo; or &lsquo;Vendor Edit Your Stores&rsquo; section in the
                       navigation bar.</div>
