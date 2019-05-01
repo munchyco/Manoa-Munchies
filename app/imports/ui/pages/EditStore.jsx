@@ -133,7 +133,8 @@ class EditStore extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location } = data;
+    const { foodTypeOne, foodTypeTwo, foodTypeThree, name, description,
+      vegan, glutenFree, vendorType, vendorPrice, location } = data;
     console.log(data);
     const ownerName = Meteor.user().username;
     if (!location) {
@@ -150,25 +151,23 @@ class EditStore extends React.Component {
             vendorType,
             vendorPrice,
             location,
-            ownerName
+            ownerName,
           },
           (error) => (error ?
               Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
               Bert.alert({ type: 'success', message: 'Update succeeded' })));
-      // Users.update({_id:id}, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo,
-      // FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } },
     }
   }
 
 getStores() {
   const vendorLocations = _.pluck(this.props.vendors, 'location');
- const locationList = [{value: ''}];
+ const locationList = [{ value: '' }];
  locationList.pop();
- if (this.props.vendors.length < 1){
+ if (this.props.vendors.length < 1) {
    Bert.alert({ type: 'danger', message: 'You have no stores' });
  }
-  if (_.contains(vendorLocations, 'Paradise Palms')){
-    locationList.push( {
+  if (_.contains(vendorLocations, 'Paradise Palms')) {
+    locationList.push({
       label: 'Paradise Palms',
       value: 'Paradise Palms',
     });
@@ -185,8 +184,8 @@ getStores() {
         value: 'Sustainability Courtyard',
       });
     }
-      if (_.contains(vendorLocations, 'Campus Center')){
-        locationList.push( {
+      if (_.contains(vendorLocations, 'Campus Center')) {
+        locationList.push({
           label: 'Campus Center',
           value: 'Campus Center',
         });
@@ -247,4 +246,3 @@ export default withTracker(() => {
     currentUser: Meteor.user() ? Meteor.user().username : '',
   };
 })(EditStore);
-

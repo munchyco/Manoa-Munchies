@@ -201,8 +201,6 @@ class EditUserProfile extends React.Component {
       }, (error) => (error ?
           Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
           Bert.alert({ type: 'success', message: 'Update succeeded' })));
-      // Users.update({_id:id}, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo,
-      // FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } },
     }
   }
 
