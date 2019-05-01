@@ -49,7 +49,7 @@ export default withTracker(() => {
   // Get access to Vendor documents.
   const subscription = Meteor.subscribe('Foods');
   return {
-    foods: Foods.find({}).fetch(),
+    foods: Foods.find({ owner: Meteor.user().username }).fetch(),
     ready: subscription.ready(),
   };
 })(VendorViewFoods);

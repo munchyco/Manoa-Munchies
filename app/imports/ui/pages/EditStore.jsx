@@ -168,7 +168,6 @@ class EditStore extends React.Component {
   submit(data) {
     const { foodTypeOne, foodTypeTwo, foodTypeThree, name, description,
       vegan, glutenFree, vendorType, vendorPrice, location } = data;
-    console.log(data);
     const ownerName = Meteor.user().username;
     if (!location) {
       Bert.alert({ type: 'danger', message: 'You have no stores' });
