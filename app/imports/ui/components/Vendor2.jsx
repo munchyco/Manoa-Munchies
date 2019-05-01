@@ -1,10 +1,9 @@
 import React from 'react';
-import { Card, Image, Button, Container } from 'semantic-ui-react';
+import { Card, Image, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Foods } from '/imports/api/food/food';
-import { Roles } from 'meteor/alanning:roles';
 import Food from '../components/Food';
 
 /** Renders a single row in the List Stuff table. See pages/ListContacts.jsx. */
@@ -27,7 +26,7 @@ class Vendor2 extends React.Component {
   render() {
 
     let content;
-    let a = this.props.vendor.name;
+    const a = this.props.vendor.name;
 
     if (this.state.isToggleOn === false) {
 
@@ -35,11 +34,11 @@ class Vendor2 extends React.Component {
         <Card.Content>
           <Card.Group>
             {this.props.foods.map(function(food, index) {
-               if((food.restaurantName) === a)
-               {
+               if ((food.restaurantName) === a) {
                  return <Food key={index}
-                             food={food}/>
-               }})}
+                             food={food}/>;
+               }
+            })}
           </Card.Group>
         </Card.Content>
       </Card>;
@@ -103,5 +102,3 @@ const VendorContainer = withTracker(() => ({
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
 export default withRouter(VendorContainer);
-
-

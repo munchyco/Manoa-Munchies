@@ -1,11 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Button } from 'semantic-ui-react';
+import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Vendors } from '/imports/api/vendor/vendor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Vendor2 from '../components/Vendor2';
-import { Roles } from 'meteor/alanning:roles';
 
 const textStyle = {
   fontSize: '40px',
@@ -58,4 +57,3 @@ export default withTracker(() => {
     currentUser: Meteor.user() ? Meteor.user().username : '',
   };
 })(VendorHome);
-

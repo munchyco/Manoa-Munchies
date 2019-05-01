@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Loader, Header, Segment, Form } from 'semantic-ui-react';
+import { Grid, Header, Segment, Form } from 'semantic-ui-react';
 import { Foods, FoodsSchema } from '/imports/api/food/food';
 import { Bert } from 'meteor/themeteorchef:bert';
 import AutoForm from 'uniforms-semantic/AutoForm';
@@ -18,10 +18,6 @@ const textStyle = {
   fontSize: '72px',
 };
 
-const styles = {
-  paddingBottom: '20px',
-  marginBottom: '100px',
-};
 const locationOptions = [
   {
     label: 'Paradise Palms',

@@ -1,13 +1,12 @@
 import { Meteor } from 'meteor/meteor';
-import { Roles } from 'meteor/alanning:roles';
 import { Users } from '../../api/user/user.js';
 
 /** Initialize the database with a default data document. */
+// eslint-disable-next-line no-unused-vars
 function addData(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
   Users.insert(data);
 }
-
 
 
 /** This subscription publishes only the documents associated with the logged in user */
@@ -18,7 +17,6 @@ Meteor.publish('Users', function publish() {
   }
   return this.ready();
 });
-
 
 
 /** This subscription publishes only the documents associated with the logged in user */

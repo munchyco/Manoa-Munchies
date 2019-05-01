@@ -1,8 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
-import uniforms from 'uniforms-semantic';
-import BoolField from 'uniforms-semantic/BoolField';
 
 const Users = new Mongo.Collection('Users');
 
@@ -10,7 +8,7 @@ const UsersSchema = new SimpleSchema({
   foodTypeOne: {
     type: String,
     optional: true,
-  },    //favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
+  },
   foodTypeTwo: {
     type: String,
     optional: true,
@@ -46,7 +44,7 @@ const UsersSchema = new SimpleSchema({
   restaurantPrice1: {
     type: Boolean,
     optional: true,
-  }, //typical price range student wants.
+  },
   restaurantPrice2: {
     type: Boolean,
     optional: true,
@@ -58,11 +56,11 @@ const UsersSchema = new SimpleSchema({
   location: {
     type: String,
     optional: true,
-  },       //usual place on campus.
+  },
   owner: {
     type: String,
     optional: true,
-  }           //user account
+  },
 }, { tracker: Tracker });
 
 Users.attachSchema(UsersSchema);

@@ -245,12 +245,12 @@ class AddVendor extends React.Component {
   submit(data) {
     const {
       name, foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, healthy,
-      vendorPrice, vendorType, location, image, description
+      vendorPrice, vendorType, location, image, description,
     } = data;
     const owner = Meteor.user().username;
     Vendors.insert({
       name, foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree,
-      healthy, vendorPrice, vendorType, location, image, description, owner
+      healthy, vendorPrice, vendorType, location, image, description, owner,
     }, this.insertCallback);
   }
 

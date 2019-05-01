@@ -27,30 +27,48 @@ class NavBar extends React.Component {
             ) : ''}
         {this.props.currentUser ? '' : ''}
         {Roles.userIsInRole(Meteor.userId(), 'vendor') ? (
-            [<Menu.Item as={NavLink} activeClassName="" exact to="/userhome">
+            [<Menu.Item as={NavLink} activeClassName="" exact to="/userhome" key='uservendorhome'>
               <Header inverted as='h1'>
                 <p className="consistent-font">Mānoa Munchies</p>
               </Header>
             </Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/addvendor" key='addvendor'>Add Vendor</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor" key='vendor'>Vendor Home</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/storeEdit" key='storeEdit'>Edit Your Stores</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/vendorAddFood" key='vendorAddFood'>Add Food</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/vendorFoodList" key='vendorFoodList'>Your Foods</Menu.Item>]
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/addvendor" key='addvendor'>
+                  Add Vendor
+                </Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor" key='vendor'>
+                Vendor Home
+              </Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/storeEdit" key='storeEdit'>
+                Edit Your Stores
+              </Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/vendorAddFood" key='vendorAddFood'>
+                Add Food
+              </Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/vendorFoodList" key='vendorFoodList'>
+                Your Foods
+              </Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'customer') ? (
-            [<Menu.Item as={NavLink} activeClassName="" exact to="/userhome">
+            [<Menu.Item as={NavLink} activeClassName="" exact to="/userhome" key='useruserhome'>
               <Header inverted as='h1'>
                 <p className="consistent-font">Mānoa Munchies</p>
               </Header>
             </Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/toppick" key='toppick'>Top Picks</Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/user" key='user'>User Profile</Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/listvendors" key='listvendors'>Vendor List</Menu.Item>]
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/toppick" key='toppick'>
+                  Top Picks
+                </Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/user" key='user'>
+                  User Profile
+                </Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/listvendors" key='listvendors'>
+                  Vendor List
+                </Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             [<Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/adminUser" key='adminUser'>View Users</Menu.Item>]
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/adminUser" key='adminUser'>
+                  View Users
+                </Menu.Item>]
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (

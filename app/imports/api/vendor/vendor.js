@@ -8,7 +8,7 @@ const VendorsSchema = new SimpleSchema({
 foodTypeOne: {
   type: String,
       optional: false,
-},    // favorite food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
+},
 foodTypeTwo: {
   type: String,
       optional: false,
@@ -44,15 +44,15 @@ vendorType: {
 vendorPrice: {
   type: String,
       optional: false,
-}, //typical price range student wants.
+},
 location: {
   type: String,
       optional: true,
-},       //usual place on campus.
+},
 owner: {
   type: String,
       optional: true,
-}           //user account
+},
 }, { tracker: Tracker });
 Vendors.attachSchema(VendorsSchema);
 
