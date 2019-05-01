@@ -12,21 +12,26 @@ class UserHomePage extends React.Component {
               <div className={'user-home'}>Welcome back!</div>
               <div className={'user-home-under'}>Lets get started.</div>
               <Segment>
-                <Grid columns={2}>
+                <Grid columns={3}>
                   <Grid.Column className={'home-columns'}>
-                    <Icon size='massive' name='user'></Icon>
-                    <div className={'column-text'}>Discover and edit your preferences by clicking on the
+                    <Icon size='massive' name='user'> </Icon>
+                    <div className={'column-text'}>(*USERS ONLY*) Discover and edit your preferences by clicking on the
                       &lsquo;User Profile&rsquo; section in the
                       navigation bar.</div>
                   </Grid.Column>
                   <Grid.Column className={'home-columns'}>
-                    <Icon size='massive' name='utensils'></Icon>
+                    <Icon size='massive' name='utensils'> </Icon>
                     <div className={'column-text'}>View the entire list of Food Vendors Manoa has to offer by
                       clicking on the
                       &lsquo;Vendor List&rsquo; or &lsquo;Top Picks&rsquo; section in the navigation bar.</div>
                   </Grid.Column>
+                  <Grid.Column className={'home-columns'}>
+                    <Icon size='massive' name='briefcase'></Icon>
+                    <div className={'column-text'}> (*VENDORS ONLY*) Add and edit your Food Vendors by clicking
+                      the &lsquo;Add Vendor&rsquo; or &lsquo;Vendor Edit Your Stores&rsquo; section in the
+                      navigation bar.</div>
+                  </Grid.Column>
                 </Grid>
-                <Divider vertical>Or</Divider>
               </Segment>
               <div className={'user-home-twitter'}>Keep up to date with our Twitter for announcements on weekly
                 Top Picks!</div>
