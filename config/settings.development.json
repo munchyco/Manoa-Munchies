@@ -18,7 +18,6 @@
 ],
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme", "role": "customer"},
     { "email": "johnvendor@foo.com", "password":  "changeme", "role": "vendor"},
     { "email": "panda@foo.com", "password":  "changeme", "role":  "vendor"},
     { "email": "dunkin@foo.com", "password":  "changeme", "role": "vendor"},
@@ -27,7 +26,14 @@
     { "email": "crepe@foo.com", "password": "changeme", "role": "vendor"},
     { "email": "daspot@foo.com", "password":  "changeme", "role": "vendor"},
     { "email": "govindas@foo.com", "password": "changeme", "role": "vendor"},
-    { "email": "holoholo@foo.com", "password": "changeme", "role": "vendor"}
+    { "email": "holoholo@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "hottacos@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "kamitoku@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "sistah@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "punchbowl@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "lasoon@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "beancounter@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "peacecafe@foo.com", "password": "changeme", "role": "vendor"}
   ],
   "defaultItems": [
     {
@@ -155,6 +161,104 @@
       "image": "https://holohologrill.com/wp-content/uploads/2017/03/hg_logo_01_ffffff_818x276_optimized.png",
       "description": "Holoholo Grill features healthy, locally grown salads, sandwiches, and grab-and-go items at affordable prices. They are committed to using the freshest island-grown ingredients sourced directly from farmers and fishermen.",
       "owner": "holoholo@foo.com"
+    },
+    {
+      "name": "Hot Tacos",
+      "foodTypeOne": "American",
+      "foodTypeTwo": "Mexican",
+      "foodTypeThree": "Spanish",
+      "vegan": false,
+      "glutenFree": true,
+      "vendorPrice": "$",
+      "vendorType": "To-Go",
+      "location": "Krauss Hall",
+      "image": "https://s3-media3.fl.yelpcdn.com/bphoto/xYNqBLXym5DC3wMpWzMqhA/ls.jpg",
+      "description": "Hot Tacos offers authentic Mexican food, prepped and cooked daily from scratch offering tacos, burritos, and quesadillas with meat options like steak, chicken, marinated pork, and shredded beef. They offer a la carte options or lunch plates that include beans and Spanish rice and other add on options like Chili Rellenos and Tamales.",
+      "owner": "hottacos@foo.com"
+    },
+    {
+      "name": "Kamitoku Ramen",
+      "foodTypeOne": "Japanese",
+      "foodTypeTwo": "Ramen",
+      "foodTypeThree": " ",
+      "vegan": false,
+      "glutenFree": false,
+      "vendorPrice": "$",
+      "vendorType": "Food Truck",
+      "location": "Center for Korean Studies",
+      "image": "https://s3-media1.fl.yelpcdn.com/bphoto/VTySnqRIxeFdGraTn8vYow/180s.jpg",
+      "description": "Kamitoku Ramen specializes in a Tottori-style beef bone ramen. Located at Center for Korean Studies (Monday, Wednesday, Friday) Holmes Hall (Tuesday, Thursday)",
+      "owner": "kamitoku@foo.com"
+    },
+    {
+      "name": "Lasoon",
+      "foodTypeOne": "Nepali",
+      "foodTypeTwo": "Indian",
+      "foodTypeThree": "Malaysian",
+      "vegan": true,
+      "glutenFree": false,
+      "vendorPrice": "$",
+      "vendorType": "To-Go",
+      "location": "Paradise Palms",
+      "image": "https://s3-media2.fl.yelpcdn.com/bphoto/9RFEehnDm-YvRvSGOwJHvQ/348s.jpg",
+      "description": "Lasoon offers something for everyone with their signature exotic South Indian and Malaysian cuisine. Daily specials include chicken curry, lamb masala, garlic shrimp, seafood curry, spinach tofu, spicy eggplant, curried potatoes, coconut cabbage & over 10 different vegetarian entrees to choose from. Spiciness ranges from mild to very hot.",
+      "owner": "lasoon@foo.com"
+    },
+    {
+      "name": "Peace Cafe",
+      "foodTypeOne": "American",
+      "foodTypeTwo": "Health",
+      "foodTypeThree": "Sandwiches",
+      "vegan": true,
+      "glutenFree": true,
+      "vendorPrice": "$",
+      "vendorType": "Food Truck",
+      "location": "Sustainability Courtyard",
+      "image": "https://images.happycow.net/venues/1024/72/29/hcmp72293_143938.jpeg",
+      "description": "All of their homestyle recipes, including their Green Garden Burger patties and sauces, are original. Green Garden's food concept is to offer plant-based, all-vegan, organic, natural, non-GMO, and healthy meals with no onion, garlic or other additives, therefore to preserve the original, clean and pure flavors of their food. They have gluten-free offerings daily and their 100% plant-based organic food is fresh, wholesome and delicious.",
+      "owner": "peacecafe@foo.com"
+    },
+    {
+      "name": "Punchbowl Cafe",
+      "foodTypeOne": "Coffee",
+      "foodTypeTwo": " ",
+      "foodTypeThree": " ",
+      "vegan": false,
+      "glutenFree": false,
+      "vendorPrice": "$",
+      "vendorType": "Food Truck",
+      "location": "Post Building",
+      "image": "https://s3-media2.fl.yelpcdn.com/bphoto/IgkeVV1O5FgSq8S0xEn6lQ/348s.jpg",
+      "description": "Punchbowl Coffee is a new brand created to promote and sell coffee from the Ka’u region on the big island. We work directly with several growers and our goal is to assist them to grow their business while maintaining control of their quality and distribution.",
+      "owner": "punchbowl@foo.com"
+    },
+    {
+      "name": "The Bean Counter",
+      "foodTypeOne": "Coffee",
+      "foodTypeTwo": "Breakfast",
+      "foodTypeThree": "Health",
+      "vegan": true,
+      "glutenFree": false,
+      "vendorPrice": "$",
+      "vendorType": "Food Truck",
+      "location": "Shidler Hall",
+      "image": "https://lh6.googleusercontent.com/proxy/pcT1lO4VcTabQfvIfRq-v_NDbT7wO_0_m1aCmjFqcXdy1_PhQPTXiki8QYHaQxfrlgW_vcFH0YXSC9f0VncJRctNwd9WzBDXfmYDZe0v3qPGlKhO98T5Ag=w1200-h630-p-k-no-nu",
+      "description": "Local beans, Local flavor...your Local Coffee Bar. The Bean Counter serves up brewed coffee from the Hawaiian Islands and fulfills your caffeinated desires with a full service espresso bar. Feed your growling stomach with a dizzying array of bagels with homemade spreads, or chow down with our savory wraps, healthy salads and sweet treats.",
+      "owner": "beancounter@foo.com"
+    },
+    {
+      "name": "Sistah Truck",
+      "foodTypeOne": "Korean",
+      "foodTypeTwo": "Hawaiian",
+      "foodTypeThree": "American",
+      "vegan": false,
+      "glutenFree": false,
+      "vendorPrice": "$",
+      "vendorType": "Food Truck",
+      "location": "Holmes Hall",
+      "image": "https://s3-media2.fl.yelpcdn.com/bphoto/9RFEehnDm-YvRvSGOwJHvQ/348s.jpg",
+      "description": "Located at Holmes Hall (Monday, Wednesday, Friday), Center for Korean Studies (Tuesday, Thursday). Sistah Truck serves Korean-inspired local cuisine. Daily menu plate lunches include loco moco, chicken katsu, and Korean-style shoyu chicken. They also serve grab-and-go dishes like bibimbap, gyoza and kimchi bowls. Vegetarian options are available.",
+      "owner": "sistah@foo.com"
     }
   ],
 

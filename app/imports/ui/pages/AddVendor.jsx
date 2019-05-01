@@ -81,6 +81,30 @@ const foodOptions = [
     label: 'Korean',
     value: 'Korean',
   },
+  {
+    label: 'Nepali',
+    value: 'Nepali',
+  },
+  {
+    label: 'Indian',
+    value: 'Indian',
+  },
+  {
+    label: 'Malaysian',
+    value: 'Malaysian',
+  },
+  {
+    label: 'Ramen',
+    value: 'Ramen',
+  },
+  {
+    label: 'Mexican',
+    value: 'Mexican',
+  },
+  {
+    label: 'Spanish',
+    value: 'Spanish',
+  },
 ];
 
 const vendorTypes = [
@@ -118,6 +142,26 @@ const locationOptions = [
   {
     label: 'Sustainability Courtyard',
     value: 'Sustainability Courtyard',
+  },
+  {
+    label: 'Shidler Hall',
+    value: 'Shidler Hall',
+  },
+  {
+    label: 'Holmes Hall',
+    value: 'Holmes Hall',
+  },
+  {
+    label: 'Post Building',
+    value: 'Post Building',
+  },
+  {
+    label: 'Center for Korean Studies',
+    value: 'Center for Korean Studies',
+  },
+  {
+    label: 'Krauss Hall',
+    value: 'Krauss Hall',
   },
 ];
 
