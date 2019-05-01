@@ -94,7 +94,40 @@ const foodOptions = [
     label: 'Korean',
     value: 'Korean',
   },
+  {
+    label: 'Nepali',
+    value: 'Nepali',
+  },
+  {
+    label: 'Indian',
+    value: 'Indian',
+  },
+  {
+    label: 'Malaysian',
+    value: 'Malaysian',
+  },
+  {
+    label: 'Ramen',
+    value: 'Ramen',
+  },
+  {
+    label: 'Mexican',
+    value: 'Mexican',
+  },
+  {
+    label: 'Spanish',
+    value: 'Spanish',
+  },
+  {
+    label: 'Juice',
+    value: 'Juice',
+  },
+  {
+    label: 'Pizza',
+    value: 'Pizza',
+  },
 ];
+
 const priceOptions = [
   {
     label: '$: $0-10 Entrees',
@@ -133,7 +166,8 @@ class EditStore extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { foodTypeOne, foodTypeTwo, foodTypeThree, name, description, vegan, glutenFree, vendorType, vendorPrice, location } = data;
+    const { foodTypeOne, foodTypeTwo, foodTypeThree, name, description,
+      vegan, glutenFree, vendorType, vendorPrice, location } = data;
     console.log(data);
     const ownerName = Meteor.user().username;
     if (!location) {
@@ -150,25 +184,23 @@ class EditStore extends React.Component {
             vendorType,
             vendorPrice,
             location,
-            ownerName
+            ownerName,
           },
           (error) => (error ?
               Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
               Bert.alert({ type: 'success', message: 'Update succeeded' })));
-      // Users.update({_id:id}, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo,
-      // FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } },
     }
   }
 
 getStores() {
   const vendorLocations = _.pluck(this.props.vendors, 'location');
- const locationList = [{value: ''}];
+ const locationList = [{ value: '' }];
  locationList.pop();
- if (this.props.vendors.length < 1){
+ if (this.props.vendors.length < 1) {
    Bert.alert({ type: 'danger', message: 'You have no stores' });
  }
-  if (_.contains(vendorLocations, 'Paradise Palms')){
-    locationList.push( {
+  if (_.contains(vendorLocations, 'Paradise Palms')) {
+    locationList.push({
       label: 'Paradise Palms',
       value: 'Paradise Palms',
     });
@@ -179,17 +211,53 @@ getStores() {
       value: 'Athletic Complex',
     });
   }
-    if (_.contains(vendorLocations, 'Sustainability Courtyard')) {
+  if (_.contains(vendorLocations, 'Sustainability Courtyard')) {
       locationList.push({
         label: 'Sustainability Courtyard',
         value: 'Sustainability Courtyard',
       });
     }
-      if (_.contains(vendorLocations, 'Campus Center')){
-        locationList.push( {
+  if (_.contains(vendorLocations, 'Campus Center')) {
+        locationList.push({
           label: 'Campus Center',
           value: 'Campus Center',
         });
+  }
+  if (_.contains(vendorLocations, 'Shidler Hall')) {
+    locationList.push({
+      label: 'Shidler Hall',
+      value: 'Shidler Hall',
+    });
+  }
+  if (_.contains(vendorLocations, 'Holmes Hall')) {
+    locationList.push({
+      label: 'Holmes Hall',
+      value: 'Holmes Hall',
+    });
+  }
+  if (_.contains(vendorLocations, 'Post Building')) {
+    locationList.push({
+      label: 'Post Building',
+      value: 'Post Building',
+    });
+  }
+  if (_.contains(vendorLocations, 'Center for Korean Studies')) {
+    locationList.push({
+      label: 'Center for Korean Studies',
+      value: 'Center for Korean Studies',
+    });
+  }
+  if (_.contains(vendorLocations, 'Krauss Hall')) {
+    locationList.push({
+      label: 'Krauss Hall',
+      value: 'Krauss Hall',
+    });
+  }
+  if (_.contains(vendorLocations, 'Hemenway Hall')) {
+    locationList.push({
+      label: 'Hemenway Hall',
+      value: 'Hemenway Hall',
+    });
   }
   return locationList;
   }
@@ -205,7 +273,7 @@ getStores() {
         <Grid container centered style={styles}>
           <Grid.Column>
             <Header as="h2" textAlign="center" style={textStyle}>Edit Profile</Header>
-            <AutoForm schema={VendorsSchema} onSubmit={this.submit} color='black' inverted>
+            <AutoForm schema={VendorsSchema} onSubmit={this.submit} color='black' inverted={'true'}>
               <Segment inverted>
                 <TextField name='name' />
                 <TextField name='description' />
@@ -247,4 +315,3 @@ export default withTracker(() => {
     currentUser: Meteor.user() ? Meteor.user().username : '',
   };
 })(EditStore);
-

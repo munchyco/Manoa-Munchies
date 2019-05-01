@@ -105,7 +105,7 @@ export default class Signup extends React.Component {
                   <Form.Button content="Submit"/>
                 </Segment>
               </Form>
-              <Message className="consistent-font" color='black' inverted>
+              <Message className="consistent-font" color='black' inverted="true">
                 Already have an account? Login <Link to="/signin">here</Link>
               </Message>
               {this.state.error === '' ? (

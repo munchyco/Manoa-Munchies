@@ -12,7 +12,7 @@ class Food extends React.Component {
           <Image centered src={this.props.food.image} id={'picSize'} />
           <Card.Content style={ { border: 'none' } }>
             <Card.Header>{this.props.food.name} </Card.Header>
-            <Card.Meta>{this.props.food.location}</Card.Meta>
+            <Card.Meta>Location: {this.props.food.restaurantName} at {this.props.food.location}</Card.Meta>
             <Card.Description>
               {this.props.food.description}
             </Card.Description>

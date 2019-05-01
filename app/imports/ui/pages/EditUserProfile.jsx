@@ -81,6 +81,38 @@ const foodOptions = [
     label: 'Korean',
     value: 'Korean',
   },
+  {
+    label: 'Nepali',
+    value: 'Nepali',
+  },
+  {
+    label: 'Indian',
+    value: 'Indian',
+  },
+  {
+    label: 'Malaysian',
+    value: 'Malaysian',
+  },
+  {
+    label: 'Ramen',
+    value: 'Ramen',
+  },
+  {
+    label: 'Mexican',
+    value: 'Mexican',
+  },
+  {
+    label: 'Spanish',
+    value: 'Spanish',
+  },
+  {
+    label: 'Juice',
+    value: 'Juice',
+  },
+  {
+    label: 'Pizza',
+    value: 'Pizza',
+  },
 ];
 
 const locationOptions = [
@@ -99,6 +131,30 @@ const locationOptions = [
   {
     label: 'Sustainability Courtyard',
     value: 'Sustainability Courtyard',
+  },
+  {
+    label: 'Shidler Hall',
+    value: 'Shidler Hall',
+  },
+  {
+    label: 'Holmes Hall',
+    value: 'Holmes Hall',
+  },
+  {
+    label: 'Post Building',
+    value: 'Post Building',
+  },
+  {
+    label: 'Center for Korean Studies',
+    value: 'Center for Korean Studies',
+  },
+  {
+    label: 'Krauss Hall',
+    value: 'Krauss Hall',
+  },
+  {
+    label: 'Hemenway Hall',
+    value: 'Hemenway Hall',
   },
 ];
 
@@ -145,8 +201,6 @@ class EditUserProfile extends React.Component {
       }, (error) => (error ?
           Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
           Bert.alert({ type: 'success', message: 'Update succeeded' })));
-      // Users.update({_id:id}, { $set: { foodTypeOne, foodTypeTwo, foodTypeThree, vegan, glutenFree, ToGo,
-      // FoodTruck, MadeToOrder, Buffet, restaurantPrice1, restaurantPrice2, restaurantPrice3, location } },
     }
   }
 

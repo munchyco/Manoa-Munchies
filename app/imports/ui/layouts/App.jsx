@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import 'semantic-ui-css/semantic.css';
@@ -18,7 +17,6 @@ import VendorHome from '../pages/VendorHome';
 import EditStore from '../pages/EditStore';
 import TopPick from '../pages/TopPick';
 import BottomFooter from '../components/BottomFooter';
-import EditPreferences from '../pages/EditPreferences';
 import UserHomePage from '../pages/UserHomePage';
 import EditUserProfile from '../pages/EditUserProfile';
 import AdminUser from '../pages/AdminUser';
@@ -140,6 +138,11 @@ AdminProtectedRoute.propTypes = {
 VendorProtectedRoute.propTypes = {
   component: PropTypes.func.isRequired,
   location: PropTypes.object,
-}
+};
+
+CustomerProtectedRoute.propTypes = {
+  component: PropTypes.func.isRequired,
+  location: PropTypes.object,
+};
 
 export default App;

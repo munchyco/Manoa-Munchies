@@ -1,6 +1,6 @@
 import React from 'react';
 import { Vendors, VendorsSchema } from '/imports/api/vendor/vendor';
-import { Grid, Segment, Header, Form, Radio } from 'semantic-ui-react';
+import { Grid, Segment, Header, Form } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
@@ -81,6 +81,38 @@ const foodOptions = [
     label: 'Korean',
     value: 'Korean',
   },
+  {
+    label: 'Nepali',
+    value: 'Nepali',
+  },
+  {
+    label: 'Indian',
+    value: 'Indian',
+  },
+  {
+    label: 'Malaysian',
+    value: 'Malaysian',
+  },
+  {
+    label: 'Ramen',
+    value: 'Ramen',
+  },
+  {
+    label: 'Mexican',
+    value: 'Mexican',
+  },
+  {
+    label: 'Spanish',
+    value: 'Spanish',
+  },
+  {
+    label: 'Juice',
+    value: 'Juice',
+  },
+  {
+    label: 'Pizza',
+    value: 'Pizza',
+  },
 ];
 
 const vendorTypes = [
@@ -118,6 +150,30 @@ const locationOptions = [
   {
     label: 'Sustainability Courtyard',
     value: 'Sustainability Courtyard',
+  },
+  {
+    label: 'Shidler Hall',
+    value: 'Shidler Hall',
+  },
+  {
+    label: 'Holmes Hall',
+    value: 'Holmes Hall',
+  },
+  {
+    label: 'Post Building',
+    value: 'Post Building',
+  },
+  {
+    label: 'Center for Korean Studies',
+    value: 'Center for Korean Studies',
+  },
+  {
+    label: 'Krauss Hall',
+    value: 'Krauss Hall',
+  },
+  {
+    label: 'Hemenway Hall',
+    value: 'Hemenway Hall',
   },
 ];
 

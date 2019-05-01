@@ -4,7 +4,6 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Users } from '/imports/api/user/user';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import '/client/style.css';
 import 'semantic-ui-css/semantic.min.css';
 import UserAdmin from '../components/UserAdmin';

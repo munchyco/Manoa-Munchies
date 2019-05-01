@@ -18,7 +18,6 @@
 ],
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme", "role": "customer"},
     { "email": "johnvendor@foo.com", "password":  "changeme", "role": "vendor"},
     { "email": "panda@foo.com", "password":  "changeme", "role":  "vendor"},
     { "email": "dunkin@foo.com", "password":  "changeme", "role": "vendor"},
@@ -27,7 +26,19 @@
     { "email": "crepe@foo.com", "password": "changeme", "role": "vendor"},
     { "email": "daspot@foo.com", "password":  "changeme", "role": "vendor"},
     { "email": "govindas@foo.com", "password": "changeme", "role": "vendor"},
-    { "email": "holoholo@foo.com", "password": "changeme", "role": "vendor"}
+    { "email": "holoholo@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "hottacos@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "kamitoku@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "sistah@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "punchbowl@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "lasoon@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "beancounter@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "bale@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "jj@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "pizzahut@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "starbucks@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "stirfresh@foo.com", "password": "changeme", "role": "vendor"},
+    { "email": "peacecafe@foo.com", "password": "changeme", "role": "vendor"}
   ],
   "defaultItems": [
     {
@@ -155,176 +166,309 @@
       "image": "https://holohologrill.com/wp-content/uploads/2017/03/hg_logo_01_ffffff_818x276_optimized.png",
       "description": "Holoholo Grill features healthy, locally grown salads, sandwiches, and grab-and-go items at affordable prices. They are committed to using the freshest island-grown ingredients sourced directly from farmers and fishermen.",
       "owner": "holoholo@foo.com"
+    },
+    {
+      "name": "Hot Tacos",
+      "foodTypeOne": "American",
+      "foodTypeTwo": "Mexican",
+      "foodTypeThree": "Spanish",
+      "vegan": false,
+      "glutenFree": true,
+      "vendorPrice": "$",
+      "vendorType": "To-Go",
+      "location": "Krauss Hall",
+      "image": "https://s3-media3.fl.yelpcdn.com/bphoto/xYNqBLXym5DC3wMpWzMqhA/ls.jpg",
+      "description": "Hot Tacos offers authentic Mexican food, prepped and cooked daily from scratch offering tacos, burritos, and quesadillas with meat options like steak, chicken, marinated pork, and shredded beef. They offer a la carte options or lunch plates that include beans and Spanish rice and other add on options like Chili Rellenos and Tamales.",
+      "owner": "hottacos@foo.com"
+    },
+    {
+      "name": "Kamitoku Ramen",
+      "foodTypeOne": "Japanese",
+      "foodTypeTwo": "Ramen",
+      "foodTypeThree": "Korean",
+      "vegan": false,
+      "glutenFree": false,
+      "vendorPrice": "$",
+      "vendorType": "FoodTruck",
+      "location": "Center for Korean Studies",
+      "image": "https://s3-media1.fl.yelpcdn.com/bphoto/VTySnqRIxeFdGraTn8vYow/180s.jpg",
+      "description": "Kamitoku Ramen specializes in a Tottori-style beef bone ramen. Located at Center for Korean Studies (Monday, Wednesday, Friday) Holmes Hall (Tuesday, Thursday)",
+      "owner": "kamitoku@foo.com"
+    },
+    {
+      "name": "Lasoon",
+      "foodTypeOne": "Nepali",
+      "foodTypeTwo": "Indian",
+      "foodTypeThree": "Malaysian",
+      "vegan": true,
+      "glutenFree": false,
+      "vendorPrice": "$",
+      "vendorType": "To-Go",
+      "location": "Paradise Palms",
+      "image": "https://s3-media2.fl.yelpcdn.com/bphoto/9RFEehnDm-YvRvSGOwJHvQ/348s.jpg",
+      "description": "Lasoon offers something for everyone with their signature exotic South Indian and Malaysian cuisine. Daily specials include chicken curry, lamb masala, garlic shrimp, seafood curry, spinach tofu, spicy eggplant, curried potatoes, coconut cabbage & over 10 different vegetarian entrees to choose from. Spiciness ranges from mild to very hot.",
+      "owner": "lasoon@foo.com"
+    },
+    {
+      "name": "Peace Cafe",
+      "foodTypeOne": "American",
+      "foodTypeTwo": "Health",
+      "foodTypeThree": "Sandwiches",
+      "vegan": true,
+      "glutenFree": true,
+      "vendorPrice": "$",
+      "vendorType": "FoodTruck",
+      "location": "Sustainability Courtyard",
+      "image": "https://images.happycow.net/venues/1024/72/29/hcmp72293_143938.jpeg",
+      "description": "All of their homestyle recipes, including their Green Garden Burger patties and sauces, are original. Green Garden's food concept is to offer plant-based, all-vegan, organic, natural, non-GMO, and healthy meals with no onion, garlic or other additives, therefore to preserve the original, clean and pure flavors of their food. They have gluten-free offerings daily and their 100% plant-based organic food is fresh, wholesome and delicious.",
+      "owner": "peacecafe@foo.com"
+    },
+    {
+      "name": "Punchbowl Cafe",
+      "foodTypeOne": "Coffee",
+      "foodTypeTwo": "Juice",
+      "foodTypeThree": "Health",
+      "vegan": false,
+      "glutenFree": false,
+      "vendorPrice": "$",
+      "vendorType": "FoodTruck",
+      "location": "Post Building",
+      "image": "https://s3-media2.fl.yelpcdn.com/bphoto/IgkeVV1O5FgSq8S0xEn6lQ/348s.jpg",
+      "description": "Punchbowl Coffee is a new brand created to promote and sell coffee from the Ka’u region on the big island. We work directly with several growers and our goal is to assist them to grow their business while maintaining control of their quality and distribution.",
+      "owner": "punchbowl@foo.com"
+    },
+    {
+      "name": "The Bean Counter",
+      "foodTypeOne": "Coffee",
+      "foodTypeTwo": "Breakfast",
+      "foodTypeThree": "Health",
+      "vegan": true,
+      "glutenFree": false,
+      "vendorPrice": "$",
+      "vendorType": "FoodTruck",
+      "location": "Shidler Hall",
+      "image": "https://lh6.googleusercontent.com/proxy/pcT1lO4VcTabQfvIfRq-v_NDbT7wO_0_m1aCmjFqcXdy1_PhQPTXiki8QYHaQxfrlgW_vcFH0YXSC9f0VncJRctNwd9WzBDXfmYDZe0v3qPGlKhO98T5Ag=w1200-h630-p-k-no-nu",
+      "description": "Local beans, Local flavor...your Local Coffee Bar. The Bean Counter serves up brewed coffee from the Hawaiian Islands and fulfills your caffeinated desires with a full service espresso bar. Feed your growling stomach with a dizzying array of bagels with homemade spreads, or chow down with our savory wraps, healthy salads and sweet treats.",
+      "owner": "beancounter@foo.com"
+    },
+    {
+      "name": "Sistah Truck",
+      "foodTypeOne": "Korean",
+      "foodTypeTwo": "Hawaiian",
+      "foodTypeThree": "American",
+      "vegan": false,
+      "glutenFree": false,
+      "vendorPrice": "$",
+      "vendorType": "FoodTruck",
+      "location": "Holmes Hall",
+      "image": "https://s3-media2.fl.yelpcdn.com/bphoto/9RFEehnDm-YvRvSGOwJHvQ/348s.jpg",
+      "description": "Located at Holmes Hall (Monday, Wednesday, Friday), Center for Korean Studies (Tuesday, Thursday). Sistah Truck serves Korean-inspired local cuisine. Daily menu plate lunches include loco moco, chicken katsu, and Korean-style shoyu chicken. They also serve grab-and-go dishes like bibimbap, gyoza and kimchi bowls. Vegetarian options are available.",
+      "owner": "sistah@foo.com"
+    },
+    {
+      "name": "Jamba Juice",
+      "foodTypeOne": "Juice",
+      "foodTypeTwo": "Breakfast",
+      "foodTypeThree": "Health",
+      "vegan": true,
+      "glutenFree": true,
+      "vendorPrice": "$",
+      "vendorType": "FoodTruck",
+      "location": "Campus Center",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Jamba_Juice_logo.svg/1200px-Jamba_Juice_logo.svg.png",
+      "description": "Jamba Juice Hawaii is the category-defining leader in Hawaii for freshly blended-to-order fruit smoothies, juices and healthy snacks.",
+      "owner": "jj@foo.com"
+    },
+    {
+      "name": "Pizza Hut Express",
+      "foodTypeOne": "Pizza",
+      "foodTypeTwo": "American",
+      "foodTypeThree": "Health",
+      "vegan": false,
+      "glutenFree": true,
+      "vendorPrice": "$",
+      "vendorType": "To-Go",
+      "location": "Campus Center",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Pizza_Hut_logo.svg/1200px-Pizza_Hut_logo.svg.png",
+      "description": "Pizza is always a go-to option when you can't decide what to have for lunch. Our Pizza Hut Express location has daily pan Pizza Hut Photo pizza specials, breadsticks, and the popular Wingstreet items! Six different sauces for the wings are offered, and you can even mix and match your favorites. Who knows, you might just create a combo so great, we'll add it to our menu!",
+      "owner": "pizzahut@foo.com"
+    },
+    {
+      "name": "Starbucks",
+      "foodTypeOne": "Juice",
+      "foodTypeTwo": "Coffee",
+      "foodTypeThree": "Breakfast",
+      "vegan": false,
+      "glutenFree": true,
+      "vendorPrice": "$",
+      "vendorType": "To-Go",
+      "location": "Campus Center",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png",
+      "description": "With a full menu, as well as seasonal and specialty items, coffee fanatics are sure to be pleased. Also available are pastries, fruit cups, and bottled beverages for your purchase. Our location strives to give you the very same experience found at any other Starbucks across the nation. By the way, Starbucks is one of the few retail locations open later into the evening -- perfect for hanging out with some friends or studying! ",
+      "owner": "starbucks@foo.com"
+    },
+    {
+      "name": "Stir Fresh",
+      "foodTypeOne": "Mongolian",
+      "foodTypeTwo": "Chinese",
+      "foodTypeThree": "American",
+      "vegan": false,
+      "glutenFree": true,
+      "vendorPrice": "$",
+      "vendorType": "To-Go",
+      "location": "Campus Center",
+      "image": "https://s3-media4.fl.yelpcdn.com/bphoto/f-PX0wDCoejZeaHMT-Q1QA/348s.jpg",
+      "description": "Stir-Fresh brings a budget conscious, fresh and healthy, Asian stir fry restaurant to the first floor of Campus Center. Come down today and build your own stir fry, choose a protein and sauce and your lunch will be tossed hot by our expert chefs. Not in the mood for stir fry? Choose from one of our signature bowls. Stop by today and enjoy the Stir-Fresh experience",
+      "owner": "stirfresh@foo.com"
+    },
+    {
+      "name": "Ba-Le",
+      "foodTypeOne": "American",
+      "foodTypeTwo": "Ramen",
+      "foodTypeThree": "Sandwiches",
+      "vegan": false,
+      "glutenFree": false,
+      "vendorPrice": "$$",
+      "vendorType": "To-Go",
+      "location": "Hemenway Hall",
+      "image": "https://igx.4sqi.net/img/general/200x200/12058905_KnXWvsQ-dfCvyQWcWWlOwkzYi1joIccMnKnnt2KqF3s.jpg",
+      "description": "Ba-Le is the perfect stop if you're craving something a little different. Pastries, sandwiches, and pre-made salads are some of their quick lunch options. Also very popular at Ba-Le is pho noodle soup, pad thai, and banh mi sandwiches for those Asian food cravings. Spend your meal time at Ba-Le for a variety of foods and flavors! ",
+      "owner": "bale@foo.com"
     }
   ],
 
   "defaultFoods": [
-    {"name": "Chicken Katsu",
-      "vendorName": "L&L Hawaiian Barbecue",
+    {
+      "name": "Chicken Katsu",
       "foodTypeOne": "Japanese",
       "foodTypeTwo": "Chinese",
       "foodTypeThree": "Korean",
       "vegan": false,
       "glutenFree": false,
-      "healthy": true,
       "foodPrice": "$$",
-      "foodType": "food truck",
+      "foodType": "to go",
       "location": "Paradise Palms",
       "image": "https://www.hawaiianbarbecue.com/wp-content/uploads/2016/07/Chicken_Katsu-optimized.png",
       "description": "$12.95",
+      "restaurantName": "L&L Hawaiian Barbecue",
       "owner": "llbbq@foo.com"
     },
-
-    {"name": "Ice Americano",
-      "vendorName": "Dunkin Donuts",
-      "foodTypeOne": "Japanese",
-      "foodTypeTwo": "Chinese",
-      "foodTypeThree": "Korean",
+    {
+      "name": "Ice Americano",
+      "foodTypeOne": "Coffee",
+      "foodTypeTwo": "American",
+      "foodTypeThree": "Breakfast",
       "vegan": false,
       "glutenFree": false,
-      "healthy": true,
-      "foodPrice": "$$",
-      "foodType": "food truck",
+      "foodPrice": "$",
+      "foodType": "to go",
       "location": "Paradise Palms",
       "image": "https://www.gannett-cdn.com/-mm-/8eedd1f306cf362844aca109869da523ef4f3e4d/c=0-147-791-594/local/-/media/2016/08/27/TreasureCoast/T0015294427--199249.JPG?width=3200&height=1680&fit=crop",
       "description": "$2.49",
+      "restaurantName": "Dunkin Donuts",
       "owner": "dunkin@foo.com"
     },
-
-    {"name": "Shanghai Angus Steak",
-      "vendorName": "Panda Express",
+    {
+      "name": "Shanghai Angus Steak",
       "foodTypeOne": "Japanese",
       "foodTypeTwo": "American",
       "foodTypeThree": "Korean",
       "vegan": false,
       "glutenFree": false,
-      "healthy": true,
-      "foodPrice": "$$",
-      "foodType": "food truck",
+      "foodPrice": "$",
+      "foodType": "to go",
       "location": "Paradise Palms",
       "image": "https://i1.wp.com/www.grubgrade.com/wp-content/uploads/2012/04/Shanghai-Angus-Steak-Panda-Express.jpg?resize=500%2C360&ssl=1",
-      "description": "+$2.00 extra",
+      "description": "$9.80+",
+      "restaurantName": "Panda Express",
       "owner": "panda@foo.com"
     },
-
-    {"name": "Mix Poke Bowl",
-      "vendorName": "Govinda's Pure Vegetarian Restaurant",
+    {
+      "name": "Mix Poke Bowl",
       "foodTypeOne": "Japanese",
       "foodTypeTwo": "Chinese",
       "foodTypeThree": "Korean",
       "vegan": false,
       "glutenFree": false,
-      "healthy": true,
       "foodPrice": "$$",
-      "foodType": "food truck",
+      "foodType": "to go",
       "location": "Campus Center",
       "image": "https://s3-media4.fl.yelpcdn.com/bphoto/Fb2XrKUdIMY5CC01mGQCnw/o.jpg",
       "description": "$13.49",
-      "owner": "govindas@foo.com"
-    },
-
-    {"name": "Teppanyaki Steak",
-      "vendorName": "Holoholo Grill",
-      "foodTypeOne": "Japanese",
-      "foodTypeTwo": "Chinese",
-      "foodTypeThree": "Korean",
-      "vegan": false,
-      "glutenFree": false,
-      "healthy": true,
-      "foodPrice": "$$",
-      "foodType": "food truck",
-      "location": "University Avenue",
-      "image": "https://s3-media4.fl.yelpcdn.com/bphoto/QXgOMDm-fTp0uwBABSp6-Q/o.jpg",
-      "description": "$12.99",
-      "owner": "holoholo@foo.com"
-    },
-
-    {"name": "Bibimbap",
-      "vendorName": "L&L Hawaiian Barbecue",
-      "foodTypeOne": "Japanese",
-      "foodTypeTwo": "American",
-      "foodTypeThree": "Korean",
-      "vegan": false,
-      "glutenFree": true,
-      "healthy": true,
-      "foodPrice": "$$",
-      "foodType": "food truck",
-      "location": "Campus Center",
-      "image": "https://thegirlonbloor.com/wp-content/uploads/2015/08/30-Minute-Korean-Bibimbap-Recipe-7.jpg",
-      "description": "$10.99",
-      "owner": "llbbq@foo.com"
+      "restaurantName": "Stir Fresh",
+      "owner": "stirfresh@foo.com"
     }
   ],
   "foodOptions": [
-  {
-    "label": "Chinese",
-    "value": "Chinese"
-  },
-  {
-    "label": "American",
-    "value": "American"
-  },
-  {
-    "label": "Vietnamese",
-    "value": "Vietnamese"
-  },
-  {
-    "label": "Hawaiian",
-    "value": "Hawaiian"
-  },
-  {
-    "label": "BBQ",
-    "value": "BBQ"
-  },
-  {
-    "label": "Mongolian",
-    "value": "Mongolian"
-  },
-  {
-    "label": "Breakfast",
-    "value": "Breakfast"
-  },
-  {
-    "label": "Donuts",
-    "value": "Donuts"
-  },
-  {
-    "label": "Coffee",
-    "value": "Coffee"
-  },
-  {
-    "label": "French",
-    "value": "French"
-  },
-  {
-    "label": "Egyptian",
-    "value": "Egyptian"
-  },
-  {
-    "label": "Greek",
-    "value": "Greek"
-  },
-  {
-    "label": "Vegetarian",
-    "value": "Vegetarian"
-  },
-  {
-    "label": "Health",
-    "value": "Health"
-  },
-  {
-    "label": "Sandwiches",
-    "value": "Sandwiches"
-  },
-  {
-    "label": "Japanese",
-    "value": "Japanese"
-  },
-  {
-    "label": "Korean",
-    "value": "Korean"
-  }
-],
+    {
+      "label": "Chinese",
+      "value": "Chinese"
+    },
+    {
+      "label": "American",
+      "value": "American"
+    },
+    {
+      "label": "Vietnamese",
+      "value": "Vietnamese"
+    },
+    {
+      "label": "Hawaiian",
+      "value": "Hawaiian"
+    },
+    {
+      "label": "BBQ",
+      "value": "BBQ"
+    },
+    {
+      "label": "Mongolian",
+      "value": "Mongolian"
+    },
+    {
+      "label": "Breakfast",
+      "value": "Breakfast"
+    },
+    {
+      "label": "Donuts",
+      "value": "Donuts"
+    },
+    {
+      "label": "Coffee",
+      "value": "Coffee"
+    },
+    {
+      "label": "French",
+      "value": "French"
+    },
+    {
+      "label": "Egyptian",
+      "value": "Egyptian"
+    },
+    {
+      "label": "Greek",
+      "value": "Greek"
+    },
+    {
+      "label": "Vegetarian",
+      "value": "Vegetarian"
+    },
+    {
+      "label": "Health",
+      "value": "Health"
+    },
+    {
+      "label": "Sandwiches",
+      "value": "Sandwiches"
+    },
+    {
+      "label": "Japanese",
+      "value": "Japanese"
+    },
+    {
+      "label": "Korean",
+      "value": "Korean"
+    }
+  ],
 
   "locationOptions": [
     {
