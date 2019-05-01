@@ -296,6 +296,7 @@ export default withTracker(() => {
   } else {
     found = true;
   }
+  console.log(Users.findOne());
   return {
     docFound: found,
     doc: Users.findOne({ owner: Meteor.user().username }),

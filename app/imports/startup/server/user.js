@@ -19,7 +19,7 @@ Meteor.publish('Users', function publish() {
 });
 
 
-/** This subscription publishes only the documents associated with the logged in user */
+/** This subscription publishes all user profile documents*/
 Meteor.publish('AllUsers', function publish() {
   if (this.userId) {
     //  const username = Meteor.users.findOne(this.userId).username;

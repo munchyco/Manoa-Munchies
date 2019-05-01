@@ -139,3 +139,12 @@ Meteor.methods({
             );
   },
 });
+
+Meteor.methods({ 'returnUser'() {
+    let userProfile;
+    while (!userProfile.owner) {
+      userProfile = Users.findOne();
+    }
+    return userProfile;
+  },
+});
