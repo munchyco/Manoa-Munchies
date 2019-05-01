@@ -6,17 +6,18 @@ const Foods = new Mongo.Collection('Foods');
 
 const FoodsSchema = new SimpleSchema({
   name: String,
-  foodTypeOne: String,     //food types such as: Middle Eastern, Japanese, Cajun, Classic American, etc.
+  foodTypeOne: String,
   foodTypeTwo: String,
   foodTypeThree: String,
-  vegan: Boolean,          //boolean values for whether the restaurant offers vegan, GF and healthy options.
+  vegan: Boolean,
   glutenFree: Boolean,
-  foodPrice: String, //this will be either $/$$/$$$
-  foodType: String,  //vendor types such as "Food Truck", "Pre-made To-go," "Made To Order"
-  location: String,        //dining hall, potentially coordinates lat/long that could be used to get distance to user?
-  image: String,           //image of food/logo
-  description: String,     //tagline for vendor
-  owner: String            //vendor POC account
+  foodPrice: String,
+  foodType: String,
+  location: String,
+  image: String,
+  description: String,
+  restaurantName: String,
+  owner: String,
 }, { tracker: Tracker });
 
 Foods.attachSchema(FoodsSchema);
