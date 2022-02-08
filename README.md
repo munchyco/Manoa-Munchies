@@ -1,2 +1,2 @@
 # Manoa-Munchies
-project repository
+View all eating options on the UH Manoa campus at any given time
